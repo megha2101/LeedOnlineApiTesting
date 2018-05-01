@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [LeedonlineApi Test Suit]">
+  <parameter name="rowNum" value="2"/>
+  <parameter name="SheetName" value="STG"/>
+  <test name="LeedonlineApi">
+    <parameter name="rowNum" value="2"/>
+    <parameter name="SheetName" value="STG"/>
+    <classes>
+      <class name="com.leedonline.testcases.AuthenticateApiTest"/>
+      <class name="com.leedonline.testcases.GetNonceApiTest"/>
+      <class name="com.leedonline.testcases.ApiTestAccessCreateData"/>
+      <class name="com.leedonline.testcases.ApiTestAccessGetData"/>
+      <class name="com.leedonline.testcases.ApiTestAccessUpdateData"/>
+      <class name="com.leedonline.testcases.ApiTestAccessDeleteData"/>
+      <class name="com.leedonline.testcases.MemGetInfoApiTest"/>
+      <class name="com.leedonline.testcases.MemSyncApiTest"/>
+      <class name="com.leedonline.testcases.InvalidateTokenApiTest"/>
+    </classes>
+  </test> <!-- LeedonlineApi -->
+  <test name="LeedonlineApi Getclient">
+    <parameter name="rowNum" value="2"/>
+    <parameter name="SheetName" value="STG"/>
+    <classes>
+      <class name="com.leedonline.testcases.GetClientKeyApiTest"/>
+    </classes>
+  </test> <!-- LeedonlineApi Getclient -->
+  <test name="LeedonlineApi(failed)">
+    <parameter name="rowNum" value="2"/>
+    <parameter name="SheetName" value="STG"/>
+    <classes>
+      <class name="com.leedonline.testcases.GetClientKeyApiTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.GetClientKeyApiTest -->
+      <class name="com.leedonline.testcases.ApiTestAccessUpdateData">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.ApiTestAccessUpdateData -->
+      <class name="com.leedonline.testcases.GetNonceApiTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.GetNonceApiTest -->
+      <class name="com.leedonline.testcases.ApiTestAccessGetData">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.ApiTestAccessGetData -->
+      <class name="com.leedonline.testcases.ApiTestAccessCreateData">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.ApiTestAccessCreateData -->
+      <class name="com.leedonline.testcases.ApiTestAccessDeleteData">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.ApiTestAccessDeleteData -->
+      <class name="com.leedonline.testcases.MemGetInfoApiTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.MemGetInfoApiTest -->
+      <class name="com.leedonline.testcases.InvalidateTokenApiTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.InvalidateTokenApiTest -->
+      <class name="com.leedonline.testcases.MemSyncApiTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+          <include name="getMemSyncApi" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.MemSyncApiTest -->
+      <class name="com.leedonline.testcases.AuthenticateApiTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.AuthenticateApiTest -->
+    </classes>
+  </test> <!-- LeedonlineApi(failed) -->
+</suite> <!-- Failed suite [LeedonlineApi Test Suit] -->

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="LeedonlineApi Test Suit">  
+  <test name="LeedonlineApi">
+	    <parameter name="rowNum" value="2"/>
+	    <parameter name="SheetName" value="STG" />
+	    <classes> 
+	         <class name="com.leedonline.testcases.AuthenticateApiTest"/>
+	         <class name="com.leedonline.testcases.GetNonceApiTest"/>	
+	         <class name="com.leedonline.testcases.ApiTestAccessCreateData"/> 
+	         <class name="com.leedonline.testcases.ApiTestAccessGetData"/>    
+	         <class name="com.leedonline.testcases.ApiTestAccessUpdateData"/> 
+	         <class name="com.leedonline.testcases.ApiTestAccessDeleteData"/>            
+	         <class name="com.leedonline.testcases.MemGetInfoApiTest"/>
+	         <class name="com.leedonline.testcases.MemSyncApiTest"/>
+	         <class name="com.leedonline.testcases.InvalidateTokenApiTest"/> 
+	                  
+	    </classes>   
+	</test> 
+		
+	<test name="LeedonlineApi Getclient">
+	    <parameter name="rowNum" value="2"/>
+	    <parameter name="SheetName" value="STG" />
+	    <classes> 
+	         <class name="com.leedonline.testcases.GetClientKeyApiTest"/>
+	    </classes>   
+	</test> 
+	  
+</suite>
