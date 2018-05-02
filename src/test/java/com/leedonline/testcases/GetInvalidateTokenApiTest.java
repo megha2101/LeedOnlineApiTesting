@@ -16,28 +16,25 @@ import com.leedOnline.driver.BaseClass;
 import com.leedOnline.driver.CommonMethod;
 import com.relevantcodes.extentreports.LogStatus;
 
-public class GetClientKeyApiTest extends BaseClass{
-
+public class GetInvalidateTokenApiTest extends BaseClass{
 	@Test
 	@Parameters({"rowNum", "SheetName" })
-	public void getClientKey(int rowNum, String SheetName) throws IOException {
+	public void invalidateTokenApi(int rowNum, String SheetName) throws IOException {
 		try {		
 			System.out.println(Thread.currentThread().getStackTrace()[1].getMethodName());
-			CommonMethod.GeneratingAuthCode();
 			CommonMethod.res = given()
 					.header("Authorization", header)
 					.spec(reqSpec)
 					.when()
-					.get("/getClientKey");		
+					.get("/invalidateToken");		
 			CommonMethod.responsetime = CommonMethod.res.getTimeIn(TimeUnit.MILLISECONDS);
 			test = extent
-					.startTest("GetClientKey Api "+ CommonMethod.getLabel(CommonMethod.responsetime),
-							"Generate and get client key to sign in API .")
+					.startTest("InvalidateToken api "+ CommonMethod.getLabel(CommonMethod.responsetime),
+							"invalidate Basic auth token to remove the access.")
 					.assignCategory("api test");
-			System.out.println("Getclient api response time is: "+CommonMethod.responsetime);
-			System.out.println("Getclient api response is: "+CommonMethod.res.asString());
+			System.out.println("Invalidate token api response is: "+ CommonMethod.res.asString());
 			CommonMethod.res.then().assertThat().statusCode(200);		  
-			CommonMethod.res.then().assertThat().contentType(ContentType.JSON);
+			CommonMethod.res.then().assertThat().contentType(ContentType.JSON);			
 	        CommonMethod.testlog("Pass", "Authorization Token generated" + "<br>" + header);
 			CommonMethod.testlog("Pass", "verifies response from API" + "<br>" + CommonMethod.res.asString());
 	        CommonMethod.testlog("Info", "API responded in "+ CommonMethod.responsetime + " Milliseconds");

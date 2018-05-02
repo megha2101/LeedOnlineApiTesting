@@ -16,26 +16,23 @@ import com.leedOnline.driver.BaseClass;
 import com.leedOnline.driver.CommonMethod;
 import com.relevantcodes.extentreports.LogStatus;
 
-public class GetClientKeyApiTest extends BaseClass{
-
+public class GetMemSyncApiTest extends BaseClass{
 	@Test
 	@Parameters({"rowNum", "SheetName" })
-	public void getClientKey(int rowNum, String SheetName) throws IOException {
+	public void getMemSyncApi(int rowNum, String SheetName) throws IOException {
 		try {		
 			System.out.println(Thread.currentThread().getStackTrace()[1].getMethodName());
-			CommonMethod.GeneratingAuthCode();
 			CommonMethod.res = given()
 					.header("Authorization", header)
 					.spec(reqSpec)
 					.when()
-					.get("/getClientKey");		
+					.get("/Member/sync?email="+data.getCellData(SheetName, "emailMemSyncApi", rowNum));		
 			CommonMethod.responsetime = CommonMethod.res.getTimeIn(TimeUnit.MILLISECONDS);
 			test = extent
-					.startTest("GetClientKey Api "+ CommonMethod.getLabel(CommonMethod.responsetime),
-							"Generate and get client key to sign in API .")
+					.startTest("GetMemberSyncApi "+ CommonMethod.getLabel(CommonMethod.responsetime),
+							"Sync member details from USGBC database.")
 					.assignCategory("api test");
-			System.out.println("Getclient api response time is: "+CommonMethod.responsetime);
-			System.out.println("Getclient api response is: "+CommonMethod.res.asString());
+			System.out.println("GetMemSyncApi response time is: "+CommonMethod.responsetime);
 			CommonMethod.res.then().assertThat().statusCode(200);		  
 			CommonMethod.res.then().assertThat().contentType(ContentType.JSON);
 	        CommonMethod.testlog("Pass", "Authorization Token generated" + "<br>" + header);

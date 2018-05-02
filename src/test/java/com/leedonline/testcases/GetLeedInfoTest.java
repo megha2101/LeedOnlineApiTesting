@@ -16,28 +16,29 @@ import com.leedOnline.driver.BaseClass;
 import com.leedOnline.driver.CommonMethod;
 import com.relevantcodes.extentreports.LogStatus;
 
-public class MemSyncApiTest extends BaseClass{
+public class GetLeedInfoTest extends BaseClass{
 	@Test
 	@Parameters({"rowNum", "SheetName" })
-	public void getMemSyncApi(int rowNum, String SheetName) throws IOException {
-		try {
-			CommonMethod.ExtentReportConfig();		
+	public void LeedGetInfo(int rowNum, String SheetName) throws IOException {
+		try {	
+			CommonMethod.GeneratingAuthCode();
 			System.out.println(Thread.currentThread().getStackTrace()[1].getMethodName());
 			CommonMethod.res = given()
 					.header("Authorization", header)
 					.spec(reqSpec)
 					.when()
-					.get("/Member/sync?email="+data.getCellData(SheetName, "emailMemSyncApi", rowNum));		
+					.get("/LEED/getInfo");		
 			CommonMethod.responsetime = CommonMethod.res.getTimeIn(TimeUnit.MILLISECONDS);
-			CommonMethod.test = CommonMethod.extent
-					.startTest("GetMemberSyncApi"+ CommonMethod.getLabel(CommonMethod.responsetime),
-							"Sync member details from USGBC database.")
+			test = extent
+					.startTest("LeedGetInfo Api "+ CommonMethod.getLabel(CommonMethod.responsetime),
+							"Get LEED project types and rating systems.")
 					.assignCategory("api test");
-			System.out.println("GetMemSyncApi response time is: "+CommonMethod.responsetime);
+			System.out.println("LeedGetInfo response time is: "+CommonMethod.res.asString());
+			System.out.println("LeedGetInfo hedaer is: "+header);
 			CommonMethod.res.then().assertThat().statusCode(200);		  
 			CommonMethod.res.then().assertThat().contentType(ContentType.JSON);
 	        CommonMethod.testlog("Pass", "Authorization Token generated" + "<br>" + header);
-			CommonMethod.testlog("Pass", "verifies response from API" + "<br>" + CommonMethod.res.asString());
+			//CommonMethod.testlog("Pass", "verifies response from API" + "<br>" + CommonMethod.res.asString());
 	        CommonMethod.testlog("Info", "API responded in "+ CommonMethod.responsetime + " Milliseconds");
 		}catch(Exception e) {
 			e.printStackTrace();

@@ -12,41 +12,28 @@ import org.testng.annotations.Test;
 
 import com.gargoylesoftware.htmlunit.javascript.host.Console;
 import com.jayway.restassured.http.ContentType;
-import com.jayway.restassured.path.json.JsonPath;
-import com.jayway.restassured.response.ResponseBody;
 import com.leedOnline.driver.BaseClass;
 import com.leedOnline.driver.CommonMethod;
 import com.relevantcodes.extentreports.LogStatus;
 
-public class ApiTestAccessCreateData extends BaseClass{
+public class GetMemInfoApiTest extends BaseClass{
 	@Test
 	@Parameters({"rowNum", "SheetName" })
-	public void createApiTestAccessData(int rowNum, String SheetName) throws IOException {
-		try {
-			CommonMethod.ExtentReportConfig();		
+	public void getMemInfoApi(int rowNum, String SheetName) throws IOException {
+		try {	
 			System.out.println(Thread.currentThread().getStackTrace()[1].getMethodName());
-			System.out.println("CreateTestApiAccessData hedaer is: "+ header);
 			CommonMethod.res = given()
-					.header("Content-Type",CommonMethod.contentType)
 					.header("Authorization", header)
-					.header("X-Nonce", CommonMethod.nonceValue)
 					.spec(reqSpec)
-					.params(
-						  "key", data.getCellData(SheetName, "createKey", rowNum),
-						  "value", data.getCellData(SheetName, "createKeyValue", rowNum)
-						  )
 					.when()
-					.post("/Api/testAccess").then().extract().response();		
+					.get("/Member/GetInfo");		
 			CommonMethod.responsetime = CommonMethod.res.getTimeIn(TimeUnit.MILLISECONDS);
-			CommonMethod.test = CommonMethod.extent
-					.startTest("Create Api Test Access Data"+ CommonMethod.getLabel(CommonMethod.responsetime),
-							"Create some data for testing.")
+			test = extent
+					.startTest("Get Member Info Api "+ CommonMethod.getLabel(CommonMethod.responsetime),
+							"Get authenticated person details.")
 					.assignCategory("api test");
-			ResponseBody body = CommonMethod.res.getBody();
-			String bodyAsString = body.asString();
-			System.out.println("CreateTestApiAccessData body res is: "+bodyAsString);
-			System.out.println("CreateTestApiAccessData response time is: "+CommonMethod.responsetime);
-			System.out.println("CreateTestApiAccessData hedaer is: "+header);
+			System.out.println("GetMemInfoApi response time is: "+CommonMethod.responsetime);
+			System.out.println("GetMemInfoApi hedaer is: "+header);
 			CommonMethod.res.then().assertThat().statusCode(200);		  
 			CommonMethod.res.then().assertThat().contentType(ContentType.JSON);
 	        CommonMethod.testlog("Pass", "Authorization Token generated" + "<br>" + header);

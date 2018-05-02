@@ -5,16 +5,22 @@
 	    <parameter name="rowNum" value="2"/>
 	    <parameter name="SheetName" value="STG" />
 	    <classes> 
-	         <class name="com.leedonline.testcases.AuthenticateApiTest"/>
+	         <class name="com.leedonline.testcases.PostAuthenticateApiTest"/>
 	         <class name="com.leedonline.testcases.GetNonceApiTest"/>	
-	         <class name="com.leedonline.testcases.ApiTestAccessCreateData"/> 
-	         <class name="com.leedonline.testcases.ApiTestAccessGetData"/>    
-	         <class name="com.leedonline.testcases.ApiTestAccessUpdateData"/> 
-	         <class name="com.leedonline.testcases.ApiTestAccessDeleteData"/>            
-	         <class name="com.leedonline.testcases.MemGetInfoApiTest"/>
-	         <class name="com.leedonline.testcases.MemSyncApiTest"/>
-	         <class name="com.leedonline.testcases.InvalidateTokenApiTest"/> 
-	                  
+	         <class name="com.leedonline.testcases.PostApiTestAccessData"/> 
+	         <class name="com.leedonline.testcases.GetApiTestAccessData"/>    
+	         <class name="com.leedonline.testcases.PutApiTestAccessData"/> 
+	         <class name="com.leedonline.testcases.DeleteApiTestAccessData"/>            
+	         <class name="com.leedonline.testcases.GetMemInfoApiTest"/>
+	         <class name="com.leedonline.testcases.GetMemSyncApiTest"/>
+	         <class name="com.leedonline.testcases.GetInvalidateTokenApiTest"/> 	
+	         <class name="com.leedonline.testcases.GetClientKeyApiTest"/> 
+	         <class name="com.leedonline.testcases.GetLeedInfoTest"/>
+	         <class name="com.leedonline.testcases.GetProjectListTypeTest"/> 
+	         <class name="com.leedonline.testcases.GetProjectDetailsTypeTest"/>   
+	         <class name="com.leedonline.testcases.GetCreditTypeTest"/>
+	         <class name="com.leedonline.testcases.GetInterpretationTypeTest"/>  
+	         <class name="com.leedonline.testcases.GetClarificationTypeTest"/>                      
 	    </classes>   
 	</test> 
 		
@@ -22,7 +28,7 @@
 	    <parameter name="rowNum" value="2"/>
 	    <parameter name="SheetName" value="STG" />
 	    <classes> 
-	         <class name="com.leedonline.testcases.GetClientKeyApiTest"/>
+	        <!--  <class name="com.leedonline.testcases.GetClientKeyApiTest"/> -->
 	    </classes>   
 	</test> 
 	  

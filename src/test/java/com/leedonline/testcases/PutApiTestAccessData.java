@@ -18,34 +18,36 @@ import com.leedOnline.driver.BaseClass;
 import com.leedOnline.driver.CommonMethod;
 import com.relevantcodes.extentreports.LogStatus;
 
-public class ApiTestAccessDeleteData extends BaseClass{
+import net.minidev.json.JSONObject;
+
+public class PutApiTestAccessData extends BaseClass{
 	@Test
 	@Parameters({"rowNum", "SheetName" })
-	public void deleteApiTestAccessData(int rowNum, String SheetName) throws IOException {
-		try {
-			CommonMethod.ExtentReportConfig();		
+	public void putApiTestAccess(int rowNum, String SheetName) throws IOException {
+		try {	
+			System.out.println("header is: " +header + " createkey value is "+data.getCellData(SheetName, "createKey", rowNum));
 			System.out.println(Thread.currentThread().getStackTrace()[1].getMethodName());
-			System.out.println("deleteApiTestAccessData heeader is: "+ header);
-			System.out.println("deleteApiTestAccess data key is:" +data.getCellData(SheetName, "createKey", rowNum));
+			JSONObject jsonAsMap = new JSONObject();
+			jsonAsMap.put("key", data.getCellData(SheetName, "createKey", rowNum));
+			jsonAsMap.put("value", data.getCellData(SheetName, "updatedKeyValue", rowNum));
+	
 			CommonMethod.res = given()
 					.header("Content-Type",CommonMethod.contentType)
 					.header("Authorization", header)
 					.spec(reqSpec)
-					.params(
-							"key", data.getCellData(SheetName, "createKey", rowNum)
-						   )
+					.body(jsonAsMap)
 					.when()
-					.delete("/Api/testAccess").then().extract().response();		
+					.put("/Api/testAccess/Test12");		
 			CommonMethod.responsetime = CommonMethod.res.getTimeIn(TimeUnit.MILLISECONDS);
-			CommonMethod.test = CommonMethod.extent
-					.startTest("Delete Api Test Access Data"+ CommonMethod.getLabel(CommonMethod.responsetime),
-							"Delete single or full data.")
+			test = extent
+					.startTest("PutApiTestAccess Api"+ CommonMethod.getLabel(CommonMethod.responsetime),
+							"Update the created test data.")
 					.assignCategory("api test");
 			ResponseBody body = CommonMethod.res.getBody();
 			String bodyAsString = body.asString();
-			System.out.println("DeleteTestApiAccessData body res is: "+bodyAsString);
-			System.out.println("DeleteTestApiAccessData response time is: "+CommonMethod.responsetime);
-			System.out.println("DeleteTestApiAccessData hedaer is: "+header);
+			System.out.println("PutTestApiAccessData body res is: "+bodyAsString);
+			System.out.println("PutApiTestAccess api response time is: "+CommonMethod.responsetime);
+			CommonMethod.res.then().log().all();
 			CommonMethod.res.then().assertThat().statusCode(200);		  
 			CommonMethod.res.then().assertThat().contentType(ContentType.JSON);
 	        CommonMethod.testlog("Pass", "Authorization Token generated" + "<br>" + header);

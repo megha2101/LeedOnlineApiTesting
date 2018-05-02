@@ -16,30 +16,29 @@ import com.leedOnline.driver.BaseClass;
 import com.leedOnline.driver.CommonMethod;
 import com.relevantcodes.extentreports.LogStatus;
 
-public class GetClientKeyApiTest extends BaseClass{
-
+public class GetClarificationTypeTest extends BaseClass{
 	@Test
 	@Parameters({"rowNum", "SheetName" })
-	public void getClientKey(int rowNum, String SheetName) throws IOException {
-		try {		
+	public void GetClarification(int rowNum, String SheetName) throws IOException {
+		try {	
 			System.out.println(Thread.currentThread().getStackTrace()[1].getMethodName());
-			CommonMethod.GeneratingAuthCode();
 			CommonMethod.res = given()
 					.header("Authorization", header)
 					.spec(reqSpec)
 					.when()
-					.get("/getClientKey");		
+					.get("/Clarifications/get/"+data.getCellData(SheetName, "projectType", rowNum)+
+							"/"+data.getCellData(SheetName, "leedProjectId", rowNum));
 			CommonMethod.responsetime = CommonMethod.res.getTimeIn(TimeUnit.MILLISECONDS);
 			test = extent
-					.startTest("GetClientKey Api "+ CommonMethod.getLabel(CommonMethod.responsetime),
-							"Generate and get client key to sign in API .")
+					.startTest("GetClarification Api "+ CommonMethod.getLabel(CommonMethod.responsetime),
+							"Get project details.")
 					.assignCategory("api test");
-			System.out.println("Getclient api response time is: "+CommonMethod.responsetime);
-			System.out.println("Getclient api response is: "+CommonMethod.res.asString());
+			System.out.println("GetClarification response time is: "+CommonMethod.res.asString());
+			System.out.println("GetClarification hedaer is: "+header);
 			CommonMethod.res.then().assertThat().statusCode(200);		  
 			CommonMethod.res.then().assertThat().contentType(ContentType.JSON);
 	        CommonMethod.testlog("Pass", "Authorization Token generated" + "<br>" + header);
-			CommonMethod.testlog("Pass", "verifies response from API" + "<br>" + CommonMethod.res.asString());
+			//CommonMethod.testlog("Pass", "verifies response from API" + "<br>" + CommonMethod.res.asString());
 	        CommonMethod.testlog("Info", "API responded in "+ CommonMethod.responsetime + " Milliseconds");
 		}catch(Exception e) {
 			e.printStackTrace();

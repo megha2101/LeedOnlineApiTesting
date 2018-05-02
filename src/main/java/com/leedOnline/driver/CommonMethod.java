@@ -25,17 +25,12 @@ import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
 public class CommonMethod extends BaseClass {
-	static Format formatter = new SimpleDateFormat("YYYY-MM-dd");
-	static Date date = new Date();
+	
 	public static String nonceValue;
 	public static long responsetime;
-	public static ExtentReports extent;
-	public static ExtentTest test;
 	public static Response res;
 	public static String contentType = "application/x-www-form-urlencoded";
-    public static File extentconfigfile = new File(System.getProperty("user.dir") +"/src/main/resources/listener/extent-config.xml");
-    public static String Reportfile = System.getProperty("user.dir") +"/Report/Leedonline-AutomationReport" + "_" + formatter.format(date) + ".html";
-    
+	
 	public static void GeneratingAuthCode() {
 		Token = given()
 				.header("Content-Type",CommonMethod.contentType)
@@ -60,20 +55,8 @@ public static String getLabel(long responsetime) {
 		else
 		{
 		return "<span class='label outline fatal'>" + CommonMethod.responsetime + " Milliseconds" + "</span>";
-		}
-	    
-	    
+		}	    
 	}
-
-public static void ExtentReportConfig() {
-	extent = new ExtentReports(Reportfile, true);
-	extent.loadConfig(extentconfigfile);
-    Map<String, String> sysInfo = new HashMap<String, String>();
-	sysInfo.put("Selenium Version", "2.53");
-	sysInfo.put("Environment", "Staging");
-    extent.addSystemInfo(sysInfo);
-	
-}
 
 public static void testlog(String log, String message){
 	switch(log){	

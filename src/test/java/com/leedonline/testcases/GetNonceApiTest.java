@@ -22,8 +22,7 @@ public class GetNonceApiTest extends BaseClass{
 	@Test
 	@Parameters({"rowNum", "SheetName" })
 	public void getNonceApi(int rowNum, String SheetName) throws IOException {
-		try {
-			CommonMethod.ExtentReportConfig();		
+		try {		
 			System.out.println(Thread.currentThread().getStackTrace()[1].getMethodName());
 			CommonMethod.GeneratingAuthCode();
 			CommonMethod.res = given()
@@ -32,8 +31,8 @@ public class GetNonceApiTest extends BaseClass{
 					.when()
 					.get("/getNonce?total="+data.getCellData(SheetName, "nonceNum", rowNum));		
 			CommonMethod.responsetime = CommonMethod.res.getTimeIn(TimeUnit.MILLISECONDS);
-			CommonMethod.test = CommonMethod.extent
-					.startTest("GetNonceApi"+ CommonMethod.getLabel(CommonMethod.responsetime),
+			test = extent
+					.startTest("GetNonceApi "+ CommonMethod.getLabel(CommonMethod.responsetime),
 							"Generates one time use nonces.")
 					.assignCategory("api test");
 			System.out.println("GetNonceApi response time is: "+CommonMethod.responsetime);

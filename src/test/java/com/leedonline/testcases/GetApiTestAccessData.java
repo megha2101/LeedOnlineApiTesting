@@ -12,30 +12,33 @@ import org.testng.annotations.Test;
 
 import com.gargoylesoftware.htmlunit.javascript.host.Console;
 import com.jayway.restassured.http.ContentType;
+import com.jayway.restassured.path.json.JsonPath;
+import com.jayway.restassured.response.ResponseBody;
 import com.leedOnline.driver.BaseClass;
 import com.leedOnline.driver.CommonMethod;
 import com.relevantcodes.extentreports.LogStatus;
 
-public class GetClientKeyApiTest extends BaseClass{
-
+public class GetApiTestAccessData extends BaseClass{
 	@Test
 	@Parameters({"rowNum", "SheetName" })
-	public void getClientKey(int rowNum, String SheetName) throws IOException {
+	public void getApiTestAccessData(int rowNum, String SheetName) throws IOException {
 		try {		
 			System.out.println(Thread.currentThread().getStackTrace()[1].getMethodName());
-			CommonMethod.GeneratingAuthCode();
+			System.out.println("GetTestApiAccessData hedaer is: "+ header);
 			CommonMethod.res = given()
 					.header("Authorization", header)
 					.spec(reqSpec)
 					.when()
-					.get("/getClientKey");		
+					.get("/Api/testAccess?key="+data.getCellData(SheetName, "createKey", rowNum));		
 			CommonMethod.responsetime = CommonMethod.res.getTimeIn(TimeUnit.MILLISECONDS);
 			test = extent
-					.startTest("GetClientKey Api "+ CommonMethod.getLabel(CommonMethod.responsetime),
-							"Generate and get client key to sign in API .")
+					.startTest("Get Api Test Access Data "+ CommonMethod.getLabel(CommonMethod.responsetime),
+							"Read the single or full data..")
 					.assignCategory("api test");
-			System.out.println("Getclient api response time is: "+CommonMethod.responsetime);
-			System.out.println("Getclient api response is: "+CommonMethod.res.asString());
+			ResponseBody body = CommonMethod.res.getBody();
+			String bodyAsString = body.asString();
+			System.out.println("GetTestApiAccessData body res is: "+bodyAsString);
+			System.out.println("GetTestApiAccessData response time is: "+CommonMethod.responsetime);
 			CommonMethod.res.then().assertThat().statusCode(200);		  
 			CommonMethod.res.then().assertThat().contentType(ContentType.JSON);
 	        CommonMethod.testlog("Pass", "Authorization Token generated" + "<br>" + header);
