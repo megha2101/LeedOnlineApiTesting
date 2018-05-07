@@ -21,6 +21,7 @@ public class GetProjectListTypeTest extends BaseClass{
 	@Parameters({"rowNum", "SheetName" })
 	public void ProjectGetListType(int rowNum, String SheetName) throws IOException {
 		try {	
+			CommonMethod.ExtentReportConfig();
 			System.out.println(Thread.currentThread().getStackTrace()[1].getMethodName());
 			CommonMethod.res = given()
 					.header("Authorization", header)
@@ -28,7 +29,7 @@ public class GetProjectListTypeTest extends BaseClass{
 					.when()
 					.get("/Projects/getList/"+data.getCellData(SheetName, "ListOfProjectType", rowNum));		
 			CommonMethod.responsetime = CommonMethod.res.getTimeIn(TimeUnit.MILLISECONDS);
-			test = extent
+			 CommonMethod.test =  CommonMethod.extent
 					.startTest("ProjectGetListType Api "+ CommonMethod.getLabel(CommonMethod.responsetime),
 							"Get projects list.")
 					.assignCategory("api test");

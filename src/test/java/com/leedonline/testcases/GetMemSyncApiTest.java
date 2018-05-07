@@ -20,7 +20,8 @@ public class GetMemSyncApiTest extends BaseClass{
 	@Test
 	@Parameters({"rowNum", "SheetName" })
 	public void getMemSyncApi(int rowNum, String SheetName) throws IOException {
-		try {		
+		try {	
+			CommonMethod.ExtentReportConfig();
 			System.out.println(Thread.currentThread().getStackTrace()[1].getMethodName());
 			CommonMethod.res = given()
 					.header("Authorization", header)
@@ -28,7 +29,7 @@ public class GetMemSyncApiTest extends BaseClass{
 					.when()
 					.get("/Member/sync?email="+data.getCellData(SheetName, "emailMemSyncApi", rowNum));		
 			CommonMethod.responsetime = CommonMethod.res.getTimeIn(TimeUnit.MILLISECONDS);
-			test = extent
+			 CommonMethod.test =  CommonMethod.extent
 					.startTest("GetMemberSyncApi "+ CommonMethod.getLabel(CommonMethod.responsetime),
 							"Sync member details from USGBC database.")
 					.assignCategory("api test");

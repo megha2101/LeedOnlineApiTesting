@@ -8,21 +8,36 @@
     <parameter name="SheetName" value="STG"/>
     <classes>
       <class name="com.leedonline.testcases.PostAuthenticateApiTest"/>
-      <class name="com.leedonline.testcases.GetNonceApiTest"/>
-      <class name="com.leedonline.testcases.PostApiTestAccessData"/>
-      <class name="com.leedonline.testcases.GetApiTestAccessData"/>
-      <class name="com.leedonline.testcases.PutApiTestAccessData"/>
-      <class name="com.leedonline.testcases.DeleteApiTestAccessData"/>
+      <class name="com.leedonline.testcases.GetFilesListTest"/>
+      <class name="com.leedonline.testcases.GetFileDownloadUrlTest"/>
       <class name="com.leedonline.testcases.GetMemInfoApiTest"/>
       <class name="com.leedonline.testcases.GetMemSyncApiTest"/>
-      <class name="com.leedonline.testcases.GetInvalidateTokenApiTest"/>
-      <class name="com.leedonline.testcases.GetClientKeyApiTest"/>
       <class name="com.leedonline.testcases.GetLeedInfoTest"/>
       <class name="com.leedonline.testcases.GetProjectListTypeTest"/>
       <class name="com.leedonline.testcases.GetProjectDetailsTypeTest"/>
       <class name="com.leedonline.testcases.GetCreditTypeTest"/>
       <class name="com.leedonline.testcases.GetInterpretationTypeTest"/>
       <class name="com.leedonline.testcases.GetClarificationTypeTest"/>
+      <class name="com.leedonline.testcases.GetCountryAndStateTest"/>
+      <class name="com.leedonline.testcases.GetTaxForAmountTest"/>
+      <class name="com.leedonline.testcases.GetPriceReleatedInfoTest"/>
+      <class name="com.leedonline.testcases.GetApiTestAccessData"/>
+      <class name="com.leedonline.testcases.GetLeedPricingDefaultVersionTest"/>
+      <class name="com.leedonline.testcases.GetLeedPricingVersionPricesInfoTest"/>
+      <class name="com.leedonline.testcases.GetLeedPricingPriceVersionInfoTest"/>
+      <class name="com.leedonline.testcases.GetLeedPricingDownloadUploadedExcelTest"/>
+      <class name="com.leedonline.testcases.GetPaymentSearchTest"/>
+      <class name="com.leedonline.testcases.GetFileDmsProxyTest"/>
+      <class name="com.leedonline.testcases.GetNonceApiTest"/>
+      <class name="com.leedonline.testcases.PostFileUploadTest"/>
+      <class name="com.leedonline.testcases.PostApiTestAccessData"/>
+      <class name="com.leedonline.testcases.PostValidateSdnStatusTest"/>
+      <class name="com.leedonline.testcases.PostValidateCaGBCMemberTest"/>
+      <class name="com.leedonline.testcases.PostValidatePostalCodeTest"/>
+      <class name="com.leedonline.testcases.PutApiTestAccessData"/>
+      <class name="com.leedonline.testcases.DeleteApiTestAccessData"/>
+      <class name="com.leedonline.testcases.GetInvalidateTokenApiTest"/>
+      <class name="com.leedonline.testcases.GetClientKeyApiTest"/>
     </classes>
   </test> <!-- LeedonlineApi -->
   <test name="LeedonlineApi Getclient">
@@ -33,18 +48,104 @@
     <parameter name="rowNum" value="2"/>
     <parameter name="SheetName" value="STG"/>
     <classes>
+      <class name="com.leedonline.testcases.PostFileUploadTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="PostFileUpload" invocation-numbers="0"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.PostFileUploadTest -->
+      <class name="com.leedonline.testcases.GetPriceReleatedInfoTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.GetPriceReleatedInfoTest -->
+      <class name="com.leedonline.testcases.GetLeedInfoTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.GetLeedInfoTest -->
+      <class name="com.leedonline.testcases.PostValidatePostalCodeTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.PostValidatePostalCodeTest -->
+      <class name="com.leedonline.testcases.GetNonceApiTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.GetNonceApiTest -->
+      <class name="com.leedonline.testcases.GetPaymentSearchTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.GetPaymentSearchTest -->
+      <class name="com.leedonline.testcases.GetApiTestAccessData">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.GetApiTestAccessData -->
+      <class name="com.leedonline.testcases.GetFileDmsProxyTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.GetFileDmsProxyTest -->
+      <class name="com.leedonline.testcases.PutApiTestAccessData">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.PutApiTestAccessData -->
+      <class name="com.leedonline.testcases.GetProjectListTypeTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.GetProjectListTypeTest -->
       <class name="com.leedonline.testcases.GetClientKeyApiTest">
         <methods>
           <include name="setBaseUri"/>
           <include name="teardown"/>
         </methods>
       </class> <!-- com.leedonline.testcases.GetClientKeyApiTest -->
-      <class name="com.leedonline.testcases.GetProjectDetailsTypeTest">
+      <class name="com.leedonline.testcases.PostValidateSdnStatusTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+          <include name="PostValidateSdnStatus" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.PostValidateSdnStatusTest -->
+      <class name="com.leedonline.testcases.GetLeedPricingVersionPricesInfoTest">
         <methods>
           <include name="setBaseUri"/>
           <include name="teardown"/>
         </methods>
-      </class> <!-- com.leedonline.testcases.GetProjectDetailsTypeTest -->
+      </class> <!-- com.leedonline.testcases.GetLeedPricingVersionPricesInfoTest -->
+      <class name="com.leedonline.testcases.GetFileDownloadUrlTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.GetFileDownloadUrlTest -->
+      <class name="com.leedonline.testcases.GetCreditTypeTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.GetCreditTypeTest -->
+      <class name="com.leedonline.testcases.PostApiTestAccessData">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.PostApiTestAccessData -->
       <class name="com.leedonline.testcases.GetMemSyncApiTest">
         <methods>
           <include name="setBaseUri"/>
@@ -52,85 +153,91 @@
           <include name="teardown"/>
         </methods>
       </class> <!-- com.leedonline.testcases.GetMemSyncApiTest -->
-      <class name="com.leedonline.testcases.GetApiTestAccessData">
+      <class name="com.leedonline.testcases.PostValidateCaGBCMemberTest">
+        <methods>
+          <include name="PostValidateCaGBCMember" invocation-numbers="0"/>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.PostValidateCaGBCMemberTest -->
+      <class name="com.leedonline.testcases.GetTaxForAmountTest">
         <methods>
           <include name="setBaseUri"/>
           <include name="teardown"/>
         </methods>
-      </class> <!-- com.leedonline.testcases.GetApiTestAccessData -->
-      <class name="com.leedonline.testcases.GetClarificationTypeTest">
+      </class> <!-- com.leedonline.testcases.GetTaxForAmountTest -->
+      <class name="com.leedonline.testcases.GetProjectDetailsTypeTest">
         <methods>
           <include name="setBaseUri"/>
           <include name="teardown"/>
         </methods>
-      </class> <!-- com.leedonline.testcases.GetClarificationTypeTest -->
-      <class name="com.leedonline.testcases.GetCreditTypeTest">
+      </class> <!-- com.leedonline.testcases.GetProjectDetailsTypeTest -->
+      <class name="com.leedonline.testcases.GetCountryAndStateTest">
         <methods>
           <include name="setBaseUri"/>
           <include name="teardown"/>
         </methods>
-      </class> <!-- com.leedonline.testcases.GetCreditTypeTest -->
-      <class name="com.leedonline.testcases.GetNonceApiTest">
+      </class> <!-- com.leedonline.testcases.GetCountryAndStateTest -->
+      <class name="com.leedonline.testcases.GetLeedPricingDownloadUploadedExcelTest">
         <methods>
           <include name="setBaseUri"/>
           <include name="teardown"/>
         </methods>
-      </class> <!-- com.leedonline.testcases.GetNonceApiTest -->
-      <class name="com.leedonline.testcases.PostApiTestAccessData">
-        <methods>
-          <include name="setBaseUri"/>
-          <include name="teardown"/>
-        </methods>
-      </class> <!-- com.leedonline.testcases.PostApiTestAccessData -->
-      <class name="com.leedonline.testcases.GetMemInfoApiTest">
-        <methods>
-          <include name="setBaseUri"/>
-          <include name="teardown"/>
-        </methods>
-      </class> <!-- com.leedonline.testcases.GetMemInfoApiTest -->
+      </class> <!-- com.leedonline.testcases.GetLeedPricingDownloadUploadedExcelTest -->
       <class name="com.leedonline.testcases.DeleteApiTestAccessData">
         <methods>
           <include name="setBaseUri"/>
           <include name="teardown"/>
         </methods>
       </class> <!-- com.leedonline.testcases.DeleteApiTestAccessData -->
-      <class name="com.leedonline.testcases.GetLeedInfoTest">
+      <class name="com.leedonline.testcases.GetLeedPricingPriceVersionInfoTest">
         <methods>
           <include name="setBaseUri"/>
           <include name="teardown"/>
         </methods>
-      </class> <!-- com.leedonline.testcases.GetLeedInfoTest -->
-      <class name="com.leedonline.testcases.PutApiTestAccessData">
+      </class> <!-- com.leedonline.testcases.GetLeedPricingPriceVersionInfoTest -->
+      <class name="com.leedonline.testcases.GetMemInfoApiTest">
         <methods>
           <include name="setBaseUri"/>
           <include name="teardown"/>
         </methods>
-      </class> <!-- com.leedonline.testcases.PutApiTestAccessData -->
-      <class name="com.leedonline.testcases.GetInterpretationTypeTest">
-        <methods>
-          <include name="setBaseUri"/>
-          <include name="teardown"/>
-        </methods>
-      </class> <!-- com.leedonline.testcases.GetInterpretationTypeTest -->
-      <class name="com.leedonline.testcases.PostAuthenticateApiTest">
-        <methods>
-          <include name="setBaseUri"/>
-          <include name="teardown"/>
-          <include name="ExtentReportConfig"/>
-        </methods>
-      </class> <!-- com.leedonline.testcases.PostAuthenticateApiTest -->
-      <class name="com.leedonline.testcases.GetProjectListTypeTest">
-        <methods>
-          <include name="setBaseUri"/>
-          <include name="teardown"/>
-        </methods>
-      </class> <!-- com.leedonline.testcases.GetProjectListTypeTest -->
+      </class> <!-- com.leedonline.testcases.GetMemInfoApiTest -->
       <class name="com.leedonline.testcases.GetInvalidateTokenApiTest">
         <methods>
           <include name="setBaseUri"/>
           <include name="teardown"/>
         </methods>
       </class> <!-- com.leedonline.testcases.GetInvalidateTokenApiTest -->
+      <class name="com.leedonline.testcases.GetFilesListTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.GetFilesListTest -->
+      <class name="com.leedonline.testcases.GetClarificationTypeTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.GetClarificationTypeTest -->
+      <class name="com.leedonline.testcases.PostAuthenticateApiTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.PostAuthenticateApiTest -->
+      <class name="com.leedonline.testcases.GetLeedPricingDefaultVersionTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.GetLeedPricingDefaultVersionTest -->
+      <class name="com.leedonline.testcases.GetInterpretationTypeTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.GetInterpretationTypeTest -->
     </classes>
   </test> <!-- LeedonlineApi(failed) -->
 </suite> <!-- Failed suite [LeedonlineApi Test Suit] -->

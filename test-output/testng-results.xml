@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" total="16" passed="15">
+<testng-results skipped="0" failed="4" total="31" passed="27">
   <reporter-output>
   </reporter-output>
-  <suite name="LeedonlineApi Test Suit" duration-ms="15753" started-at="2018-05-02T03:47:03Z" finished-at="2018-05-02T03:47:19Z">
+  <suite name="LeedonlineApi Test Suit" duration-ms="22374" started-at="2018-05-07T19:16:36Z" finished-at="2018-05-07T19:16:59Z">
     <groups>
     </groups>
-    <test name="LeedonlineApi" duration-ms="15645" started-at="2018-05-02T03:47:03Z" finished-at="2018-05-02T03:47:19Z">
+    <test name="LeedonlineApi" duration-ms="22224" started-at="2018-05-07T19:16:36Z" finished-at="2018-05-07T19:16:59Z">
       <class name="com.leedonline.testcases.GetInterpretationTypeTest">
-        <test-method status="PASS" signature="setBaseUri()[pri:0, instance:com.leedonline.testcases.GetInterpretationTypeTest@5fcfde70]" name="setBaseUri" is-config="true" duration-ms="96" started-at="2018-05-01T23:47:18Z" finished-at="2018-05-01T23:47:18Z">
+        <test-method status="PASS" signature="setBaseUri()[pri:0, instance:com.leedonline.testcases.GetInterpretationTypeTest@4b74b35]" name="setBaseUri" is-config="true" duration-ms="130" started-at="2018-05-07T15:16:48Z" finished-at="2018-05-07T15:16:48Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setBaseUri -->
-        <test-method status="PASS" signature="GetInterpretationTypeTest(int, java.lang.String)[pri:0, instance:com.leedonline.testcases.GetInterpretationTypeTest@5fcfde70]" name="GetInterpretationTypeTest" duration-ms="225" started-at="2018-05-01T23:47:18Z" finished-at="2018-05-01T23:47:18Z">
+        <test-method status="PASS" signature="GetInterpretationTypeTest(int, java.lang.String)[pri:0, instance:com.leedonline.testcases.GetInterpretationTypeTest@4b74b35]" name="GetInterpretationTypeTest" duration-ms="261" started-at="2018-05-07T15:16:48Z" finished-at="2018-05-07T15:16:48Z">
           <params>
             <param index="0">
               <value>
@@ -27,11 +27,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetInterpretationTypeTest -->
-        <test-method status="PASS" signature="teardown(org.testng.ITestResult)[pri:0, instance:com.leedonline.testcases.GetInterpretationTypeTest@5fcfde70]" name="teardown" is-config="true" duration-ms="185" started-at="2018-05-01T23:47:18Z" finished-at="2018-05-01T23:47:18Z">
+        <test-method status="PASS" signature="teardown(org.testng.ITestResult)[pri:0, instance:com.leedonline.testcases.GetInterpretationTypeTest@4b74b35]" name="teardown" is-config="true" duration-ms="90" started-at="2018-05-07T15:16:48Z" finished-at="2018-05-07T15:16:48Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=GetInterpretationTypeTest status=SUCCESS method=GetInterpretationTypeTest.GetInterpretationTypeTest(int, java.lang.String)[pri:0, instance:com.leedonline.testcases.GetInterpretationTypeTest@5fcfde70] output={null}]]]>
+                <![CDATA[[TestResult name=GetInterpretationTypeTest status=SUCCESS method=GetInterpretationTypeTest.GetInterpretationTypeTest(int, java.lang.String)[pri:0, instance:com.leedonline.testcases.GetInterpretationTypeTest@4b74b35] output={null}]]]>
               </value>
             </param>
           </params>
@@ -40,11 +40,11 @@
         </test-method> <!-- teardown -->
       </class> <!-- com.leedonline.testcases.GetInterpretationTypeTest -->
       <class name="com.leedonline.testcases.GetProjectListTypeTest">
-        <test-method status="PASS" signature="setBaseUri()[pri:0, instance:com.leedonline.testcases.GetProjectListTypeTest@54d8c20d]" name="setBaseUri" is-config="true" duration-ms="100" started-at="2018-05-01T23:47:16Z" finished-at="2018-05-01T23:47:16Z">
+        <test-method status="PASS" signature="setBaseUri()[pri:0, instance:com.leedonline.testcases.GetProjectListTypeTest@2bc426f0]" name="setBaseUri" is-config="true" duration-ms="40" started-at="2018-05-07T15:16:46Z" finished-at="2018-05-07T15:16:47Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setBaseUri -->
-        <test-method status="PASS" signature="ProjectGetListType(int, java.lang.String)[pri:0, instance:com.leedonline.testcases.GetProjectListTypeTest@54d8c20d]" name="ProjectGetListType" duration-ms="212" started-at="2018-05-01T23:47:16Z" finished-at="2018-05-01T23:47:17Z">
+        <test-method status="PASS" signature="ProjectGetListType(int, java.lang.String)[pri:0, instance:com.leedonline.testcases.GetProjectListTypeTest@2bc426f0]" name="ProjectGetListType" duration-ms="311" started-at="2018-05-07T15:16:47Z" finished-at="2018-05-07T15:16:47Z">
           <params>
             <param index="0">
               <value>
@@ -60,11 +60,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ProjectGetListType -->
-        <test-method status="PASS" signature="teardown(org.testng.ITestResult)[pri:0, instance:com.leedonline.testcases.GetProjectListTypeTest@54d8c20d]" name="teardown" is-config="true" duration-ms="121" started-at="2018-05-01T23:47:17Z" finished-at="2018-05-01T23:47:17Z">
+        <test-method status="PASS" signature="teardown(org.testng.ITestResult)[pri:0, instance:com.leedonline.testcases.GetProjectListTypeTest@2bc426f0]" name="teardown" is-config="true" duration-ms="50" started-at="2018-05-07T15:16:47Z" finished-at="2018-05-07T15:16:47Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=ProjectGetListType status=SUCCESS method=GetProjectListTypeTest.ProjectGetListType(int, java.lang.String)[pri:0, instance:com.leedonline.testcases.GetProjectListTypeTest@54d8c20d] output={null}]]]>
+                <![CDATA[[TestResult name=ProjectGetListType status=SUCCESS method=GetProjectListTypeTest.ProjectGetListType(int, java.lang.String)[pri:0, instance:com.leedonline.testcases.GetProjectListTypeTest@2bc426f0] output={null}]]]>
               </value>
             </param>
           </params>
@@ -72,12 +72,137 @@
           </reporter-output>
         </test-method> <!-- teardown -->
       </class> <!-- com.leedonline.testcases.GetProjectListTypeTest -->
-      <class name="com.leedonline.testcases.DeleteApiTestAccessData">
-        <test-method status="PASS" signature="setBaseUri()[pri:0, instance:com.leedonline.testcases.DeleteApiTestAccessData@5f0f9947]" name="setBaseUri" is-config="true" duration-ms="64" started-at="2018-05-01T23:47:14Z" finished-at="2018-05-01T23:47:14Z">
+      <class name="com.leedonline.testcases.PostValidateCaGBCMemberTest">
+        <test-method status="PASS" signature="setBaseUri()[pri:0, instance:com.leedonline.testcases.PostValidateCaGBCMemberTest@2e869098]" name="setBaseUri" is-config="true" duration-ms="30" started-at="2018-05-07T15:16:56Z" finished-at="2018-05-07T15:16:56Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setBaseUri -->
-        <test-method status="PASS" signature="deleteApiTestAccessData(int, java.lang.String)[pri:0, instance:com.leedonline.testcases.DeleteApiTestAccessData@5f0f9947]" name="deleteApiTestAccessData" duration-ms="218" started-at="2018-05-01T23:47:14Z" finished-at="2018-05-01T23:47:14Z">
+        <test-method status="FAIL" signature="PostValidateCaGBCMember(int, java.lang.String)[pri:0, instance:com.leedonline.testcases.PostValidateCaGBCMemberTest@2e869098]" name="PostValidateCaGBCMember" duration-ms="262" started-at="2018-05-07T15:16:56Z" finished-at="2018-05-07T15:16:56Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[STG]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[1 expectation failed.
+Expected status code <200> doesn't match actual status code <400>.
+]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: 1 expectation failed.
+Expected status code <200> doesn't match actual status code <400>.
+
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:80)
+	at org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:74)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:84)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:247)
+	at com.jayway.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:598)
+	at com.jayway.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
+	at com.jayway.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:760)
+	at sun.reflect.GeneratedMethodAccessor74.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:210)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:59)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:166)
+	at com.jayway.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:120)
+	at com.jayway.restassured.specification.ResponseSpecification$statusCode$0.callCurrent(Unknown Source)
+	at com.jayway.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:128)
+	at com.jayway.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:117)
+	at com.leedonline.testcases.PostValidateCaGBCMemberTest.PostValidateCaGBCMember(PostValidateCaGBCMemberTest.java:47)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- PostValidateCaGBCMember -->
+        <test-method status="PASS" signature="teardown(org.testng.ITestResult)[pri:0, instance:com.leedonline.testcases.PostValidateCaGBCMemberTest@2e869098]" name="teardown" is-config="true" duration-ms="52" started-at="2018-05-07T15:16:56Z" finished-at="2018-05-07T15:16:56Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=PostValidateCaGBCMember status=FAILURE method=PostValidateCaGBCMemberTest.PostValidateCaGBCMember(int, java.lang.String)[pri:0, instance:com.leedonline.testcases.PostValidateCaGBCMemberTest@2e869098] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- com.leedonline.testcases.PostValidateCaGBCMemberTest -->
+      <class name="com.leedonline.testcases.GetLeedPricingDefaultVersionTest">
+        <test-method status="PASS" signature="setBaseUri()[pri:0, instance:com.leedonline.testcases.GetLeedPricingDefaultVersionTest@6fa0450e]" name="setBaseUri" is-config="true" duration-ms="42" started-at="2018-05-07T15:16:51Z" finished-at="2018-05-07T15:16:51Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setBaseUri -->
+        <test-method status="PASS" signature="GetLeedPricingDefaultVersion(int, java.lang.String)[pri:0, instance:com.leedonline.testcases.GetLeedPricingDefaultVersionTest@6fa0450e]" name="GetLeedPricingDefaultVersion" duration-ms="244" started-at="2018-05-07T15:16:51Z" finished-at="2018-05-07T15:16:51Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[STG]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- GetLeedPricingDefaultVersion -->
+        <test-method status="PASS" signature="teardown(org.testng.ITestResult)[pri:0, instance:com.leedonline.testcases.GetLeedPricingDefaultVersionTest@6fa0450e]" name="teardown" is-config="true" duration-ms="60" started-at="2018-05-07T15:16:51Z" finished-at="2018-05-07T15:16:51Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=GetLeedPricingDefaultVersion status=SUCCESS method=GetLeedPricingDefaultVersionTest.GetLeedPricingDefaultVersion(int, java.lang.String)[pri:0, instance:com.leedonline.testcases.GetLeedPricingDefaultVersionTest@6fa0450e] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- com.leedonline.testcases.GetLeedPricingDefaultVersionTest -->
+      <class name="com.leedonline.testcases.DeleteApiTestAccessData">
+        <test-method status="PASS" signature="setBaseUri()[pri:0, instance:com.leedonline.testcases.DeleteApiTestAccessData@617389a]" name="setBaseUri" is-config="true" duration-ms="52" started-at="2018-05-07T15:16:57Z" finished-at="2018-05-07T15:16:57Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setBaseUri -->
+        <test-method status="PASS" signature="deleteApiTestAccessData(int, java.lang.String)[pri:0, instance:com.leedonline.testcases.DeleteApiTestAccessData@617389a]" name="deleteApiTestAccessData" duration-ms="310" started-at="2018-05-07T15:16:57Z" finished-at="2018-05-07T15:16:57Z">
           <params>
             <param index="0">
               <value>
@@ -93,11 +218,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- deleteApiTestAccessData -->
-        <test-method status="PASS" signature="teardown(org.testng.ITestResult)[pri:0, instance:com.leedonline.testcases.DeleteApiTestAccessData@5f0f9947]" name="teardown" is-config="true" duration-ms="161" started-at="2018-05-01T23:47:14Z" finished-at="2018-05-01T23:47:14Z">
+        <test-method status="PASS" signature="teardown(org.testng.ITestResult)[pri:0, instance:com.leedonline.testcases.DeleteApiTestAccessData@617389a]" name="teardown" is-config="true" duration-ms="70" started-at="2018-05-07T15:16:57Z" finished-at="2018-05-07T15:16:57Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=deleteApiTestAccessData status=SUCCESS method=DeleteApiTestAccessData.deleteApiTestAccessData(int, java.lang.String)[pri:0, instance:com.leedonline.testcases.DeleteApiTestAccessData@5f0f9947] output={null}]]]>
+                <![CDATA[[TestResult name=deleteApiTestAccessData status=SUCCESS method=DeleteApiTestAccessData.deleteApiTestAccessData(int, java.lang.String)[pri:0, instance:com.leedonline.testcases.DeleteApiTestAccessData@617389a] output={null}]]]>
               </value>
             </param>
           </params>
@@ -106,15 +231,11 @@
         </test-method> <!-- teardown -->
       </class> <!-- com.leedonline.testcases.DeleteApiTestAccessData -->
       <class name="com.leedonline.testcases.PostAuthenticateApiTest">
-        <test-method status="PASS" signature="ExtentReportConfig()[pri:0, instance:com.leedonline.testcases.PostAuthenticateApiTest@50850539]" name="ExtentReportConfig" is-config="true" duration-ms="807" started-at="2018-05-01T23:47:03Z" finished-at="2018-05-01T23:47:04Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ExtentReportConfig -->
-        <test-method status="PASS" signature="setBaseUri()[pri:0, instance:com.leedonline.testcases.PostAuthenticateApiTest@50850539]" name="setBaseUri" is-config="true" duration-ms="2809" started-at="2018-05-01T23:47:04Z" finished-at="2018-05-01T23:47:07Z">
+        <test-method status="PASS" signature="setBaseUri()[pri:0, instance:com.leedonline.testcases.PostAuthenticateApiTest@4af45442]" name="setBaseUri" is-config="true" duration-ms="2843" started-at="2018-05-07T15:16:36Z" finished-at="2018-05-07T15:16:39Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setBaseUri -->
-        <test-method status="PASS" signature="authenticate(int, java.lang.String)[pri:0, instance:com.leedonline.testcases.PostAuthenticateApiTest@50850539]" name="authenticate" duration-ms="3817" started-at="2018-05-01T23:47:07Z" finished-at="2018-05-01T23:47:10Z">
+        <test-method status="PASS" signature="authenticate(int, java.lang.String)[pri:0, instance:com.leedonline.testcases.PostAuthenticateApiTest@4af45442]" name="authenticate" duration-ms="1940" started-at="2018-05-07T15:16:39Z" finished-at="2018-05-07T15:16:41Z">
           <params>
             <param index="0">
               <value>
@@ -130,11 +251,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- authenticate -->
-        <test-method status="PASS" signature="teardown(org.testng.ITestResult)[pri:0, instance:com.leedonline.testcases.PostAuthenticateApiTest@50850539]" name="teardown" is-config="true" duration-ms="512" started-at="2018-05-01T23:47:10Z" finished-at="2018-05-01T23:47:11Z">
+        <test-method status="PASS" signature="teardown(org.testng.ITestResult)[pri:0, instance:com.leedonline.testcases.PostAuthenticateApiTest@4af45442]" name="teardown" is-config="true" duration-ms="388" started-at="2018-05-07T15:16:41Z" finished-at="2018-05-07T15:16:42Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=authenticate status=SUCCESS method=PostAuthenticateApiTest.authenticate(int, java.lang.String)[pri:0, instance:com.leedonline.testcases.PostAuthenticateApiTest@50850539] output={null}]]]>
+                <![CDATA[[TestResult name=authenticate status=SUCCESS method=PostAuthenticateApiTest.authenticate(int, java.lang.String)[pri:0, instance:com.leedonline.testcases.PostAuthenticateApiTest@4af45442] output={null}]]]>
               </value>
             </param>
           </params>
@@ -143,11 +264,11 @@
         </test-method> <!-- teardown -->
       </class> <!-- com.leedonline.testcases.PostAuthenticateApiTest -->
       <class name="com.leedonline.testcases.GetCreditTypeTest">
-        <test-method status="PASS" signature="setBaseUri()[pri:0, instance:com.leedonline.testcases.GetCreditTypeTest@44536de4]" name="setBaseUri" is-config="true" duration-ms="69" started-at="2018-05-01T23:47:17Z" finished-at="2018-05-01T23:47:17Z">
+        <test-method status="PASS" signature="setBaseUri()[pri:0, instance:com.leedonline.testcases.GetCreditTypeTest@33425811]" name="setBaseUri" is-config="true" duration-ms="82" started-at="2018-05-07T15:16:47Z" finished-at="2018-05-07T15:16:48Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setBaseUri -->
-        <test-method status="PASS" signature="GetCreditType(int, java.lang.String)[pri:0, instance:com.leedonline.testcases.GetCreditTypeTest@44536de4]" name="GetCreditType" duration-ms="267" started-at="2018-05-01T23:47:17Z" finished-at="2018-05-01T23:47:18Z">
+        <test-method status="PASS" signature="GetCreditType(int, java.lang.String)[pri:0, instance:com.leedonline.testcases.GetCreditTypeTest@33425811]" name="GetCreditType" duration-ms="285" started-at="2018-05-07T15:16:48Z" finished-at="2018-05-07T15:16:48Z">
           <params>
             <param index="0">
               <value>
@@ -163,11 +284,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetCreditType -->
-        <test-method status="PASS" signature="teardown(org.testng.ITestResult)[pri:0, instance:com.leedonline.testcases.GetCreditTypeTest@44536de4]" name="teardown" is-config="true" duration-ms="142" started-at="2018-05-01T23:47:18Z" finished-at="2018-05-01T23:47:18Z">
+        <test-method status="PASS" signature="teardown(org.testng.ITestResult)[pri:0, instance:com.leedonline.testcases.GetCreditTypeTest@33425811]" name="teardown" is-config="true" duration-ms="80" started-at="2018-05-07T15:16:48Z" finished-at="2018-05-07T15:16:48Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=GetCreditType status=SUCCESS method=GetCreditTypeTest.GetCreditType(int, java.lang.String)[pri:0, instance:com.leedonline.testcases.GetCreditTypeTest@44536de4] output={null}]]]>
+                <![CDATA[[TestResult name=GetCreditType status=SUCCESS method=GetCreditTypeTest.GetCreditType(int, java.lang.String)[pri:0, instance:com.leedonline.testcases.GetCreditTypeTest@33425811] output={null}]]]>
               </value>
             </param>
           </params>
@@ -175,12 +296,12 @@
           </reporter-output>
         </test-method> <!-- teardown -->
       </class> <!-- com.leedonline.testcases.GetCreditTypeTest -->
-      <class name="com.leedonline.testcases.GetInvalidateTokenApiTest">
-        <test-method status="PASS" signature="setBaseUri()[pri:0, instance:com.leedonline.testcases.GetInvalidateTokenApiTest@5af8bb51]" name="setBaseUri" is-config="true" duration-ms="50" started-at="2018-05-01T23:47:15Z" finished-at="2018-05-01T23:47:15Z">
+      <class name="com.leedonline.testcases.PostFileUploadTest">
+        <test-method status="PASS" signature="setBaseUri()[pri:0, instance:com.leedonline.testcases.PostFileUploadTest@27e7c77f]" name="setBaseUri" is-config="true" duration-ms="40" started-at="2018-05-07T15:16:54Z" finished-at="2018-05-07T15:16:54Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setBaseUri -->
-        <test-method status="PASS" signature="invalidateTokenApi(int, java.lang.String)[pri:0, instance:com.leedonline.testcases.GetInvalidateTokenApiTest@5af8bb51]" name="invalidateTokenApi" duration-ms="190" started-at="2018-05-01T23:47:15Z" finished-at="2018-05-01T23:47:15Z">
+        <test-method status="FAIL" signature="PostFileUpload(int, java.lang.String)[pri:0, instance:com.leedonline.testcases.PostFileUploadTest@27e7c77f]" name="PostFileUpload" duration-ms="466" started-at="2018-05-07T15:16:54Z" finished-at="2018-05-07T15:16:55Z">
           <params>
             <param index="0">
               <value>
@@ -193,27 +314,86 @@
               </value>
             </param>
           </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[1 expectation failed.
+Expected status code <200> doesn't match actual status code <400>.
+]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: 1 expectation failed.
+Expected status code <200> doesn't match actual status code <400>.
+
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:80)
+	at org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:74)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:84)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:247)
+	at com.jayway.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:598)
+	at com.jayway.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
+	at com.jayway.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:760)
+	at sun.reflect.GeneratedMethodAccessor74.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:210)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:59)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:166)
+	at com.jayway.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:120)
+	at com.jayway.restassured.specification.ResponseSpecification$statusCode$0.callCurrent(Unknown Source)
+	at com.jayway.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:128)
+	at com.jayway.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:117)
+	at com.leedonline.testcases.PostFileUploadTest.PostFileUpload(PostFileUploadTest.java:48)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- invalidateTokenApi -->
-        <test-method status="PASS" signature="teardown(org.testng.ITestResult)[pri:0, instance:com.leedonline.testcases.GetInvalidateTokenApiTest@5af8bb51]" name="teardown" is-config="true" duration-ms="80" started-at="2018-05-01T23:47:15Z" finished-at="2018-05-01T23:47:15Z">
+        </test-method> <!-- PostFileUpload -->
+        <test-method status="PASS" signature="teardown(org.testng.ITestResult)[pri:0, instance:com.leedonline.testcases.PostFileUploadTest@27e7c77f]" name="teardown" is-config="true" duration-ms="80" started-at="2018-05-07T15:16:55Z" finished-at="2018-05-07T15:16:55Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=invalidateTokenApi status=SUCCESS method=GetInvalidateTokenApiTest.invalidateTokenApi(int, java.lang.String)[pri:0, instance:com.leedonline.testcases.GetInvalidateTokenApiTest@5af8bb51] output={null}]]]>
+                <![CDATA[[TestResult name=PostFileUpload status=FAILURE method=PostFileUploadTest.PostFileUpload(int, java.lang.String)[pri:0, instance:com.leedonline.testcases.PostFileUploadTest@27e7c77f] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-      </class> <!-- com.leedonline.testcases.GetInvalidateTokenApiTest -->
+      </class> <!-- com.leedonline.testcases.PostFileUploadTest -->
       <class name="com.leedonline.testcases.GetMemInfoApiTest">
-        <test-method status="PASS" signature="setBaseUri()[pri:0, instance:com.leedonline.testcases.GetMemInfoApiTest@1aad0b1]" name="setBaseUri" is-config="true" duration-ms="61" started-at="2018-05-01T23:47:14Z" finished-at="2018-05-01T23:47:14Z">
+        <test-method status="PASS" signature="setBaseUri()[pri:0, instance:com.leedonline.testcases.GetMemInfoApiTest@30ca0779]" name="setBaseUri" is-config="true" duration-ms="69" started-at="2018-05-07T15:16:45Z" finished-at="2018-05-07T15:16:45Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setBaseUri -->
-        <test-method status="PASS" signature="getMemInfoApi(int, java.lang.String)[pri:0, instance:com.leedonline.testcases.GetMemInfoApiTest@1aad0b1]" name="getMemInfoApi" duration-ms="189" started-at="2018-05-01T23:47:14Z" finished-at="2018-05-01T23:47:14Z">
+        <test-method status="PASS" signature="getMemInfoApi(int, java.lang.String)[pri:0, instance:com.leedonline.testcases.GetMemInfoApiTest@30ca0779]" name="getMemInfoApi" duration-ms="329" started-at="2018-05-07T15:16:45Z" finished-at="2018-05-07T15:16:45Z">
           <params>
             <param index="0">
               <value>
@@ -229,11 +409,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getMemInfoApi -->
-        <test-method status="PASS" signature="teardown(org.testng.ITestResult)[pri:0, instance:com.leedonline.testcases.GetMemInfoApiTest@1aad0b1]" name="teardown" is-config="true" duration-ms="50" started-at="2018-05-01T23:47:14Z" finished-at="2018-05-01T23:47:14Z">
+        <test-method status="PASS" signature="teardown(org.testng.ITestResult)[pri:0, instance:com.leedonline.testcases.GetMemInfoApiTest@30ca0779]" name="teardown" is-config="true" duration-ms="80" started-at="2018-05-07T15:16:45Z" finished-at="2018-05-07T15:16:45Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=getMemInfoApi status=SUCCESS method=GetMemInfoApiTest.getMemInfoApi(int, java.lang.String)[pri:0, instance:com.leedonline.testcases.GetMemInfoApiTest@1aad0b1] output={null}]]]>
+                <![CDATA[[TestResult name=getMemInfoApi status=SUCCESS method=GetMemInfoApiTest.getMemInfoApi(int, java.lang.String)[pri:0, instance:com.leedonline.testcases.GetMemInfoApiTest@30ca0779] output={null}]]]>
               </value>
             </param>
           </params>
@@ -242,11 +422,11 @@
         </test-method> <!-- teardown -->
       </class> <!-- com.leedonline.testcases.GetMemInfoApiTest -->
       <class name="com.leedonline.testcases.GetNonceApiTest">
-        <test-method status="PASS" signature="setBaseUri()[pri:0, instance:com.leedonline.testcases.GetNonceApiTest@65e21ce3]" name="setBaseUri" is-config="true" duration-ms="50" started-at="2018-05-01T23:47:11Z" finished-at="2018-05-01T23:47:11Z">
+        <test-method status="PASS" signature="setBaseUri()[pri:0, instance:com.leedonline.testcases.GetNonceApiTest@2fcd7d3f]" name="setBaseUri" is-config="true" duration-ms="50" started-at="2018-05-07T15:16:54Z" finished-at="2018-05-07T15:16:54Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setBaseUri -->
-        <test-method status="PASS" signature="getNonceApi(int, java.lang.String)[pri:0, instance:com.leedonline.testcases.GetNonceApiTest@65e21ce3]" name="getNonceApi" duration-ms="1196" started-at="2018-05-01T23:47:11Z" finished-at="2018-05-01T23:47:12Z">
+        <test-method status="PASS" signature="getNonceApi(int, java.lang.String)[pri:0, instance:com.leedonline.testcases.GetNonceApiTest@2fcd7d3f]" name="getNonceApi" duration-ms="382" started-at="2018-05-07T15:16:54Z" finished-at="2018-05-07T15:16:54Z">
           <params>
             <param index="0">
               <value>
@@ -262,11 +442,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getNonceApi -->
-        <test-method status="PASS" signature="teardown(org.testng.ITestResult)[pri:0, instance:com.leedonline.testcases.GetNonceApiTest@65e21ce3]" name="teardown" is-config="true" duration-ms="77" started-at="2018-05-01T23:47:12Z" finished-at="2018-05-01T23:47:12Z">
+        <test-method status="PASS" signature="teardown(org.testng.ITestResult)[pri:0, instance:com.leedonline.testcases.GetNonceApiTest@2fcd7d3f]" name="teardown" is-config="true" duration-ms="80" started-at="2018-05-07T15:16:54Z" finished-at="2018-05-07T15:16:54Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=getNonceApi status=SUCCESS method=GetNonceApiTest.getNonceApi(int, java.lang.String)[pri:0, instance:com.leedonline.testcases.GetNonceApiTest@65e21ce3] output={null}]]]>
+                <![CDATA[[TestResult name=getNonceApi status=SUCCESS method=GetNonceApiTest.getNonceApi(int, java.lang.String)[pri:0, instance:com.leedonline.testcases.GetNonceApiTest@2fcd7d3f] output={null}]]]>
               </value>
             </param>
           </params>
@@ -274,12 +454,12 @@
           </reporter-output>
         </test-method> <!-- teardown -->
       </class> <!-- com.leedonline.testcases.GetNonceApiTest -->
-      <class name="com.leedonline.testcases.GetClarificationTypeTest">
-        <test-method status="PASS" signature="setBaseUri()[pri:0, instance:com.leedonline.testcases.GetClarificationTypeTest@4d95a72e]" name="setBaseUri" is-config="true" duration-ms="108" started-at="2018-05-01T23:47:18Z" finished-at="2018-05-01T23:47:18Z">
+      <class name="com.leedonline.testcases.GetCountryAndStateTest">
+        <test-method status="PASS" signature="setBaseUri()[pri:0, instance:com.leedonline.testcases.GetCountryAndStateTest@6d11ceef]" name="setBaseUri" is-config="true" duration-ms="79" started-at="2018-05-07T15:16:49Z" finished-at="2018-05-07T15:16:49Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setBaseUri -->
-        <test-method status="PASS" signature="GetClarification(int, java.lang.String)[pri:0, instance:com.leedonline.testcases.GetClarificationTypeTest@4d95a72e]" name="GetClarification" duration-ms="210" started-at="2018-05-01T23:47:18Z" finished-at="2018-05-01T23:47:19Z">
+        <test-method status="PASS" signature="GetCountryAndStates(int, java.lang.String)[pri:0, instance:com.leedonline.testcases.GetCountryAndStateTest@6d11ceef]" name="GetCountryAndStates" duration-ms="449" started-at="2018-05-07T15:16:49Z" finished-at="2018-05-07T15:16:49Z">
           <params>
             <param index="0">
               <value>
@@ -294,25 +474,25 @@
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- GetClarification -->
-        <test-method status="PASS" signature="teardown(org.testng.ITestResult)[pri:0, instance:com.leedonline.testcases.GetClarificationTypeTest@4d95a72e]" name="teardown" is-config="true" duration-ms="126" started-at="2018-05-01T23:47:19Z" finished-at="2018-05-01T23:47:19Z">
+        </test-method> <!-- GetCountryAndStates -->
+        <test-method status="PASS" signature="teardown(org.testng.ITestResult)[pri:0, instance:com.leedonline.testcases.GetCountryAndStateTest@6d11ceef]" name="teardown" is-config="true" duration-ms="177" started-at="2018-05-07T15:16:49Z" finished-at="2018-05-07T15:16:50Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=GetClarification status=SUCCESS method=GetClarificationTypeTest.GetClarification(int, java.lang.String)[pri:0, instance:com.leedonline.testcases.GetClarificationTypeTest@4d95a72e] output={null}]]]>
+                <![CDATA[[TestResult name=GetCountryAndStates status=SUCCESS method=GetCountryAndStateTest.GetCountryAndStates(int, java.lang.String)[pri:0, instance:com.leedonline.testcases.GetCountryAndStateTest@6d11ceef] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-      </class> <!-- com.leedonline.testcases.GetClarificationTypeTest -->
+      </class> <!-- com.leedonline.testcases.GetCountryAndStateTest -->
       <class name="com.leedonline.testcases.PostApiTestAccessData">
-        <test-method status="PASS" signature="setBaseUri()[pri:0, instance:com.leedonline.testcases.PostApiTestAccessData@6c3659be]" name="setBaseUri" is-config="true" duration-ms="104" started-at="2018-05-01T23:47:12Z" finished-at="2018-05-01T23:47:12Z">
+        <test-method status="PASS" signature="setBaseUri()[pri:0, instance:com.leedonline.testcases.PostApiTestAccessData@6f70a21b]" name="setBaseUri" is-config="true" duration-ms="30" started-at="2018-05-07T15:16:55Z" finished-at="2018-05-07T15:16:55Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setBaseUri -->
-        <test-method status="PASS" signature="createApiTestAccessData(int, java.lang.String)[pri:0, instance:com.leedonline.testcases.PostApiTestAccessData@6c3659be]" name="createApiTestAccessData" duration-ms="252" started-at="2018-05-01T23:47:12Z" finished-at="2018-05-01T23:47:13Z">
+        <test-method status="PASS" signature="createApiTestAccessData(int, java.lang.String)[pri:0, instance:com.leedonline.testcases.PostApiTestAccessData@6f70a21b]" name="createApiTestAccessData" duration-ms="306" started-at="2018-05-07T15:16:55Z" finished-at="2018-05-07T15:16:55Z">
           <params>
             <param index="0">
               <value>
@@ -328,11 +508,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createApiTestAccessData -->
-        <test-method status="PASS" signature="teardown(org.testng.ITestResult)[pri:0, instance:com.leedonline.testcases.PostApiTestAccessData@6c3659be]" name="teardown" is-config="true" duration-ms="191" started-at="2018-05-01T23:47:13Z" finished-at="2018-05-01T23:47:13Z">
+        <test-method status="PASS" signature="teardown(org.testng.ITestResult)[pri:0, instance:com.leedonline.testcases.PostApiTestAccessData@6f70a21b]" name="teardown" is-config="true" duration-ms="70" started-at="2018-05-07T15:16:55Z" finished-at="2018-05-07T15:16:55Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=createApiTestAccessData status=SUCCESS method=PostApiTestAccessData.createApiTestAccessData(int, java.lang.String)[pri:0, instance:com.leedonline.testcases.PostApiTestAccessData@6c3659be] output={null}]]]>
+                <![CDATA[[TestResult name=createApiTestAccessData status=SUCCESS method=PostApiTestAccessData.createApiTestAccessData(int, java.lang.String)[pri:0, instance:com.leedonline.testcases.PostApiTestAccessData@6f70a21b] output={null}]]]>
               </value>
             </param>
           </params>
@@ -340,12 +520,599 @@
           </reporter-output>
         </test-method> <!-- teardown -->
       </class> <!-- com.leedonline.testcases.PostApiTestAccessData -->
-      <class name="com.leedonline.testcases.GetMemSyncApiTest">
-        <test-method status="PASS" signature="setBaseUri()[pri:0, instance:com.leedonline.testcases.GetMemSyncApiTest@c3edf4c]" name="setBaseUri" is-config="true" duration-ms="30" started-at="2018-05-01T23:47:14Z" finished-at="2018-05-01T23:47:14Z">
+      <class name="com.leedonline.testcases.GetPriceReleatedInfoTest">
+        <test-method status="PASS" signature="setBaseUri()[pri:0, instance:com.leedonline.testcases.GetPriceReleatedInfoTest@72e295cc]" name="setBaseUri" is-config="true" duration-ms="39" started-at="2018-05-07T15:16:50Z" finished-at="2018-05-07T15:16:50Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setBaseUri -->
-        <test-method status="FAIL" signature="getMemSyncApi(int, java.lang.String)[pri:0, instance:com.leedonline.testcases.GetMemSyncApiTest@c3edf4c]" name="getMemSyncApi" duration-ms="210" started-at="2018-05-01T23:47:14Z" finished-at="2018-05-01T23:47:15Z">
+        <test-method status="PASS" signature="GetPriceReleatedInfo(int, java.lang.String)[pri:0, instance:com.leedonline.testcases.GetPriceReleatedInfoTest@72e295cc]" name="GetPriceReleatedInfo" duration-ms="316" started-at="2018-05-07T15:16:50Z" finished-at="2018-05-07T15:16:50Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[STG]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- GetPriceReleatedInfo -->
+        <test-method status="PASS" signature="teardown(org.testng.ITestResult)[pri:0, instance:com.leedonline.testcases.GetPriceReleatedInfoTest@72e295cc]" name="teardown" is-config="true" duration-ms="80" started-at="2018-05-07T15:16:50Z" finished-at="2018-05-07T15:16:51Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=GetPriceReleatedInfo status=SUCCESS method=GetPriceReleatedInfoTest.GetPriceReleatedInfo(int, java.lang.String)[pri:0, instance:com.leedonline.testcases.GetPriceReleatedInfoTest@72e295cc] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- com.leedonline.testcases.GetPriceReleatedInfoTest -->
+      <class name="com.leedonline.testcases.GetApiTestAccessData">
+        <test-method status="PASS" signature="setBaseUri()[pri:0, instance:com.leedonline.testcases.GetApiTestAccessData@c2584d3]" name="setBaseUri" is-config="true" duration-ms="43" started-at="2018-05-07T15:16:51Z" finished-at="2018-05-07T15:16:51Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setBaseUri -->
+        <test-method status="PASS" signature="getApiTestAccessData(int, java.lang.String)[pri:0, instance:com.leedonline.testcases.GetApiTestAccessData@c2584d3]" name="getApiTestAccessData" duration-ms="273" started-at="2018-05-07T15:16:51Z" finished-at="2018-05-07T15:16:51Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[STG]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getApiTestAccessData -->
+        <test-method status="PASS" signature="teardown(org.testng.ITestResult)[pri:0, instance:com.leedonline.testcases.GetApiTestAccessData@c2584d3]" name="teardown" is-config="true" duration-ms="82" started-at="2018-05-07T15:16:51Z" finished-at="2018-05-07T15:16:51Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=getApiTestAccessData status=SUCCESS method=GetApiTestAccessData.getApiTestAccessData(int, java.lang.String)[pri:0, instance:com.leedonline.testcases.GetApiTestAccessData@c2584d3] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- com.leedonline.testcases.GetApiTestAccessData -->
+      <class name="com.leedonline.testcases.GetClientKeyApiTest">
+        <test-method status="PASS" signature="setBaseUri()[pri:0, instance:com.leedonline.testcases.GetClientKeyApiTest@3050ac2f]" name="setBaseUri" is-config="true" duration-ms="63" started-at="2018-05-07T15:16:58Z" finished-at="2018-05-07T15:16:58Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setBaseUri -->
+        <test-method status="PASS" signature="getClientKey(int, java.lang.String)[pri:0, instance:com.leedonline.testcases.GetClientKeyApiTest@3050ac2f]" name="getClientKey" duration-ms="669" started-at="2018-05-07T15:16:58Z" finished-at="2018-05-07T15:16:59Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[STG]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getClientKey -->
+        <test-method status="PASS" signature="teardown(org.testng.ITestResult)[pri:0, instance:com.leedonline.testcases.GetClientKeyApiTest@3050ac2f]" name="teardown" is-config="true" duration-ms="81" started-at="2018-05-07T15:16:59Z" finished-at="2018-05-07T15:16:59Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=getClientKey status=SUCCESS method=GetClientKeyApiTest.getClientKey(int, java.lang.String)[pri:0, instance:com.leedonline.testcases.GetClientKeyApiTest@3050ac2f] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- com.leedonline.testcases.GetClientKeyApiTest -->
+      <class name="com.leedonline.testcases.PutApiTestAccessData">
+        <test-method status="PASS" signature="setBaseUri()[pri:0, instance:com.leedonline.testcases.PutApiTestAccessData@5d497a91]" name="setBaseUri" is-config="true" duration-ms="50" started-at="2018-05-07T15:16:57Z" finished-at="2018-05-07T15:16:57Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setBaseUri -->
+        <test-method status="PASS" signature="putApiTestAccess(int, java.lang.String)[pri:0, instance:com.leedonline.testcases.PutApiTestAccessData@5d497a91]" name="putApiTestAccess" duration-ms="292" started-at="2018-05-07T15:16:57Z" finished-at="2018-05-07T15:16:57Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[STG]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- putApiTestAccess -->
+        <test-method status="PASS" signature="teardown(org.testng.ITestResult)[pri:0, instance:com.leedonline.testcases.PutApiTestAccessData@5d497a91]" name="teardown" is-config="true" duration-ms="145" started-at="2018-05-07T15:16:57Z" finished-at="2018-05-07T15:16:57Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=putApiTestAccess status=SUCCESS method=PutApiTestAccessData.putApiTestAccess(int, java.lang.String)[pri:0, instance:com.leedonline.testcases.PutApiTestAccessData@5d497a91] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- com.leedonline.testcases.PutApiTestAccessData -->
+      <class name="com.leedonline.testcases.GetLeedPricingDownloadUploadedExcelTest">
+        <test-method status="PASS" signature="setBaseUri()[pri:0, instance:com.leedonline.testcases.GetLeedPricingDownloadUploadedExcelTest@714f3da4]" name="setBaseUri" is-config="true" duration-ms="50" started-at="2018-05-07T15:16:52Z" finished-at="2018-05-07T15:16:52Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setBaseUri -->
+        <test-method status="PASS" signature="GetLeedPricingDownloadUploadedExcel(int, java.lang.String)[pri:0, instance:com.leedonline.testcases.GetLeedPricingDownloadUploadedExcelTest@714f3da4]" name="GetLeedPricingDownloadUploadedExcel" duration-ms="230" started-at="2018-05-07T15:16:52Z" finished-at="2018-05-07T15:16:52Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[STG]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- GetLeedPricingDownloadUploadedExcel -->
+        <test-method status="PASS" signature="teardown(org.testng.ITestResult)[pri:0, instance:com.leedonline.testcases.GetLeedPricingDownloadUploadedExcelTest@714f3da4]" name="teardown" is-config="true" duration-ms="40" started-at="2018-05-07T15:16:52Z" finished-at="2018-05-07T15:16:52Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=GetLeedPricingDownloadUploadedExcel status=SUCCESS method=GetLeedPricingDownloadUploadedExcelTest.GetLeedPricingDownloadUploadedExcel(int, java.lang.String)[pri:0, instance:com.leedonline.testcases.GetLeedPricingDownloadUploadedExcelTest@714f3da4] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- com.leedonline.testcases.GetLeedPricingDownloadUploadedExcelTest -->
+      <class name="com.leedonline.testcases.PostValidateSdnStatusTest">
+        <test-method status="PASS" signature="setBaseUri()[pri:0, instance:com.leedonline.testcases.PostValidateSdnStatusTest@6ae62c7e]" name="setBaseUri" is-config="true" duration-ms="36" started-at="2018-05-07T15:16:55Z" finished-at="2018-05-07T15:16:55Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setBaseUri -->
+        <test-method status="FAIL" signature="PostValidateSdnStatus(int, java.lang.String)[pri:0, instance:com.leedonline.testcases.PostValidateSdnStatusTest@6ae62c7e]" name="PostValidateSdnStatus" duration-ms="258" started-at="2018-05-07T15:16:55Z" finished-at="2018-05-07T15:16:56Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[STG]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[1 expectation failed.
+Expected status code <200> doesn't match actual status code <400>.
+]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: 1 expectation failed.
+Expected status code <200> doesn't match actual status code <400>.
+
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:80)
+	at org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:74)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:84)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:247)
+	at com.jayway.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:598)
+	at com.jayway.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
+	at com.jayway.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:760)
+	at sun.reflect.GeneratedMethodAccessor74.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:210)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:59)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:166)
+	at com.jayway.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:120)
+	at com.jayway.restassured.specification.ResponseSpecification$statusCode$0.callCurrent(Unknown Source)
+	at com.jayway.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:128)
+	at com.jayway.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:117)
+	at com.leedonline.testcases.PostValidateSdnStatusTest.PostValidateSdnStatus(PostValidateSdnStatusTest.java:51)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- PostValidateSdnStatus -->
+        <test-method status="PASS" signature="teardown(org.testng.ITestResult)[pri:0, instance:com.leedonline.testcases.PostValidateSdnStatusTest@6ae62c7e]" name="teardown" is-config="true" duration-ms="63" started-at="2018-05-07T15:16:56Z" finished-at="2018-05-07T15:16:56Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=PostValidateSdnStatus status=FAILURE method=PostValidateSdnStatusTest.PostValidateSdnStatus(int, java.lang.String)[pri:0, instance:com.leedonline.testcases.PostValidateSdnStatusTest@6ae62c7e] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- com.leedonline.testcases.PostValidateSdnStatusTest -->
+      <class name="com.leedonline.testcases.GetProjectDetailsTypeTest">
+        <test-method status="PASS" signature="setBaseUri()[pri:0, instance:com.leedonline.testcases.GetProjectDetailsTypeTest@4bd51d3e]" name="setBaseUri" is-config="true" duration-ms="60" started-at="2018-05-07T15:16:47Z" finished-at="2018-05-07T15:16:47Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setBaseUri -->
+        <test-method status="PASS" signature="ProjectDetailsType(int, java.lang.String)[pri:0, instance:com.leedonline.testcases.GetProjectDetailsTypeTest@4bd51d3e]" name="ProjectDetailsType" duration-ms="367" started-at="2018-05-07T15:16:47Z" finished-at="2018-05-07T15:16:47Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[STG]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ProjectDetailsType -->
+        <test-method status="PASS" signature="teardown(org.testng.ITestResult)[pri:0, instance:com.leedonline.testcases.GetProjectDetailsTypeTest@4bd51d3e]" name="teardown" is-config="true" duration-ms="162" started-at="2018-05-07T15:16:47Z" finished-at="2018-05-07T15:16:47Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=ProjectDetailsType status=SUCCESS method=GetProjectDetailsTypeTest.ProjectDetailsType(int, java.lang.String)[pri:0, instance:com.leedonline.testcases.GetProjectDetailsTypeTest@4bd51d3e] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- com.leedonline.testcases.GetProjectDetailsTypeTest -->
+      <class name="com.leedonline.testcases.GetPaymentSearchTest">
+        <test-method status="PASS" signature="setBaseUri()[pri:0, instance:com.leedonline.testcases.GetPaymentSearchTest@1caa9eb6]" name="setBaseUri" is-config="true" duration-ms="41" started-at="2018-05-07T15:16:52Z" finished-at="2018-05-07T15:16:52Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setBaseUri -->
+        <test-method status="PASS" signature="GetPaymentSearch(int, java.lang.String)[pri:0, instance:com.leedonline.testcases.GetPaymentSearchTest@1caa9eb6]" name="GetPaymentSearch" duration-ms="441" started-at="2018-05-07T15:16:52Z" finished-at="2018-05-07T15:16:53Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[STG]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- GetPaymentSearch -->
+        <test-method status="PASS" signature="teardown(org.testng.ITestResult)[pri:0, instance:com.leedonline.testcases.GetPaymentSearchTest@1caa9eb6]" name="teardown" is-config="true" duration-ms="31" started-at="2018-05-07T15:16:53Z" finished-at="2018-05-07T15:16:53Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=GetPaymentSearch status=SUCCESS method=GetPaymentSearchTest.GetPaymentSearch(int, java.lang.String)[pri:0, instance:com.leedonline.testcases.GetPaymentSearchTest@1caa9eb6] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- com.leedonline.testcases.GetPaymentSearchTest -->
+      <class name="com.leedonline.testcases.GetFileDmsProxyTest">
+        <test-method status="PASS" signature="setBaseUri()[pri:0, instance:com.leedonline.testcases.GetFileDmsProxyTest@1f53481b]" name="setBaseUri" is-config="true" duration-ms="119" started-at="2018-05-07T15:16:53Z" finished-at="2018-05-07T15:16:53Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setBaseUri -->
+        <test-method status="PASS" signature="GetFileDmsProxy(int, java.lang.String)[pri:0, instance:com.leedonline.testcases.GetFileDmsProxyTest@1f53481b]" name="GetFileDmsProxy" duration-ms="652" started-at="2018-05-07T15:16:53Z" finished-at="2018-05-07T15:16:54Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[STG]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- GetFileDmsProxy -->
+        <test-method status="PASS" signature="teardown(org.testng.ITestResult)[pri:0, instance:com.leedonline.testcases.GetFileDmsProxyTest@1f53481b]" name="teardown" is-config="true" duration-ms="130" started-at="2018-05-07T15:16:54Z" finished-at="2018-05-07T15:16:54Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=GetFileDmsProxy status=SUCCESS method=GetFileDmsProxyTest.GetFileDmsProxy(int, java.lang.String)[pri:0, instance:com.leedonline.testcases.GetFileDmsProxyTest@1f53481b] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- com.leedonline.testcases.GetFileDmsProxyTest -->
+      <class name="com.leedonline.testcases.GetInvalidateTokenApiTest">
+        <test-method status="PASS" signature="setBaseUri()[pri:0, instance:com.leedonline.testcases.GetInvalidateTokenApiTest@1c8f6a90]" name="setBaseUri" is-config="true" duration-ms="40" started-at="2018-05-07T15:16:57Z" finished-at="2018-05-07T15:16:57Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setBaseUri -->
+        <test-method status="PASS" signature="invalidateTokenApi(int, java.lang.String)[pri:0, instance:com.leedonline.testcases.GetInvalidateTokenApiTest@1c8f6a90]" name="invalidateTokenApi" duration-ms="260" started-at="2018-05-07T15:16:57Z" finished-at="2018-05-07T15:16:58Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[STG]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- invalidateTokenApi -->
+        <test-method status="PASS" signature="teardown(org.testng.ITestResult)[pri:0, instance:com.leedonline.testcases.GetInvalidateTokenApiTest@1c8f6a90]" name="teardown" is-config="true" duration-ms="80" started-at="2018-05-07T15:16:58Z" finished-at="2018-05-07T15:16:58Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=invalidateTokenApi status=SUCCESS method=GetInvalidateTokenApiTest.invalidateTokenApi(int, java.lang.String)[pri:0, instance:com.leedonline.testcases.GetInvalidateTokenApiTest@1c8f6a90] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- com.leedonline.testcases.GetInvalidateTokenApiTest -->
+      <class name="com.leedonline.testcases.GetFileDownloadUrlTest">
+        <test-method status="PASS" signature="setBaseUri()[pri:0, instance:com.leedonline.testcases.GetFileDownloadUrlTest@176f7f3b]" name="setBaseUri" is-config="true" duration-ms="110" started-at="2018-05-07T15:16:44Z" finished-at="2018-05-07T15:16:44Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setBaseUri -->
+        <test-method status="PASS" signature="GetFileDownloadUrl(int, java.lang.String)[pri:0, instance:com.leedonline.testcases.GetFileDownloadUrlTest@176f7f3b]" name="GetFileDownloadUrl" duration-ms="335" started-at="2018-05-07T15:16:44Z" finished-at="2018-05-07T15:16:45Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[STG]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- GetFileDownloadUrl -->
+        <test-method status="PASS" signature="teardown(org.testng.ITestResult)[pri:0, instance:com.leedonline.testcases.GetFileDownloadUrlTest@176f7f3b]" name="teardown" is-config="true" duration-ms="162" started-at="2018-05-07T15:16:45Z" finished-at="2018-05-07T15:16:45Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=GetFileDownloadUrl status=SUCCESS method=GetFileDownloadUrlTest.GetFileDownloadUrl(int, java.lang.String)[pri:0, instance:com.leedonline.testcases.GetFileDownloadUrlTest@176f7f3b] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- com.leedonline.testcases.GetFileDownloadUrlTest -->
+      <class name="com.leedonline.testcases.GetFilesListTest">
+        <test-method status="PASS" signature="setBaseUri()[pri:0, instance:com.leedonline.testcases.GetFilesListTest@1d805aa1]" name="setBaseUri" is-config="true" duration-ms="42" started-at="2018-05-07T15:16:42Z" finished-at="2018-05-07T15:16:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setBaseUri -->
+        <test-method status="PASS" signature="GetFilesList(int, java.lang.String)[pri:0, instance:com.leedonline.testcases.GetFilesListTest@1d805aa1]" name="GetFilesList" duration-ms="2326" started-at="2018-05-07T15:16:42Z" finished-at="2018-05-07T15:16:44Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[STG]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- GetFilesList -->
+        <test-method status="PASS" signature="teardown(org.testng.ITestResult)[pri:0, instance:com.leedonline.testcases.GetFilesListTest@1d805aa1]" name="teardown" is-config="true" duration-ms="110" started-at="2018-05-07T15:16:44Z" finished-at="2018-05-07T15:16:44Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=GetFilesList status=SUCCESS method=GetFilesListTest.GetFilesList(int, java.lang.String)[pri:0, instance:com.leedonline.testcases.GetFilesListTest@1d805aa1] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- com.leedonline.testcases.GetFilesListTest -->
+      <class name="com.leedonline.testcases.GetTaxForAmountTest">
+        <test-method status="PASS" signature="setBaseUri()[pri:0, instance:com.leedonline.testcases.GetTaxForAmountTest@4cb2918c]" name="setBaseUri" is-config="true" duration-ms="40" started-at="2018-05-07T15:16:50Z" finished-at="2018-05-07T15:16:50Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setBaseUri -->
+        <test-method status="PASS" signature="GetTaxForAmount(int, java.lang.String)[pri:0, instance:com.leedonline.testcases.GetTaxForAmountTest@4cb2918c]" name="GetTaxForAmount" duration-ms="334" started-at="2018-05-07T15:16:50Z" finished-at="2018-05-07T15:16:50Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[STG]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- GetTaxForAmount -->
+        <test-method status="PASS" signature="teardown(org.testng.ITestResult)[pri:0, instance:com.leedonline.testcases.GetTaxForAmountTest@4cb2918c]" name="teardown" is-config="true" duration-ms="152" started-at="2018-05-07T15:16:50Z" finished-at="2018-05-07T15:16:50Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=GetTaxForAmount status=SUCCESS method=GetTaxForAmountTest.GetTaxForAmount(int, java.lang.String)[pri:0, instance:com.leedonline.testcases.GetTaxForAmountTest@4cb2918c] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- com.leedonline.testcases.GetTaxForAmountTest -->
+      <class name="com.leedonline.testcases.PostValidatePostalCodeTest">
+        <test-method status="PASS" signature="setBaseUri()[pri:0, instance:com.leedonline.testcases.PostValidatePostalCodeTest@37c36608]" name="setBaseUri" is-config="true" duration-ms="20" started-at="2018-05-07T15:16:56Z" finished-at="2018-05-07T15:16:56Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setBaseUri -->
+        <test-method status="PASS" signature="PostValidatePostalCode(int, java.lang.String)[pri:0, instance:com.leedonline.testcases.PostValidatePostalCodeTest@37c36608]" name="PostValidatePostalCode" duration-ms="383" started-at="2018-05-07T15:16:56Z" finished-at="2018-05-07T15:16:56Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[STG]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- PostValidatePostalCode -->
+        <test-method status="PASS" signature="teardown(org.testng.ITestResult)[pri:0, instance:com.leedonline.testcases.PostValidatePostalCodeTest@37c36608]" name="teardown" is-config="true" duration-ms="50" started-at="2018-05-07T15:16:56Z" finished-at="2018-05-07T15:16:57Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=PostValidatePostalCode status=SUCCESS method=PostValidatePostalCodeTest.PostValidatePostalCode(int, java.lang.String)[pri:0, instance:com.leedonline.testcases.PostValidatePostalCodeTest@37c36608] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- com.leedonline.testcases.PostValidatePostalCodeTest -->
+      <class name="com.leedonline.testcases.GetClarificationTypeTest">
+        <test-method status="PASS" signature="setBaseUri()[pri:0, instance:com.leedonline.testcases.GetClarificationTypeTest@e4e1ef5]" name="setBaseUri" is-config="true" duration-ms="70" started-at="2018-05-07T15:16:48Z" finished-at="2018-05-07T15:16:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setBaseUri -->
+        <test-method status="PASS" signature="GetClarification(int, java.lang.String)[pri:0, instance:com.leedonline.testcases.GetClarificationTypeTest@e4e1ef5]" name="GetClarification" duration-ms="312" started-at="2018-05-07T15:16:48Z" finished-at="2018-05-07T15:16:49Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[STG]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- GetClarification -->
+        <test-method status="PASS" signature="teardown(org.testng.ITestResult)[pri:0, instance:com.leedonline.testcases.GetClarificationTypeTest@e4e1ef5]" name="teardown" is-config="true" duration-ms="97" started-at="2018-05-07T15:16:49Z" finished-at="2018-05-07T15:16:49Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=GetClarification status=SUCCESS method=GetClarificationTypeTest.GetClarification(int, java.lang.String)[pri:0, instance:com.leedonline.testcases.GetClarificationTypeTest@e4e1ef5] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- com.leedonline.testcases.GetClarificationTypeTest -->
+      <class name="com.leedonline.testcases.GetLeedPricingPriceVersionInfoTest">
+        <test-method status="PASS" signature="setBaseUri()[pri:0, instance:com.leedonline.testcases.GetLeedPricingPriceVersionInfoTest@51ec2856]" name="setBaseUri" is-config="true" duration-ms="41" started-at="2018-05-07T15:16:52Z" finished-at="2018-05-07T15:16:52Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setBaseUri -->
+        <test-method status="PASS" signature="GetLeedPricingPriceVersionInfo(int, java.lang.String)[pri:0, instance:com.leedonline.testcases.GetLeedPricingPriceVersionInfoTest@51ec2856]" name="GetLeedPricingPriceVersionInfo" duration-ms="230" started-at="2018-05-07T15:16:52Z" finished-at="2018-05-07T15:16:52Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[STG]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- GetLeedPricingPriceVersionInfo -->
+        <test-method status="PASS" signature="teardown(org.testng.ITestResult)[pri:0, instance:com.leedonline.testcases.GetLeedPricingPriceVersionInfoTest@51ec2856]" name="teardown" is-config="true" duration-ms="50" started-at="2018-05-07T15:16:52Z" finished-at="2018-05-07T15:16:52Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=GetLeedPricingPriceVersionInfo status=SUCCESS method=GetLeedPricingPriceVersionInfoTest.GetLeedPricingPriceVersionInfo(int, java.lang.String)[pri:0, instance:com.leedonline.testcases.GetLeedPricingPriceVersionInfoTest@51ec2856] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- com.leedonline.testcases.GetLeedPricingPriceVersionInfoTest -->
+      <class name="com.leedonline.testcases.GetMemSyncApiTest">
+        <test-method status="PASS" signature="setBaseUri()[pri:0, instance:com.leedonline.testcases.GetMemSyncApiTest@58740366]" name="setBaseUri" is-config="true" duration-ms="60" started-at="2018-05-07T15:16:45Z" finished-at="2018-05-07T15:16:45Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setBaseUri -->
+        <test-method status="FAIL" signature="getMemSyncApi(int, java.lang.String)[pri:0, instance:com.leedonline.testcases.GetMemSyncApiTest@58740366]" name="getMemSyncApi" duration-ms="620" started-at="2018-05-07T15:16:45Z" finished-at="2018-05-07T15:16:46Z">
           <params>
             <param index="0">
               <value>
@@ -381,7 +1148,8 @@ Expected status code <200> doesn't match actual status code <403>.
 	at com.jayway.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:598)
 	at com.jayway.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
 	at com.jayway.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:760)
-	at sun.reflect.GeneratedMethodAccessor67.invoke(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.lang.reflect.Method.invoke(Method.java:498)
 	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:210)
@@ -391,7 +1159,7 @@ Expected status code <200> doesn't match actual status code <403>.
 	at com.jayway.restassured.specification.ResponseSpecification$statusCode$0.callCurrent(Unknown Source)
 	at com.jayway.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:128)
 	at com.jayway.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:117)
-	at com.leedonline.testcases.GetMemSyncApiTest.getMemSyncApi(GetMemSyncApiTest.java:36)
+	at com.leedonline.testcases.GetMemSyncApiTest.getMemSyncApi(GetMemSyncApiTest.java:37)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -422,11 +1190,11 @@ Expected status code <200> doesn't match actual status code <403>.
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getMemSyncApi -->
-        <test-method status="PASS" signature="teardown(org.testng.ITestResult)[pri:0, instance:com.leedonline.testcases.GetMemSyncApiTest@c3edf4c]" name="teardown" is-config="true" duration-ms="60" started-at="2018-05-01T23:47:15Z" finished-at="2018-05-01T23:47:15Z">
+        <test-method status="PASS" signature="teardown(org.testng.ITestResult)[pri:0, instance:com.leedonline.testcases.GetMemSyncApiTest@58740366]" name="teardown" is-config="true" duration-ms="220" started-at="2018-05-07T15:16:46Z" finished-at="2018-05-07T15:16:46Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=getMemSyncApi status=FAILURE method=GetMemSyncApiTest.getMemSyncApi(int, java.lang.String)[pri:0, instance:com.leedonline.testcases.GetMemSyncApiTest@c3edf4c] output={null}]]]>
+                <![CDATA[[TestResult name=getMemSyncApi status=FAILURE method=GetMemSyncApiTest.getMemSyncApi(int, java.lang.String)[pri:0, instance:com.leedonline.testcases.GetMemSyncApiTest@58740366] output={null}]]]>
               </value>
             </param>
           </params>
@@ -435,11 +1203,11 @@ Expected status code <200> doesn't match actual status code <403>.
         </test-method> <!-- teardown -->
       </class> <!-- com.leedonline.testcases.GetMemSyncApiTest -->
       <class name="com.leedonline.testcases.GetLeedInfoTest">
-        <test-method status="PASS" signature="setBaseUri()[pri:0, instance:com.leedonline.testcases.GetLeedInfoTest@2e66bc32]" name="setBaseUri" is-config="true" duration-ms="50" started-at="2018-05-01T23:47:16Z" finished-at="2018-05-01T23:47:16Z">
+        <test-method status="PASS" signature="setBaseUri()[pri:0, instance:com.leedonline.testcases.GetLeedInfoTest@47be0f9b]" name="setBaseUri" is-config="true" duration-ms="30" started-at="2018-05-07T15:16:46Z" finished-at="2018-05-07T15:16:46Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setBaseUri -->
-        <test-method status="PASS" signature="LeedGetInfo(int, java.lang.String)[pri:0, instance:com.leedonline.testcases.GetLeedInfoTest@2e66bc32]" name="LeedGetInfo" duration-ms="502" started-at="2018-05-01T23:47:16Z" finished-at="2018-05-01T23:47:16Z">
+        <test-method status="PASS" signature="LeedGetInfo(int, java.lang.String)[pri:0, instance:com.leedonline.testcases.GetLeedInfoTest@47be0f9b]" name="LeedGetInfo" duration-ms="302" started-at="2018-05-07T15:16:46Z" finished-at="2018-05-07T15:16:46Z">
           <params>
             <param index="0">
               <value>
@@ -455,11 +1223,11 @@ Expected status code <200> doesn't match actual status code <403>.
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LeedGetInfo -->
-        <test-method status="PASS" signature="teardown(org.testng.ITestResult)[pri:0, instance:com.leedonline.testcases.GetLeedInfoTest@2e66bc32]" name="teardown" is-config="true" duration-ms="130" started-at="2018-05-01T23:47:16Z" finished-at="2018-05-01T23:47:16Z">
+        <test-method status="PASS" signature="teardown(org.testng.ITestResult)[pri:0, instance:com.leedonline.testcases.GetLeedInfoTest@47be0f9b]" name="teardown" is-config="true" duration-ms="50" started-at="2018-05-07T15:16:46Z" finished-at="2018-05-07T15:16:46Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=LeedGetInfo status=SUCCESS method=GetLeedInfoTest.LeedGetInfo(int, java.lang.String)[pri:0, instance:com.leedonline.testcases.GetLeedInfoTest@2e66bc32] output={null}]]]>
+                <![CDATA[[TestResult name=LeedGetInfo status=SUCCESS method=GetLeedInfoTest.LeedGetInfo(int, java.lang.String)[pri:0, instance:com.leedonline.testcases.GetLeedInfoTest@47be0f9b] output={null}]]]>
               </value>
             </param>
           </params>
@@ -467,12 +1235,12 @@ Expected status code <200> doesn't match actual status code <403>.
           </reporter-output>
         </test-method> <!-- teardown -->
       </class> <!-- com.leedonline.testcases.GetLeedInfoTest -->
-      <class name="com.leedonline.testcases.GetApiTestAccessData">
-        <test-method status="PASS" signature="setBaseUri()[pri:0, instance:com.leedonline.testcases.GetApiTestAccessData@522bf64e]" name="setBaseUri" is-config="true" duration-ms="83" started-at="2018-05-01T23:47:13Z" finished-at="2018-05-01T23:47:13Z">
+      <class name="com.leedonline.testcases.GetLeedPricingVersionPricesInfoTest">
+        <test-method status="PASS" signature="setBaseUri()[pri:0, instance:com.leedonline.testcases.GetLeedPricingVersionPricesInfoTest@37468787]" name="setBaseUri" is-config="true" duration-ms="50" started-at="2018-05-07T15:16:51Z" finished-at="2018-05-07T15:16:51Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setBaseUri -->
-        <test-method status="PASS" signature="getApiTestAccessData(int, java.lang.String)[pri:0, instance:com.leedonline.testcases.GetApiTestAccessData@522bf64e]" name="getApiTestAccessData" duration-ms="221" started-at="2018-05-01T23:47:13Z" finished-at="2018-05-01T23:47:13Z">
+        <test-method status="PASS" signature="GetLeedPricingVersionPricesInfo(int, java.lang.String)[pri:0, instance:com.leedonline.testcases.GetLeedPricingVersionPricesInfoTest@37468787]" name="GetLeedPricingVersionPricesInfo" duration-ms="302" started-at="2018-05-07T15:16:51Z" finished-at="2018-05-07T15:16:52Z">
           <params>
             <param index="0">
               <value>
@@ -487,120 +1255,21 @@ Expected status code <200> doesn't match actual status code <403>.
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- getApiTestAccessData -->
-        <test-method status="PASS" signature="teardown(org.testng.ITestResult)[pri:0, instance:com.leedonline.testcases.GetApiTestAccessData@522bf64e]" name="teardown" is-config="true" duration-ms="100" started-at="2018-05-01T23:47:13Z" finished-at="2018-05-01T23:47:13Z">
+        </test-method> <!-- GetLeedPricingVersionPricesInfo -->
+        <test-method status="PASS" signature="teardown(org.testng.ITestResult)[pri:0, instance:com.leedonline.testcases.GetLeedPricingVersionPricesInfoTest@37468787]" name="teardown" is-config="true" duration-ms="80" started-at="2018-05-07T15:16:52Z" finished-at="2018-05-07T15:16:52Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=getApiTestAccessData status=SUCCESS method=GetApiTestAccessData.getApiTestAccessData(int, java.lang.String)[pri:0, instance:com.leedonline.testcases.GetApiTestAccessData@522bf64e] output={null}]]]>
+                <![CDATA[[TestResult name=GetLeedPricingVersionPricesInfo status=SUCCESS method=GetLeedPricingVersionPricesInfoTest.GetLeedPricingVersionPricesInfo(int, java.lang.String)[pri:0, instance:com.leedonline.testcases.GetLeedPricingVersionPricesInfoTest@37468787] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-      </class> <!-- com.leedonline.testcases.GetApiTestAccessData -->
-      <class name="com.leedonline.testcases.GetClientKeyApiTest">
-        <test-method status="PASS" signature="setBaseUri()[pri:0, instance:com.leedonline.testcases.GetClientKeyApiTest@799ed4e8]" name="setBaseUri" is-config="true" duration-ms="90" started-at="2018-05-01T23:47:15Z" finished-at="2018-05-01T23:47:15Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setBaseUri -->
-        <test-method status="PASS" signature="getClientKey(int, java.lang.String)[pri:0, instance:com.leedonline.testcases.GetClientKeyApiTest@799ed4e8]" name="getClientKey" duration-ms="490" started-at="2018-05-01T23:47:15Z" finished-at="2018-05-01T23:47:16Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[2]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[STG]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getClientKey -->
-        <test-method status="PASS" signature="teardown(org.testng.ITestResult)[pri:0, instance:com.leedonline.testcases.GetClientKeyApiTest@799ed4e8]" name="teardown" is-config="true" duration-ms="131" started-at="2018-05-01T23:47:16Z" finished-at="2018-05-01T23:47:16Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=getClientKey status=SUCCESS method=GetClientKeyApiTest.getClientKey(int, java.lang.String)[pri:0, instance:com.leedonline.testcases.GetClientKeyApiTest@799ed4e8] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- teardown -->
-      </class> <!-- com.leedonline.testcases.GetClientKeyApiTest -->
-      <class name="com.leedonline.testcases.PutApiTestAccessData">
-        <test-method status="PASS" signature="setBaseUri()[pri:0, instance:com.leedonline.testcases.PutApiTestAccessData@2aff9dff]" name="setBaseUri" is-config="true" duration-ms="162" started-at="2018-05-01T23:47:13Z" finished-at="2018-05-01T23:47:13Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setBaseUri -->
-        <test-method status="PASS" signature="putApiTestAccess(int, java.lang.String)[pri:0, instance:com.leedonline.testcases.PutApiTestAccessData@2aff9dff]" name="putApiTestAccess" duration-ms="72" started-at="2018-05-01T23:47:13Z" finished-at="2018-05-01T23:47:14Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[2]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[STG]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- putApiTestAccess -->
-        <test-method status="PASS" signature="teardown(org.testng.ITestResult)[pri:0, instance:com.leedonline.testcases.PutApiTestAccessData@2aff9dff]" name="teardown" is-config="true" duration-ms="91" started-at="2018-05-01T23:47:14Z" finished-at="2018-05-01T23:47:14Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=putApiTestAccess status=SUCCESS method=PutApiTestAccessData.putApiTestAccess(int, java.lang.String)[pri:0, instance:com.leedonline.testcases.PutApiTestAccessData@2aff9dff] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- teardown -->
-      </class> <!-- com.leedonline.testcases.PutApiTestAccessData -->
-      <class name="com.leedonline.testcases.GetProjectDetailsTypeTest">
-        <test-method status="PASS" signature="setBaseUri()[pri:0, instance:com.leedonline.testcases.GetProjectDetailsTypeTest@4b65d9f4]" name="setBaseUri" is-config="true" duration-ms="84" started-at="2018-05-01T23:47:17Z" finished-at="2018-05-01T23:47:17Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setBaseUri -->
-        <test-method status="PASS" signature="ProjectDetailsType(int, java.lang.String)[pri:0, instance:com.leedonline.testcases.GetProjectDetailsTypeTest@4b65d9f4]" name="ProjectDetailsType" duration-ms="187" started-at="2018-05-01T23:47:17Z" finished-at="2018-05-01T23:47:17Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[2]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[STG]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ProjectDetailsType -->
-        <test-method status="PASS" signature="teardown(org.testng.ITestResult)[pri:0, instance:com.leedonline.testcases.GetProjectDetailsTypeTest@4b65d9f4]" name="teardown" is-config="true" duration-ms="120" started-at="2018-05-01T23:47:17Z" finished-at="2018-05-01T23:47:17Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=ProjectDetailsType status=SUCCESS method=GetProjectDetailsTypeTest.ProjectDetailsType(int, java.lang.String)[pri:0, instance:com.leedonline.testcases.GetProjectDetailsTypeTest@4b65d9f4] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- teardown -->
-      </class> <!-- com.leedonline.testcases.GetProjectDetailsTypeTest -->
+      </class> <!-- com.leedonline.testcases.GetLeedPricingVersionPricesInfoTest -->
     </test> <!-- LeedonlineApi -->
-    <test name="LeedonlineApi Getclient" duration-ms="4" started-at="2018-05-02T03:47:19Z" finished-at="2018-05-02T03:47:19Z">
+    <test name="LeedonlineApi Getclient" duration-ms="10" started-at="2018-05-07T19:16:59Z" finished-at="2018-05-07T19:16:59Z">
     </test> <!-- LeedonlineApi Getclient -->
   </suite> <!-- LeedonlineApi Test Suit -->
 </testng-results>

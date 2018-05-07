@@ -21,6 +21,7 @@ public class GetClarificationTypeTest extends BaseClass{
 	@Parameters({"rowNum", "SheetName" })
 	public void GetClarification(int rowNum, String SheetName) throws IOException {
 		try {	
+			CommonMethod.ExtentReportConfig();
 			System.out.println(Thread.currentThread().getStackTrace()[1].getMethodName());
 			CommonMethod.res = given()
 					.header("Authorization", header)
@@ -29,7 +30,7 @@ public class GetClarificationTypeTest extends BaseClass{
 					.get("/Clarifications/get/"+data.getCellData(SheetName, "projectType", rowNum)+
 							"/"+data.getCellData(SheetName, "leedProjectId", rowNum));
 			CommonMethod.responsetime = CommonMethod.res.getTimeIn(TimeUnit.MILLISECONDS);
-			test = extent
+			 CommonMethod.test =  CommonMethod.extent
 					.startTest("GetClarification Api "+ CommonMethod.getLabel(CommonMethod.responsetime),
 							"Get project details.")
 					.assignCategory("api test");

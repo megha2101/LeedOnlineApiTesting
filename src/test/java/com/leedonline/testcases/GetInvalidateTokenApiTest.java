@@ -20,7 +20,8 @@ public class GetInvalidateTokenApiTest extends BaseClass{
 	@Test
 	@Parameters({"rowNum", "SheetName" })
 	public void invalidateTokenApi(int rowNum, String SheetName) throws IOException {
-		try {		
+		try {
+			CommonMethod.ExtentReportConfig();
 			System.out.println(Thread.currentThread().getStackTrace()[1].getMethodName());
 			CommonMethod.res = given()
 					.header("Authorization", header)
@@ -28,7 +29,7 @@ public class GetInvalidateTokenApiTest extends BaseClass{
 					.when()
 					.get("/invalidateToken");		
 			CommonMethod.responsetime = CommonMethod.res.getTimeIn(TimeUnit.MILLISECONDS);
-			test = extent
+			 CommonMethod.test =  CommonMethod.extent
 					.startTest("InvalidateToken api "+ CommonMethod.getLabel(CommonMethod.responsetime),
 							"invalidate Basic auth token to remove the access.")
 					.assignCategory("api test");

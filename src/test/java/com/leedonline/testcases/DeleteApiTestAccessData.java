@@ -23,6 +23,7 @@ public class DeleteApiTestAccessData extends BaseClass{
 	@Parameters({"rowNum", "SheetName" })
 	public void deleteApiTestAccessData(int rowNum, String SheetName) throws IOException {
 		try {	
+			CommonMethod.ExtentReportConfig();
 			System.out.println(Thread.currentThread().getStackTrace()[1].getMethodName());
 			System.out.println("deleteApiTestAccessData heeader is: "+ header);
 			System.out.println("deleteApiTestAccess data key is:" +data.getCellData(SheetName, "createKey", rowNum));
@@ -36,7 +37,7 @@ public class DeleteApiTestAccessData extends BaseClass{
 					.when()
 					.delete("/Api/testAccess").then().extract().response();		
 			CommonMethod.responsetime = CommonMethod.res.getTimeIn(TimeUnit.MILLISECONDS);
-			test = extent
+			 CommonMethod.test =  CommonMethod.extent
 					.startTest("Delete Api Test Access Data "+ CommonMethod.getLabel(CommonMethod.responsetime),
 							"Delete single or full data.")
 					.assignCategory("api test");

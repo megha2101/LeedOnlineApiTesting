@@ -20,7 +20,8 @@ public class GetCreditTypeTest extends BaseClass{
 	@Test
 	@Parameters({"rowNum", "SheetName" })
 	public void GetCreditType(int rowNum, String SheetName) throws IOException {
-		try {	
+		try {
+			CommonMethod.ExtentReportConfig();
 			System.out.println(Thread.currentThread().getStackTrace()[1].getMethodName());
 			CommonMethod.res = given()
 					.header("Authorization", header)
@@ -29,7 +30,7 @@ public class GetCreditTypeTest extends BaseClass{
 					.get("/Credits/get/"+data.getCellData(SheetName, "projectType", rowNum)+
 							"/"+data.getCellData(SheetName, "leedProjectId", rowNum));		
 			CommonMethod.responsetime = CommonMethod.res.getTimeIn(TimeUnit.MILLISECONDS);
-			test = extent
+			 CommonMethod.test =  CommonMethod.extent
 					.startTest("GetCreditType Api "+ CommonMethod.getLabel(CommonMethod.responsetime),
 							"Get project credits.")
 					.assignCategory("api test");

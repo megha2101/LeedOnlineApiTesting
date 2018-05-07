@@ -22,13 +22,14 @@ public class PostApiTestAccessData extends BaseClass{
 	@Test
 	@Parameters({"rowNum", "SheetName" })
 	public void createApiTestAccessData(int rowNum, String SheetName) throws IOException {
-		try {		
+		try {	
+			CommonMethod.ExtentReportConfig();
 			System.out.println(Thread.currentThread().getStackTrace()[1].getMethodName());
 			System.out.println("CreateTestApiAccessData hedaer is: "+ header);
 			CommonMethod.res = given()
 					.header("Content-Type",CommonMethod.contentType)
 					.header("Authorization", header)
-					.header("X-Nonce", CommonMethod.nonceValue)
+					.header("X-Nonce", CommonMethod.jsonNonceResponse.get(0))
 					.spec(reqSpec)
 					.params(
 						  "key", data.getCellData(SheetName, "createKey", rowNum),
@@ -37,7 +38,7 @@ public class PostApiTestAccessData extends BaseClass{
 					.when()
 					.post("/Api/testAccess").then().extract().response();		
 			CommonMethod.responsetime = CommonMethod.res.getTimeIn(TimeUnit.MILLISECONDS);
-			test = extent
+			 CommonMethod.test =  CommonMethod.extent
 					.startTest("Create Api Test Access Data "+ CommonMethod.getLabel(CommonMethod.responsetime),
 							"Create some data for testing.")
 					.assignCategory("api test");

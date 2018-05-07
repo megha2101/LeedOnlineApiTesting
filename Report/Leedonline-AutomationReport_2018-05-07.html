@@ -1,0 +1,2612 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+			ExtentReports Library 2.41.1 | http://relevantcodes.com/extentreports-for-selenium/ | https://github.com/anshooarora/
+			Copyright (c) 2015, Anshoo Arora (Relevant Codes) | Copyrights licensed under the New BSD License | http://opensource.org/licenses/BSD-3-Clause
+			Documentation: http://extentreports.relevantcodes.com 
+		-->
+
+		<meta charset='UTF-8' /> 
+		<meta name='description' content='ExtentReports (by Anshoo Arora) is a reporting library for automation testing for .NET and Java. It creates detailed and beautiful HTML reports for modern browsers. ExtentReports shows test and step summary along with dashboards, system and environment details for quick analysis of your tests.' />
+		<meta name='robots' content='noodp, noydir' />
+		<meta name='viewport' content='width=device-width, initial-scale=1' />
+		<meta name='extentx' id='extentx' content='' />
+		
+		<title>
+				LeedOnline
+		</title>
+		
+		
+		<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600' rel='stylesheet' type='text/css'>
+		<link href='https://cdn.rawgit.com/anshooarora/extentreports/6032d73243ba4fe4fb8769eb9c315d4fdf16fe68/cdn/extent.css' type='text/css' rel='stylesheet' />
+		
+		<style>
+				
+      
+        
+      
+    
+		</style>
+	</head>
+	
+	
+	<body class='extent default standard hide-overflow'>
+		<!-- nav -->
+		<nav>
+			<div class='logo-container blue darken-2'>
+				<a class='logo-content' href='http://extentreports.relevantcodes.com'>
+					<span>ExtentReports</span>
+				</a>
+				<a href='#' data-activates='slide-out' class='button-collapse hide-on-large-only'><i class='mdi-navigation-apps'></i></a>
+			</div>
+			<ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
+				<li class='analysis waves-effect active'><a href='#!' class='test-view' onclick="_updateCurrentStage(0)"><i class='mdi-action-dashboard'></i>Test Details</a></li>
+					<li class='analysis waves-effect'><a href='#!' class='categories-view' onclick="_updateCurrentStage(1)"><i class='mdi-maps-local-offer'></i>Categories</a></li>
+					<li class='analysis waves-effect'><a href='#!' class='exceptions-view' onclick="_updateCurrentStage(2)"><i class='mdi-action-bug-report'></i>Exceptions</a></li>
+				<li class='analysis waves-effect'>
+					<a href='#!' onclick="_updateCurrentStage(-1)" class='dashboard-view'><i class='mdi-action-track-changes'></i></i>Analysis</a>
+				</li>
+			</ul>
+			<span class='report-name'>Automation Report</span> <span class='report-headline'>Dynamic</span>
+			<ul class='right hide-on-med-and-down nav-right'>
+				<li class='theme-selector' alt='Click to toggle dark theme. To enable by default, use js configuration $("body").addClass("dark");' title='Click to toggle dark theme. To enable by default, use js configuration $("body").addClass("dark");'>
+					<i class='mdi-hardware-desktop-windows'></i>
+				</li>
+				<li>
+					<span class='suite-started-time'>2018-05-07 15:16:59</span>
+				</li>
+				<li>
+					<span>v2.41.1</span>
+				</li>
+			</ul>
+		</nav>
+		<!-- /nav -->
+		
+		<!-- container -->
+		<div class='container'>
+			
+			<!-- dashboard -->
+			<div id='dashboard-view' class='row'>
+				<div class='time-totals'>
+					<div class='col l2 m4 s6'>
+						<div class='card suite-total-tests'> 
+							<span class='panel-name'>Total Tests</span> 
+							<span class='total-tests'> <span class='panel-lead'></span> </span> 
+						</div> 
+					</div>
+					<div class='col l2 m4 s6'>
+						<div class='card suite-total-steps'> 
+							<span class='panel-name'>Total Steps</span> 
+							<span class='total-steps'> <span class='panel-lead'></span> </span> 
+						</div> 
+					</div>
+					<div class='col l2 m4 s12'>
+						<div class='card suite-total-time-current'> 
+							<span class='panel-name'>Total Time Taken (Current Run)</span> 
+							<span class='suite-total-time-current-value panel-lead'>0h 0m 18s+112ms</span> 
+						</div> 
+					</div>
+					<div class='col l2 m4 s12'>
+						<div class='card suite-total-time-overall'> 
+							<span class='panel-name'>Total Time Taken (Overall)</span> 
+							<span class='suite-total-time-overall-value panel-lead'>0h 0m 16s+600ms</span> 
+						</div> 
+					</div>
+					<div class='col l2 m4 s6 suite-start-time'>
+						<div class='card accent green-accent'> 
+							<span class='panel-name'>Start</span> 
+							<span class='panel-lead suite-started-time'>2018-05-07 15:16:41</span> 
+						</div> 
+					</div>
+					<div class='col l2 m4 s6 suite-end-time'>
+						<div class='card accent pink-accent'> 
+							<span class='panel-name'>End</span> 
+							<span class='panel-lead suite-ended-time'>2018-05-07 15:16:59</span> 
+						</div> 
+					</div>
+				</div>
+				<div class='charts'>
+					<div class='col s12 m6 l4 fh'> 
+						<div class='card-panel'> 
+							<div>
+								<span class='panel-name'>Tests View</span>
+							</div> 
+							<div class='panel-setting modal-trigger test-count-setting right'>
+								<a href='#test-count-setting'><i class='mdi-navigation-more-vert text-md'></i></a>
+							</div> 
+							<div class='chart-box'>
+								<canvas class='text-centered' id='test-analysis'></canvas>
+							</div> 
+							<div>
+								<span class='weight-light'><span class='t-pass-count weight-normal'></span> test(s) passed</span>
+							</div> 
+							<div>
+								<span class='weight-light'><span class='t-fail-count weight-normal'></span> test(s) failed, <span class='t-others-count weight-normal'></span> others</span>
+							</div> 
+						</div> 
+					</div> 
+					<div class='col s12 m6 l4 fh'> 
+						<div class='card-panel'> 
+							<div>
+								<span class='panel-name'>Steps View</span>
+							</div> 
+							<div class='panel-setting modal-trigger step-status-filter right'>
+								<a href='#step-status-filter'><i class='mdi-navigation-more-vert text-md'></i></a>
+							</div> 
+							<div class='chart-box'>
+								<canvas class='text-centered' id='step-analysis'></canvas>
+							</div> 
+							<div>
+								<span class='weight-light'><span class='s-pass-count weight-normal'></span> step(s) passed </span>
+							</div> 
+							<div>
+								<span class='weight-light'><span class='s-fail-count weight-normal'></span> step(s) failed, <span class='s-others-count weight-normal'></span> others</span>
+							</div> 
+						</div> 
+					</div>
+					<div class='col s12 m12 l4 fh'> 
+						<div class='card-panel'> 
+							<span class='panel-name'>Pass Percentage</span> 
+							<span class='pass-percentage panel-lead'></span> 
+							<div class='progress light-blue lighten-3'> 
+								<div class='determinate light-blue'></div> 
+							</div> 
+						</div> 
+					</div>
+				</div>
+				<div class='system-view'>
+					<div class='col l4 m12 s12'>
+						<div class='card-panel'>
+							<span class='label info outline right'>Environment</span>
+							<table>
+								<thead>
+									<tr>
+										<th>Param</th>
+										<th>Value</th>
+									</tr>
+								</thead>
+								<tbody>
+										<tr>
+											<td>User Name</td>
+											<td>Megha</td>
+										</tr>
+										<tr>
+											<td>OS</td>
+											<td>Windows 7</td>
+										</tr>
+										<tr>
+											<td>Java Version</td>
+											<td>1.8.0_152</td>
+										</tr>
+										<tr>
+											<td>Host Name</td>
+											<td>Megha</td>
+										</tr>
+										<tr>
+											<td>Environment</td>
+											<td>Staging</td>
+										</tr>
+										<tr>
+											<td>Selenium Version</td>
+											<td>2.53</td>
+										</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+					<div class='category-summary-view'>
+						<div class='col l4 m6 s12'>
+							<div class='card-panel'>
+								<span class='label info outline right'>Categories</span>
+								<table>
+									<thead>
+										<tr>
+											<th>Name</th>
+										</tr>
+									</thead>
+									<tbody>
+											<tr>
+												<td>
+													api test
+												</td>
+											</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+			</div>
+			<!-- /dashboard -->
+			
+			<!-- tests -->
+			<div id='test-view' class='row _addedTable'>
+				<div class='col _addedCell1'>
+					<div class='contents'>
+						<div class='card-panel heading'>
+							<h5>Tests</h5>
+						</div>
+						<div class='card-panel filters'>
+							<div>
+								<a class='dropdown-button btn-floating btn-small waves-effect waves-light grey tests-toggle' data-activates='tests-toggle' data-constrainwidth='true' data-beloworigin='true' data-hover='true' href='#'>
+									<i class='mdi-action-reorder'></i>
+								</a>
+								<ul id='tests-toggle' class='dropdown-content'>
+									<li class='pass'><a href='#!'>Pass</a></li>
+									<li class='fail'><a href='#!'>Fail</a></li>
+									<li class='skip'><a href='#!'>Skip</a></li>
+									<li class='divider'></li>
+									<li class='clear'><a href='#!'>Clear Filters</a></li>
+								</ul>
+							</div>
+								<div>
+									<a class='dropdown-button btn-floating btn-small waves-effect waves-light grey category-toggle' data-activates='category-toggle' data-constrainwidth='false' data-beloworigin='true' data-hover='true' href='#'>
+										<i class='mdi-maps-local-offer'></i>
+									</a>
+									<ul id='category-toggle' class='dropdown-content'>
+											<li class='api test'><a href='#!'>api test</a></li>
+										<li class='divider'></li>
+										<li class='clear'><a href='#!'>Clear Filters</a></li>
+									</ul>
+								</div>
+							<div>
+								<a class='btn-floating btn-small waves-effect waves-light grey' id='clear-filters' alt='Clear Filters' title='Clear Filters'>
+									<i class='mdi-navigation-close'></i>
+								</a>
+							</div>
+							<div>
+								<a class='btn-floating btn-small waves-effect waves-light grey' id='enableDashboard' alt='Enable Dashboard' title='Enable Dashboard'>
+									<i class='mdi-action-track-changes'></i>
+								</a>
+							</div>
+							<div>
+								<a class='btn-floating btn-small waves-effect waves-light blue enabled' id='refreshCharts' alt='Refresh Charts on Filters' title='Refresh Charts on Filters'>
+									<i class='mdi-navigation-refresh'></i>
+								</a>
+							</div>
+							<div class='search' alt='Search Tests' title='Search Tests'>
+								<div class='input-field left'>
+									<input id='searchTests' type='text' class='validate' placeholder='Search Tests...'>
+								</div>
+								<a href="#" class='btn-floating btn-small waves-effect waves-light grey'>
+									<i class='mdi-action-search'></i>
+								</a>
+							</div>
+						</div>
+						<div class='card-panel no-padding-h no-padding-v no-margin-v'>
+							<div class='wrapper'>
+								<ul id='test-collection' class='test-collection'>
+										<li class='collection-item test displayed active pass ' extentid='5f926f56-1a5d-4178-aaac-fa6295cd2640'>
+											<div class='test-head'>
+												<span class='test-name'>Authentication api <span class="label outline info">1219 Milliseconds</span> </span>
+												<span class='test-status label right outline capitalize pass'>pass</span>
+												<span class='category-assigned hide  apitest'></span>
+											</div>
+											<div class='test-body'>
+												<div class='test-info'>
+													<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-1 text-white'>2018-05-07 15:16:41</span>
+													<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-1 text-white'>2018-05-07 15:16:41</span>
+													<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 0s+0ms</span>
+												</div>
+												<div class='test-desc'>genrating token.</div>
+												<div class='test-attributes'>
+														<div class='categories'>
+																<span class='category text-white'>api test</span>
+														</div>
+												</div>
+												<div class='test-steps'>
+													<table class='bordered table-results'>
+														<thead>
+															<tr>
+																<th>Status</th>
+																<th>Timestamp</th>
+																<th>Details</th>
+															</tr>
+														</thead>
+														<tbody>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>15:16:41</td>
+																	<td class='step-details'>verifies response from API<br>{"token":"308e717dd9251bfe8fb283b565bbfee3f9322ae8"}</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>15:16:41</td>
+																	<td class='step-details'>API responded in 1219 Milliseconds</td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>15:16:41</td>
+																	<td class='step-details'>Test passed</td>
+																</tr>
+														</tbody>
+													</table>
+													<ul class='collapsible node-list' data-collapsible='accordion'>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class='collection-item test displayed active pass ' extentid='e1b78b87-4bd4-476f-97e8-ea8826917a5e'>
+											<div class='test-head'>
+												<span class='test-name'>GetFilesList Api <span class="label outline info">266 Milliseconds</span> </span>
+												<span class='test-status label right outline capitalize pass'>pass</span>
+												<span class='category-assigned hide  apitest'></span>
+											</div>
+											<div class='test-body'>
+												<div class='test-info'>
+													<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-1 text-white'>2018-05-07 15:16:44</span>
+													<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-1 text-white'>2018-05-07 15:16:44</span>
+													<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 0s+0ms</span>
+												</div>
+												<div class='test-desc'>Get files list.</div>
+												<div class='test-attributes'>
+														<div class='categories'>
+																<span class='category text-white'>api test</span>
+														</div>
+												</div>
+												<div class='test-steps'>
+													<table class='bordered table-results'>
+														<thead>
+															<tr>
+																<th>Status</th>
+																<th>Timestamp</th>
+																<th>Details</th>
+															</tr>
+														</thead>
+														<tbody>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>15:16:44</td>
+																	<td class='step-details'>Authorization Token generated<br>Basic ab9da8aeb02c0fb170e7209b8233773b7ffc4b7a</td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>15:16:44</td>
+																	<td class='step-details'>verifies response from API<br>{"files":[{"id":"P1000146660_5aec7c1f24aca076e44144a3","uploadBy":10543838,"uploadByName":"new ser serverb","fileName":"test100Mb1.db","fileSize":null,"sizeInBytes":null,"mimeType":null,"timeStamp":1523433973},{"id":"P1000146660_5aec7c1f24aca076e44144a2","uploadBy":10543838,"uploadByName":"new ser serverb","fileName":"LEED v4 for Building Design and Construction Checklist.xls","fileSize":null,"sizeInBytes":null,"mimeType":null,"timeStamp":1523433716}]}</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>15:16:44</td>
+																	<td class='step-details'>API responded in 266 Milliseconds</td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>15:16:44</td>
+																	<td class='step-details'>Test passed</td>
+																</tr>
+														</tbody>
+													</table>
+													<ul class='collapsible node-list' data-collapsible='accordion'>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class='collection-item test displayed active pass ' extentid='a492be38-6df5-4438-8b86-a6aeac30394d'>
+											<div class='test-head'>
+												<span class='test-name'>GetFilesList Api <span class="label outline info">185 Milliseconds</span> </span>
+												<span class='test-status label right outline capitalize pass'>pass</span>
+												<span class='category-assigned hide  apitest'></span>
+											</div>
+											<div class='test-body'>
+												<div class='test-info'>
+													<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-1 text-white'>2018-05-07 15:16:45</span>
+													<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-1 text-white'>2018-05-07 15:16:45</span>
+													<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 0s+0ms</span>
+												</div>
+												<div class='test-desc'>Get file download URL.</div>
+												<div class='test-attributes'>
+														<div class='categories'>
+																<span class='category text-white'>api test</span>
+														</div>
+												</div>
+												<div class='test-steps'>
+													<table class='bordered table-results'>
+														<thead>
+															<tr>
+																<th>Status</th>
+																<th>Timestamp</th>
+																<th>Details</th>
+															</tr>
+														</thead>
+														<tbody>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>15:16:45</td>
+																	<td class='step-details'>Authorization Token generated<br>Basic ab9da8aeb02c0fb170e7209b8233773b7ffc4b7a</td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>15:16:45</td>
+																	<td class='step-details'>verifies response from API<br>{"downloadUrl":{"P1000146660_5aec7c1f24aca076e44144a2":"https://leedonline-fileproxy-stg.usgbc.org/fileApi/action/download.php?k=YWs1akpJWXJ3SVlESlZZQlBHUGRjT25scFM5c3VGTVpTUXUwMm1lNHVZbmREd052SmZsMnVRTDUrcTA3aG9obndsTEQ5WGhPUkprb08xbEpmRU52VVJYSUJLOVArY240YUp5MU1qbTBNekpMQy9GWjhTUm0wYitkWUJXc2RtZGYkbE9WNEdPeHkxWTQ9&amp;p[]=0000000010000000000809807&amp;p[]=000&amp;p[]=Z02&amp;p[]=00&amp;p[]=E83D4DD62452FEF1909C0AFDDE1F6773&amp;p[]=E83D4DD62452FCF1909C0AFDDE1F6773&amp;p[]=1000146660&amp;p[]=LEED+v4+for+Building+Design+and+Construction+Checklist.xls&amp;force=1"}}</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>15:16:45</td>
+																	<td class='step-details'>API responded in 185 Milliseconds</td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>15:16:45</td>
+																	<td class='step-details'>Test passed</td>
+																</tr>
+														</tbody>
+													</table>
+													<ul class='collapsible node-list' data-collapsible='accordion'>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class='collection-item test displayed active pass ' extentid='a6745340-d16f-4817-8b3f-8acfba33a2c4'>
+											<div class='test-head'>
+												<span class='test-name'>Get Member Info Api <span class="label outline info">195 Milliseconds</span> </span>
+												<span class='test-status label right outline capitalize pass'>pass</span>
+												<span class='category-assigned hide  apitest'></span>
+											</div>
+											<div class='test-body'>
+												<div class='test-info'>
+													<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-1 text-white'>2018-05-07 15:16:45</span>
+													<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-1 text-white'>2018-05-07 15:16:45</span>
+													<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 0s+0ms</span>
+												</div>
+												<div class='test-desc'>Get authenticated person details.</div>
+												<div class='test-attributes'>
+														<div class='categories'>
+																<span class='category text-white'>api test</span>
+														</div>
+												</div>
+												<div class='test-steps'>
+													<table class='bordered table-results'>
+														<thead>
+															<tr>
+																<th>Status</th>
+																<th>Timestamp</th>
+																<th>Details</th>
+															</tr>
+														</thead>
+														<tbody>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>15:16:45</td>
+																	<td class='step-details'>Authorization Token generated<br>Basic ab9da8aeb02c0fb170e7209b8233773b7ffc4b7a</td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>15:16:45</td>
+																	<td class='step-details'>verifies response from API<br>{"bpNumber":10543838,"firstName":"new ser","lastName":"serverb","email":"newserver2@gmail.com","usgbcUid":1745317,"userType":"SITEUSER","personal":{"jobTitle":"Test","companyName":"check","phone":"210-009-0009"},"about":{"gender":"Male","dateOfBirth":"01/06/1980","eduInstitute":"Southern Illinois University Carbondale","studentId":"1222","graduationDate":"10/26/2017"},"address":{"location":{"city":"san antonio","state":"TX","country":"US","postalCode":"00000"},"mailing":{"address1":"8727 fredericksburg rd","city":"san antonio","state":"TX","country":"US","postalCode":"78240"},"billing":{"address1":"8727 fredericksburg rd","city":"san antonio","state":"TX","country":"US","postalCode":"78240"}},"status":1,"createdOn":1452780039,"updatedOn":1521662552,"accessType":"M","lastLogin":{"loginTime":"2018-05-07 18:48:13","remoteIp":"96.68.242.97","proxyIp":"","userAgent":"Apache-HttpClient/4.5.1 (Java/1.8.0_152)"}}</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>15:16:45</td>
+																	<td class='step-details'>API responded in 195 Milliseconds</td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>15:16:45</td>
+																	<td class='step-details'>Test passed</td>
+																</tr>
+														</tbody>
+													</table>
+													<ul class='collapsible node-list' data-collapsible='accordion'>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class='collection-item test displayed active fail ' extentid='ee80da78-0ce8-465d-9025-fd67c93615ce'>
+											<div class='test-head'>
+												<span class='test-name'>GetMemberSyncApi <span class="label outline info">500 Milliseconds</span> </span>
+												<span class='test-status label right outline capitalize fail'>fail</span>
+												<span class='category-assigned hide  apitest'></span>
+											</div>
+											<div class='test-body'>
+												<div class='test-info'>
+													<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-1 text-white'>2018-05-07 15:16:46</span>
+													<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-1 text-white'>2018-05-07 15:16:46</span>
+													<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 0s+0ms</span>
+												</div>
+												<div class='test-desc'>Sync member details from USGBC database.</div>
+												<div class='test-attributes'>
+														<div class='categories'>
+																<span class='category text-white'>api test</span>
+														</div>
+												</div>
+												<div class='test-steps'>
+													<table class='bordered table-results'>
+														<thead>
+															<tr>
+																<th>Status</th>
+																<th>Timestamp</th>
+																<th>Details</th>
+															</tr>
+														</thead>
+														<tbody>
+																<tr>
+																	<td class='status fail' title='fail' alt='fail'><i class='mdi-navigation-cancel'></i></td>
+																	<td class='timestamp'>15:16:46</td>
+																	<td class='step-details'><textarea>java.lang.AssertionError: 1 expectation failed.
+Expected status code &lt;200&gt; doesn't match actual status code &lt;403&gt;.
+
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:80)
+	at org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:74)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:84)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:60)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:235)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:247)
+	at com.jayway.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:598)
+	at com.jayway.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
+	at com.jayway.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:760)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:210)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:59)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:166)
+	at com.jayway.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:120)
+	at com.jayway.restassured.specification.ResponseSpecification$statusCode$0.callCurrent(Unknown Source)
+	at com.jayway.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:128)
+	at com.jayway.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:117)
+	at com.leedonline.testcases.GetMemSyncApiTest.getMemSyncApi(GetMemSyncApiTest.java:37)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</textarea></td>
+																</tr>
+														</tbody>
+													</table>
+													<ul class='collapsible node-list' data-collapsible='accordion'>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class='collection-item test displayed active pass ' extentid='27e62a8b-2382-43a6-8a56-8aba5f44f2e6'>
+											<div class='test-head'>
+												<span class='test-name'>LeedGetInfo Api <span class="label outline info">232 Milliseconds</span> </span>
+												<span class='test-status label right outline capitalize pass'>pass</span>
+												<span class='category-assigned hide  apitest'></span>
+											</div>
+											<div class='test-body'>
+												<div class='test-info'>
+													<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-1 text-white'>2018-05-07 15:16:46</span>
+													<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-1 text-white'>2018-05-07 15:16:46</span>
+													<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 0s+0ms</span>
+												</div>
+												<div class='test-desc'>Get LEED project types and rating systems.</div>
+												<div class='test-attributes'>
+														<div class='categories'>
+																<span class='category text-white'>api test</span>
+														</div>
+												</div>
+												<div class='test-steps'>
+													<table class='bordered table-results'>
+														<thead>
+															<tr>
+																<th>Status</th>
+																<th>Timestamp</th>
+																<th>Details</th>
+															</tr>
+														</thead>
+														<tbody>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>15:16:46</td>
+																	<td class='step-details'>Authorization Token generated<br>Basic ab9da8aeb02c0fb170e7209b8233773b7ffc4b7a</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>15:16:46</td>
+																	<td class='step-details'>API responded in 232 Milliseconds</td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>15:16:46</td>
+																	<td class='step-details'>Test passed</td>
+																</tr>
+														</tbody>
+													</table>
+													<ul class='collapsible node-list' data-collapsible='accordion'>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class='collection-item test displayed active pass ' extentid='8e3db6c5-faca-4337-95c4-782e0fffbbfe'>
+											<div class='test-head'>
+												<span class='test-name'>ProjectGetListType Api <span class="label outline info">200 Milliseconds</span> </span>
+												<span class='test-status label right outline capitalize pass'>pass</span>
+												<span class='category-assigned hide  apitest'></span>
+											</div>
+											<div class='test-body'>
+												<div class='test-info'>
+													<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-1 text-white'>2018-05-07 15:16:47</span>
+													<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-1 text-white'>2018-05-07 15:16:47</span>
+													<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 0s+0ms</span>
+												</div>
+												<div class='test-desc'>Get projects list.</div>
+												<div class='test-attributes'>
+														<div class='categories'>
+																<span class='category text-white'>api test</span>
+														</div>
+												</div>
+												<div class='test-steps'>
+													<table class='bordered table-results'>
+														<thead>
+															<tr>
+																<th>Status</th>
+																<th>Timestamp</th>
+																<th>Details</th>
+															</tr>
+														</thead>
+														<tbody>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>15:16:47</td>
+																	<td class='step-details'>Authorization Token generated<br>Basic ab9da8aeb02c0fb170e7209b8233773b7ffc4b7a</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>15:16:47</td>
+																	<td class='step-details'>API responded in 200 Milliseconds</td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>15:16:47</td>
+																	<td class='step-details'>Test passed</td>
+																</tr>
+														</tbody>
+													</table>
+													<ul class='collapsible node-list' data-collapsible='accordion'>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class='collection-item test displayed active pass ' extentid='815e6fcd-406d-4273-8ffa-6484f33d7d53'>
+											<div class='test-head'>
+												<span class='test-name'>ProjectDetailsType Api <span class="label outline info">225 Milliseconds</span> </span>
+												<span class='test-status label right outline capitalize pass'>pass</span>
+												<span class='category-assigned hide  apitest'></span>
+											</div>
+											<div class='test-body'>
+												<div class='test-info'>
+													<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-1 text-white'>2018-05-07 15:16:47</span>
+													<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-1 text-white'>2018-05-07 15:16:47</span>
+													<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 0s+0ms</span>
+												</div>
+												<div class='test-desc'>Get final payable amount after calculating all taxes.</div>
+												<div class='test-attributes'>
+														<div class='categories'>
+																<span class='category text-white'>api test</span>
+														</div>
+												</div>
+												<div class='test-steps'>
+													<table class='bordered table-results'>
+														<thead>
+															<tr>
+																<th>Status</th>
+																<th>Timestamp</th>
+																<th>Details</th>
+															</tr>
+														</thead>
+														<tbody>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>15:16:47</td>
+																	<td class='step-details'>Authorization Token generated<br>Basic ab9da8aeb02c0fb170e7209b8233773b7ffc4b7a</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>15:16:47</td>
+																	<td class='step-details'>API responded in 225 Milliseconds</td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>15:16:47</td>
+																	<td class='step-details'>Test passed</td>
+																</tr>
+														</tbody>
+													</table>
+													<ul class='collapsible node-list' data-collapsible='accordion'>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class='collection-item test displayed active pass ' extentid='a6f6456e-0279-4b63-887e-e695ee27869e'>
+											<div class='test-head'>
+												<span class='test-name'>GetCreditType Api <span class="label outline info">178 Milliseconds</span> </span>
+												<span class='test-status label right outline capitalize pass'>pass</span>
+												<span class='category-assigned hide  apitest'></span>
+											</div>
+											<div class='test-body'>
+												<div class='test-info'>
+													<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-1 text-white'>2018-05-07 15:16:48</span>
+													<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-1 text-white'>2018-05-07 15:16:48</span>
+													<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 0s+0ms</span>
+												</div>
+												<div class='test-desc'>Get project credits.</div>
+												<div class='test-attributes'>
+														<div class='categories'>
+																<span class='category text-white'>api test</span>
+														</div>
+												</div>
+												<div class='test-steps'>
+													<table class='bordered table-results'>
+														<thead>
+															<tr>
+																<th>Status</th>
+																<th>Timestamp</th>
+																<th>Details</th>
+															</tr>
+														</thead>
+														<tbody>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>15:16:48</td>
+																	<td class='step-details'>Authorization Token generated<br>Basic ab9da8aeb02c0fb170e7209b8233773b7ffc4b7a</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>15:16:48</td>
+																	<td class='step-details'>API responded in 178 Milliseconds</td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>15:16:48</td>
+																	<td class='step-details'>Test passed</td>
+																</tr>
+														</tbody>
+													</table>
+													<ul class='collapsible node-list' data-collapsible='accordion'>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class='collection-item test displayed active pass ' extentid='2c2f9ce7-513a-43c8-92ab-b836ccca20aa'>
+											<div class='test-head'>
+												<span class='test-name'>GetInterpretationTypeTest Api <span class="label outline info">161 Milliseconds</span> </span>
+												<span class='test-status label right outline capitalize pass'>pass</span>
+												<span class='category-assigned hide  apitest'></span>
+											</div>
+											<div class='test-body'>
+												<div class='test-info'>
+													<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-1 text-white'>2018-05-07 15:16:48</span>
+													<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-1 text-white'>2018-05-07 15:16:48</span>
+													<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 0s+0ms</span>
+												</div>
+												<div class='test-desc'>Get project details.</div>
+												<div class='test-attributes'>
+														<div class='categories'>
+																<span class='category text-white'>api test</span>
+														</div>
+												</div>
+												<div class='test-steps'>
+													<table class='bordered table-results'>
+														<thead>
+															<tr>
+																<th>Status</th>
+																<th>Timestamp</th>
+																<th>Details</th>
+															</tr>
+														</thead>
+														<tbody>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>15:16:48</td>
+																	<td class='step-details'>Authorization Token generated<br>Basic ab9da8aeb02c0fb170e7209b8233773b7ffc4b7a</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>15:16:48</td>
+																	<td class='step-details'>API responded in 161 Milliseconds</td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>15:16:48</td>
+																	<td class='step-details'>Test passed</td>
+																</tr>
+														</tbody>
+													</table>
+													<ul class='collapsible node-list' data-collapsible='accordion'>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class='collection-item test displayed active pass ' extentid='3d159f52-b62a-4d68-8118-c3261deb7177'>
+											<div class='test-head'>
+												<span class='test-name'>GetClarification Api <span class="label outline info">190 Milliseconds</span> </span>
+												<span class='test-status label right outline capitalize pass'>pass</span>
+												<span class='category-assigned hide  apitest'></span>
+											</div>
+											<div class='test-body'>
+												<div class='test-info'>
+													<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-1 text-white'>2018-05-07 15:16:49</span>
+													<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-1 text-white'>2018-05-07 15:16:49</span>
+													<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 0s+0ms</span>
+												</div>
+												<div class='test-desc'>Get project details.</div>
+												<div class='test-attributes'>
+														<div class='categories'>
+																<span class='category text-white'>api test</span>
+														</div>
+												</div>
+												<div class='test-steps'>
+													<table class='bordered table-results'>
+														<thead>
+															<tr>
+																<th>Status</th>
+																<th>Timestamp</th>
+																<th>Details</th>
+															</tr>
+														</thead>
+														<tbody>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>15:16:49</td>
+																	<td class='step-details'>Authorization Token generated<br>Basic ab9da8aeb02c0fb170e7209b8233773b7ffc4b7a</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>15:16:49</td>
+																	<td class='step-details'>API responded in 190 Milliseconds</td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>15:16:49</td>
+																	<td class='step-details'>Test passed</td>
+																</tr>
+														</tbody>
+													</table>
+													<ul class='collapsible node-list' data-collapsible='accordion'>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class='collection-item test displayed active pass ' extentid='c599b581-3949-4b5f-9fc4-816c2dd55e5a'>
+											<div class='test-head'>
+												<span class='test-name'>GetCountryAndStates Api <span class="label outline info">285 Milliseconds</span> </span>
+												<span class='test-status label right outline capitalize pass'>pass</span>
+												<span class='category-assigned hide  apitest'></span>
+											</div>
+											<div class='test-body'>
+												<div class='test-info'>
+													<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-1 text-white'>2018-05-07 15:16:49</span>
+													<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-1 text-white'>2018-05-07 15:16:49</span>
+													<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 0s+0ms</span>
+												</div>
+												<div class='test-desc'>Get all supported country/state codes.</div>
+												<div class='test-attributes'>
+														<div class='categories'>
+																<span class='category text-white'>api test</span>
+														</div>
+												</div>
+												<div class='test-steps'>
+													<table class='bordered table-results'>
+														<thead>
+															<tr>
+																<th>Status</th>
+																<th>Timestamp</th>
+																<th>Details</th>
+															</tr>
+														</thead>
+														<tbody>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>15:16:49</td>
+																	<td class='step-details'>Authorization Token generated<br>Basic ab9da8aeb02c0fb170e7209b8233773b7ffc4b7a</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>15:16:49</td>
+																	<td class='step-details'>API responded in 285 Milliseconds</td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>15:16:49</td>
+																	<td class='step-details'>Test passed</td>
+																</tr>
+														</tbody>
+													</table>
+													<ul class='collapsible node-list' data-collapsible='accordion'>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class='collection-item test displayed active pass ' extentid='c44a58af-e6e0-40dd-8b9f-02937241ae41'>
+											<div class='test-head'>
+												<span class='test-name'>GetTaxForAmount Api <span class="label outline info">207 Milliseconds</span> </span>
+												<span class='test-status label right outline capitalize pass'>pass</span>
+												<span class='category-assigned hide  apitest'></span>
+											</div>
+											<div class='test-body'>
+												<div class='test-info'>
+													<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-1 text-white'>2018-05-07 15:16:50</span>
+													<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-1 text-white'>2018-05-07 15:16:50</span>
+													<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 0s+0ms</span>
+												</div>
+												<div class='test-desc'>Get final payable amount after calculating all taxes.</div>
+												<div class='test-attributes'>
+														<div class='categories'>
+																<span class='category text-white'>api test</span>
+														</div>
+												</div>
+												<div class='test-steps'>
+													<table class='bordered table-results'>
+														<thead>
+															<tr>
+																<th>Status</th>
+																<th>Timestamp</th>
+																<th>Details</th>
+															</tr>
+														</thead>
+														<tbody>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>15:16:50</td>
+																	<td class='step-details'>Authorization Token generated<br>Basic ab9da8aeb02c0fb170e7209b8233773b7ffc4b7a</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>15:16:50</td>
+																	<td class='step-details'>API responded in 207 Milliseconds</td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>15:16:50</td>
+																	<td class='step-details'>Test passed</td>
+																</tr>
+														</tbody>
+													</table>
+													<ul class='collapsible node-list' data-collapsible='accordion'>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class='collection-item test displayed active pass ' extentid='9fe963d9-a7da-4e89-ac93-4475e8c1bc6c'>
+											<div class='test-head'>
+												<span class='test-name'>GetPriceReleatedInfoTest Api <span class="label outline info">181 Milliseconds</span> </span>
+												<span class='test-status label right outline capitalize pass'>pass</span>
+												<span class='category-assigned hide  apitest'></span>
+											</div>
+											<div class='test-body'>
+												<div class='test-info'>
+													<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-1 text-white'>2018-05-07 15:16:50</span>
+													<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-1 text-white'>2018-05-07 15:16:50</span>
+													<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 0s+0ms</span>
+												</div>
+												<div class='test-desc'>Get currency taxes details.</div>
+												<div class='test-attributes'>
+														<div class='categories'>
+																<span class='category text-white'>api test</span>
+														</div>
+												</div>
+												<div class='test-steps'>
+													<table class='bordered table-results'>
+														<thead>
+															<tr>
+																<th>Status</th>
+																<th>Timestamp</th>
+																<th>Details</th>
+															</tr>
+														</thead>
+														<tbody>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>15:16:50</td>
+																	<td class='step-details'>Authorization Token generated<br>Basic ab9da8aeb02c0fb170e7209b8233773b7ffc4b7a</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>15:16:50</td>
+																	<td class='step-details'>API responded in 181 Milliseconds</td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>15:16:50</td>
+																	<td class='step-details'>Test passed</td>
+																</tr>
+														</tbody>
+													</table>
+													<ul class='collapsible node-list' data-collapsible='accordion'>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class='collection-item test displayed active pass ' extentid='985cd191-848e-45a5-bb42-af97d785b89f'>
+											<div class='test-head'>
+												<span class='test-name'>Get Api Test Access Data <span class="label outline info">167 Milliseconds</span> </span>
+												<span class='test-status label right outline capitalize pass'>pass</span>
+												<span class='category-assigned hide  apitest'></span>
+											</div>
+											<div class='test-body'>
+												<div class='test-info'>
+													<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-1 text-white'>2018-05-07 15:16:51</span>
+													<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-1 text-white'>2018-05-07 15:16:51</span>
+													<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 0s+0ms</span>
+												</div>
+												<div class='test-desc'>Read the single or full data..</div>
+												<div class='test-attributes'>
+														<div class='categories'>
+																<span class='category text-white'>api test</span>
+														</div>
+												</div>
+												<div class='test-steps'>
+													<table class='bordered table-results'>
+														<thead>
+															<tr>
+																<th>Status</th>
+																<th>Timestamp</th>
+																<th>Details</th>
+															</tr>
+														</thead>
+														<tbody>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>15:16:51</td>
+																	<td class='step-details'>Authorization Token generated<br>Basic ab9da8aeb02c0fb170e7209b8233773b7ffc4b7a</td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>15:16:51</td>
+																	<td class='step-details'>verifies response from API<br>{"key":"Test12","value":null}</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>15:16:51</td>
+																	<td class='step-details'>API responded in 167 Milliseconds</td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>15:16:51</td>
+																	<td class='step-details'>Test passed</td>
+																</tr>
+														</tbody>
+													</table>
+													<ul class='collapsible node-list' data-collapsible='accordion'>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class='collection-item test displayed active pass ' extentid='2cd84912-9ca1-48f1-b28e-36e3cd3bf0f8'>
+											<div class='test-head'>
+												<span class='test-name'>Get Member Info Api <span class="label outline info">192 Milliseconds</span> </span>
+												<span class='test-status label right outline capitalize pass'>pass</span>
+												<span class='category-assigned hide  apitest'></span>
+											</div>
+											<div class='test-body'>
+												<div class='test-info'>
+													<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-1 text-white'>2018-05-07 15:16:51</span>
+													<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-1 text-white'>2018-05-07 15:16:51</span>
+													<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 0s+0ms</span>
+												</div>
+												<div class='test-desc'>Get default version.</div>
+												<div class='test-attributes'>
+														<div class='categories'>
+																<span class='category text-white'>api test</span>
+														</div>
+												</div>
+												<div class='test-steps'>
+													<table class='bordered table-results'>
+														<thead>
+															<tr>
+																<th>Status</th>
+																<th>Timestamp</th>
+																<th>Details</th>
+															</tr>
+														</thead>
+														<tbody>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>15:16:51</td>
+																	<td class='step-details'>Authorization Token generated<br>Basic ab9da8aeb02c0fb170e7209b8233773b7ffc4b7a</td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>15:16:51</td>
+																	<td class='step-details'>verifies response from API<br>{"status":"success","versions":{"USD":20170124205036,"INR":20170124205047}}</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>15:16:51</td>
+																	<td class='step-details'>API responded in 192 Milliseconds</td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>15:16:51</td>
+																	<td class='step-details'>Test passed</td>
+																</tr>
+														</tbody>
+													</table>
+													<ul class='collapsible node-list' data-collapsible='accordion'>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class='collection-item test displayed active pass ' extentid='563f645f-c306-4f51-a931-16133e46cc38'>
+											<div class='test-head'>
+												<span class='test-name'>Get Member Info Api <span class="label outline info">190 Milliseconds</span> </span>
+												<span class='test-status label right outline capitalize pass'>pass</span>
+												<span class='category-assigned hide  apitest'></span>
+											</div>
+											<div class='test-body'>
+												<div class='test-info'>
+													<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-1 text-white'>2018-05-07 15:16:52</span>
+													<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-1 text-white'>2018-05-07 15:16:52</span>
+													<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 0s+0ms</span>
+												</div>
+												<div class='test-desc'>Get the pricing details using either version number or currency code.</div>
+												<div class='test-attributes'>
+														<div class='categories'>
+																<span class='category text-white'>api test</span>
+														</div>
+												</div>
+												<div class='test-steps'>
+													<table class='bordered table-results'>
+														<thead>
+															<tr>
+																<th>Status</th>
+																<th>Timestamp</th>
+																<th>Details</th>
+															</tr>
+														</thead>
+														<tbody>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>15:16:52</td>
+																	<td class='step-details'>Authorization Token generated<br>Basic ab9da8aeb02c0fb170e7209b8233773b7ffc4b7a</td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>15:16:52</td>
+																	<td class='step-details'>verifies response from API<br>{"status":"success","version":20170124205036,"currency":"USD","prices":{"O+M":[{"sizeMin":0,"sizeMax":249999,"memberRate":0.038,"memberMin":1900,"nonMemberRate":0.0456,"nonMemberMin":2250},{"sizeMin":250000,"sizeMax":499999,"memberRate":0.035,"memberMin":9500,"nonMemberRate":0.042,"nonMemberMin":11400},{"sizeMin":500000,"sizeMax":749999,"memberRate":0.03,"memberMin":17500,"nonMemberRate":0.036,"nonMemberMin":21000},{"sizeMin":750000,"sizeMax":999999,"memberRate":0.025,"memberMin":22500,"nonMemberRate":0.03,"nonMemberMin":27000},{"sizeMin":1000000,"sizeMax":1249999,"memberRate":0.02,"memberMin":25000,"nonMemberRate":0.024,"nonMemberMin":30000},{"sizeMin":1250000,"sizeMax":1499999,"memberRate":0.02,"memberMin":25000,"nonMemberRate":0.024,"nonMemberMin":30000},{"sizeMin":1500000,"sizeMax":1999999,"memberRate":0.015,"memberMin":30000,"nonMemberRate":0.018,"nonMemberMin":36000},{"sizeMin":2000000,"sizeMax":2499999,"memberRate":0.0146,"memberMin":30000,"nonMemberRate":0.01752,"nonMemberMin":36000},{"sizeMin":2500000,"sizeMax":2999999,"memberRate":0.0142,"memberMin":36500,"nonMemberRate":0.01704,"nonMemberMin":43800},{"sizeMin":3000000,"sizeMax":3499999,"memberRate":0.0138,"memberMin":42600,"nonMemberRate":0.01656,"nonMemberMin":51120},{"sizeMin":3500000,"sizeMax":3999999,"memberRate":0.0134,"memberMin":48300,"nonMemberRate":0.01608,"nonMemberMin":57960},{"sizeMin":4000000,"sizeMax":4499999,"memberRate":0.013,"memberMin":53600,"nonMemberRate":0.0156,"nonMemberMin":64320},{"sizeMin":4500000,"sizeMax":4999999,"memberRate":0.0126,"memberMin":58500,"nonMemberRate":0.01512,"nonMemberMin":70200},{"sizeMin":5000000,"sizeMax":5499999,"memberRate":0.0122,"memberMin":63000,"nonMemberRate":0.01464,"nonMemberMin":75600},{"sizeMin":5500000,"sizeMax":5999999,"memberRate":0.0118,"memberMin":67100,"nonMemberRate":0.01416,"nonMemberMin":80520},{"sizeMin":6000000,"sizeMax":6499999,"memberRate":0.0114,"memberMin":70800,"nonMemberRate":0.01368,"nonMemberMin":84960},{"sizeMin":6500000,"sizeMax":6999999,"memberRate":0.011,"memberMin":74100,"nonMemberRate":0.0132,"nonMemberMin":88920},{"sizeMin":7000000,"sizeMax":7499999,"memberRate":0.0106,"memberMin":77000,"nonMemberRate":0.01272,"nonMemberMin":92400},{"sizeMin":7500000,"sizeMax":7999999,"memberRate":0.0102,"memberMin":79500,"nonMemberRate":0.01224,"nonMemberMin":95400},{"sizeMin":8000000,"sizeMax":8499999,"memberRate":0.0098,"memberMin":81600,"nonMemberRate":0.01176,"nonMemberMin":97920},{"sizeMin":8500000,"sizeMax":8999999,"memberRate":0.0094,"memberMin":83300,"nonMemberRate":0.01128,"nonMemberMin":99960},{"sizeMin":9000000,"sizeMax":9499999,"memberRate":0.009,"memberMin":84600,"nonMemberRate":0.0108,"nonMemberMin":101520},{"sizeMin":9500000,"sizeMax":9999999,"memberRate":0.0086,"memberMin":85500,"nonMemberRate":0.01032,"nonMemberMin":102600},{"sizeMin":10000000,"sizeMax":10499999,"memberRate":0.0082,"memberMin":86000,"nonMemberRate":0.00984,"nonMemberMin":103200},{"sizeMin":10500000,"sizeMax":10999999,"memberRate":0.008,"memberMin":86100,"nonMemberRate":0.0096,"nonMemberMin":103320},{"sizeMin":11000000,"sizeMax":11499999,"memberRate":0.008,"memberMin":88000,"nonMemberRate":0.0096,"nonMemberMin":105600},{"sizeMin":11500000,"sizeMax":11999999,"memberRate":0.008,"memberMin":92000,"nonMemberRate":0.0096,"nonMemberMin":110400},{"sizeMin":12000000,"sizeMax":12499999,"memberRate":0.008,"memberMin":96000,"nonMemberRate":0.0096,"nonMemberMin":115200},{"sizeMin":12500000,"sizeMax":12999999,"memberRate":0.008,"memberMin":100000,"nonMemberRate":0.0096,"nonMemberMin":120000},{"sizeMin":13000000,"sizeMax":13499999,"memberRate":0.008,"memberMin":104000,"nonMemberRate":0.0096,"nonMemberMin":124800},{"sizeMin":13500000,"sizeMax":13999999,"memberRate":0.008,"memberMin":108000,"nonMemberRate":0.0096,"nonMemberMin":129600},{"sizeMin":14000000,"sizeMax":14499999,"memberRate":0.008,"memberMin":112000,"nonMemberRate":0.0096,"nonMemberMin":134400},{"sizeMin":14500000,"sizeMax":14999999,"memberRate":0.008,"memberMin":116000,"nonMemberRate":0.0096,"nonMemberMin":139200},{"sizeMin":15000000,"sizeMax":15499999,"memberRate":0.008,"memberMin":120000,"nonMemberRate":0.0096,"nonMemberMin":144000},{"sizeMin":15500000,"sizeMax":15999999,"memberRate":0.008,"memberMin":124000,"nonMemberRate":0.0096,"nonMemberMin":148800},{"sizeMin":16000000,"sizeMax":16499999,"memberRate":0.008,"memberMin":128000,"nonMemberRate":0.0096,"nonMemberMin":153600},{"sizeMin":16500000,"sizeMax":16999999,"memberRate":0.008,"memberMin":132000,"nonMemberRate":0.0096,"nonMemberMin":158400},{"sizeMin":17000000,"sizeMax":17499999,"memberRate":0.008,"memberMin":136000,"nonMemberRate":0.0096,"nonMemberMin":163200},{"sizeMin":17500000,"sizeMax":17999999,"memberRate":0.008,"memberMin":140000,"nonMemberRate":0.0096,"nonMemberMin":168000},{"sizeMin":18000000,"sizeMax":18499999,"memberRate":0.008,"memberMin":144000,"nonMemberRate":0.0096,"nonMemberMin":172800},{"sizeMin":18500000,"sizeMax":18999999,"memberRate":0.008,"memberMin":148000,"nonMemberRate":0.0096,"nonMemberMin":177600},{"sizeMin":19000000,"sizeMax":19499999,"memberRate":0.008,"memberMin":152000,"nonMemberRate":0.0096,"nonMemberMin":182400},{"sizeMin":19500000,"sizeMax":19999999,"memberRate":0.008,"memberMin":156000,"nonMemberRate":0.0096,"nonMemberMin":187200},{"sizeMin":20000000,"sizeMax":20499999,"memberRate":0.008,"memberMin":160000,"nonMemberRate":0.0096,"nonMemberMin":192000}],"ID+C":[{"sizeMin":0,"sizeMax":249999,"memberRate":0.038,"memberMin":1900,"memberDesignRate":0.03225,"memberDesignMin":1613,"memberConstRate":0.01075,"memberConstMin":538,"nonMemberRate":0.0456,"nonMemberMin":2250,"nonMemberDesignRate":0.03795,"nonMemberDesignMin":1898,"nonMemberConstRate":0.01265,"nonMemberConstMin":633},{"sizeMin":250000,"sizeMax":499999,"memberRate":0.035,"memberMin":9500,"memberDesignRate":0.03,"memberDesignMin":8062,"memberConstRate":0.01,"memberConstMin":2687,"nonMemberRate":0.042,"nonMemberMin":11400,"nonMemberDesignRate":0.03525,"nonMemberDesignMin":9487,"nonMemberConstRate":0.01175,"nonMemberConstMin":3162},{"sizeMin":500000,"sizeMax":749999,"memberRate":0.03,"memberMin":17500,"memberDesignRate":0.02625,"memberDesignMin":15000,"memberConstRate":0.00875,"memberConstMin":5000,"nonMemberRate":0.036,"nonMemberMin":21000,"nonMemberDesignRate":0.03075,"nonMemberDesignMin":17625,"nonMemberConstRate":0.01025,"nonMemberConstMin":5875},{"sizeMin":750000,"sizeMax":999999,"memberRate":0.025,"memberMin":22500,"memberDesignRate":0.0225,"memberDesignMin":19687,"memberConstRate":0.0075,"memberConstMin":6562,"nonMemberRate":0.03,"nonMemberMin":27000,"nonMemberDesignRate":0.02625,"nonMemberDesignMin":23062,"nonMemberConstRate":0.00875,"nonMemberConstMin":7687},{"sizeMin":1000000,"sizeMax":1249999,"memberRate":0.02,"memberMin":25000,"memberDesignRate":0.01875,"memberDesignMin":22500,"memberConstRate":0.00625,"memberConstMin":7500,"nonMemberRate":0.024,"nonMemberMin":30000,"nonMemberDesignRate":0.02175,"nonMemberDesignMin":26250,"nonMemberConstRate":0.00725,"nonMemberConstMin":8750},{"sizeMin":1250000,"sizeMax":1499999,"memberRate":0.02,"memberMin":25000,"memberDesignRate":0.01875,"memberDesignMin":23437,"memberConstRate":0.00625,"memberConstMin":7812,"nonMemberRate":0.024,"nonMemberMin":30000,"nonMemberDesignRate":0.02175,"nonMemberDesignMin":27187,"nonMemberConstRate":0.00725,"nonMemberConstMin":9062},{"sizeMin":1500000,"sizeMax":1999999,"memberRate":0.015,"memberMin":30000,"memberDesignRate":0.015,"memberDesignMin":28125,"memberConstRate":0.005,"memberConstMin":9375,"nonMemberRate":0.018,"nonMemberMin":36000,"nonMemberDesignRate":0.01725,"nonMemberDesignMin":32625,"nonMemberConstRate":0.00575,"nonMemberConstMin":10875},{"sizeMin":2000000,"sizeMax":2499999,"memberRate":0.0146,"memberMin":30000,"memberDesignRate":0.0147,"memberDesignMin":30000,"memberConstRate":0.0049,"memberConstMin":10000,"nonMemberRate":0.01752,"nonMemberMin":36000,"nonMemberDesignRate":0.01689,"nonMemberDesignMin":34500,"nonMemberConstRate":0.00563,"nonMemberConstMin":11500},{"sizeMin":2500000,"sizeMax":2999999,"memberRate":0.0142,"memberMin":36500,"memberDesignRate":0.0144,"memberDesignMin":36750,"memberConstRate":0.0048,"memberConstMin":12250,"nonMemberRate":0.01704,"nonMemberMin":43800,"nonMemberDesignRate":0.01653,"nonMemberDesignMin":42225,"nonMemberConstRate":0.00551,"nonMemberConstMin":14075},{"sizeMin":3000000,"sizeMax":3499999,"memberRate":0.0138,"memberMin":42600,"memberDesignRate":0.0141,"memberDesignMin":43200,"memberConstRate":0.0047,"memberConstMin":14400,"nonMemberRate":0.01656,"nonMemberMin":51120,"nonMemberDesignRate":0.01617,"nonMemberDesignMin":49590,"nonMemberConstRate":0.00539,"nonMemberConstMin":16530},{"sizeMin":3500000,"sizeMax":3999999,"memberRate":0.0134,"memberMin":48300,"memberDesignRate":0.0138,"memberDesignMin":49350,"memberConstRate":0.0046,"memberConstMin":16450,"nonMemberRate":0.01608,"nonMemberMin":57960,"nonMemberDesignRate":0.01581,"nonMemberDesignMin":56595,"nonMemberConstRate":0.00527,"nonMemberConstMin":18865},{"sizeMin":4000000,"sizeMax":4499999,"memberRate":0.013,"memberMin":53600,"memberDesignRate":0.0135,"memberDesignMin":55200,"memberConstRate":0.0045,"memberConstMin":18400,"nonMemberRate":0.0156,"nonMemberMin":64320,"nonMemberDesignRate":0.01545,"nonMemberDesignMin":63240,"nonMemberConstRate":0.00515,"nonMemberConstMin":21080},{"sizeMin":4500000,"sizeMax":4999999,"memberRate":0.0126,"memberMin":58500,"memberDesignRate":0.0132,"memberDesignMin":60750,"memberConstRate":0.0044,"memberConstMin":20250,"nonMemberRate":0.01512,"nonMemberMin":70200,"nonMemberDesignRate":0.01509,"nonMemberDesignMin":69525,"nonMemberConstRate":0.00503,"nonMemberConstMin":23175},{"sizeMin":5000000,"sizeMax":5499999,"memberRate":0.0122,"memberMin":63000,"memberDesignRate":0.0129,"memberDesignMin":66000,"memberConstRate":0.0043,"memberConstMin":22000,"nonMemberRate":0.01464,"nonMemberMin":75600,"nonMemberDesignRate":0.01473,"nonMemberDesignMin":75450,"nonMemberConstRate":0.00491,"nonMemberConstMin":25150},{"sizeMin":5500000,"sizeMax":5999999,"memberRate":0.0118,"memberMin":67100,"memberDesignRate":0.0126,"memberDesignMin":70950,"memberConstRate":0.0042,"memberConstMin":23650,"nonMemberRate":0.01416,"nonMemberMin":80520,"nonMemberDesignRate":0.01437,"nonMemberDesignMin":81015,"nonMemberConstRate":0.00479,"nonMemberConstMin":27005},{"sizeMin":6000000,"sizeMax":6499999,"memberRate":0.0114,"memberMin":70800,"memberDesignRate":0.0123,"memberDesignMin":75600,"memberConstRate":0.0041,"memberConstMin":25200,"nonMemberRate":0.01368,"nonMemberMin":84960,"nonMemberDesignRate":0.01401,"nonMemberDesignMin":86220,"nonMemberConstRate":0.00467,"nonMemberConstMin":28740},{"sizeMin":6500000,"sizeMax":6999999,"memberRate":0.011,"memberMin":74100,"memberDesignRate":0.012,"memberDesignMin":79950,"memberConstRate":0.004,"memberConstMin":26650,"nonMemberRate":0.0132,"nonMemberMin":88920,"nonMemberDesignRate":0.01365,"nonMemberDesignMin":91065,"nonMemberConstRate":0.00455,"nonMemberConstMin":30355},{"sizeMin":7000000,"sizeMax":7499999,"memberRate":0.0106,"memberMin":77000,"memberDesignRate":0.0117,"memberDesignMin":84000,"memberConstRate":0.0039,"memberConstMin":28000,"nonMemberRate":0.01272,"nonMemberMin":92400,"nonMemberDesignRate":0.01329,"nonMemberDesignMin":95550,"nonMemberConstRate":0.00443,"nonMemberConstMin":31850},{"sizeMin":7500000,"sizeMax":7999999,"memberRate":0.0102,"memberMin":79500,"memberDesignRate":0.0114,"memberDesignMin":87750,"memberConstRate":0.0038,"memberConstMin":29250,"nonMemberRate":0.01224,"nonMemberMin":95400,"nonMemberDesignRate":0.01293,"nonMemberDesignMin":99675,"nonMemberConstRate":0.00431,"nonMemberConstMin":33225},{"sizeMin":8000000,"sizeMax":8499999,"memberRate":0.0098,"memberMin":81600,"memberDesignRate":0.0111,"memberDesignMin":91200,"memberConstRate":0.0037,"memberConstMin":30400,"nonMemberRate":0.01176,"nonMemberMin":97920,"nonMemberDesignRate":0.01257,"nonMemberDesignMin":103440,"nonMemberConstRate":0.00419,"nonMemberConstMin":34480},{"sizeMin":8500000,"sizeMax":8999999,"memberRate":0.0094,"memberMin":83300,"memberDesignRate":0.0108,"memberDesignMin":94350,"memberConstRate":0.0036,"memberConstMin":31450,"nonMemberRate":0.01128,"nonMemberMin":99960,"nonMemberDesignRate":0.01221,"nonMemberDesignMin":106845,"nonMemberConstRate":0.00407,"nonMemberConstMin":35615},{"sizeMin":9000000,"sizeMax":9499999,"memberRate":0.009,"memberMin":84600,"memberDesignRate":0.0105,"memberDesignMin":97200,"memberConstRate":0.0035,"memberConstMin":32400,"nonMemberRate":0.0108,"nonMemberMin":101520,"nonMemberDesignRate":0.01185,"nonMemberDesignMin":109890,"nonMemberConstRate":0.00395,"nonMemberConstMin":36630},{"sizeMin":9500000,"sizeMax":9999999,"memberRate":0.0086,"memberMin":85500,"memberDesignRate":0.0102,"memberDesignMin":99750,"memberConstRate":0.0034,"memberConstMin":33250,"nonMemberRate":0.01032,"nonMemberMin":102600,"nonMemberDesignRate":0.01149,"nonMemberDesignMin":112575,"nonMemberConstRate":0.00383,"nonMemberConstMin":37525},{"sizeMin":10000000,"sizeMax":10499999,"memberRate":0.0082,"memberMin":86000,"memberDesignRate":0.0099,"memberDesignMin":102000,"memberConstRate":0.0033,"memberConstMin":34000,"nonMemberRate":0.00984,"nonMemberMin":103200,"nonMemberDesignRate":0.01113,"nonMemberDesignMin":114900,"nonMemberConstRate":0.00371,"nonMemberConstMin":38300},{"sizeMin":10500000,"sizeMax":10999999,"memberRate":0.008,"memberMin":86100,"memberDesignRate":0.00975,"memberDesignMin":103950,"memberConstRate":0.00325,"memberConstMin":34650,"nonMemberRate":0.0096,"nonMemberMin":103320,"nonMemberDesignRate":0.01095,"nonMemberDesignMin":116865,"nonMemberConstRate":0.00365,"nonMemberConstMin":38955},{"sizeMin":11000000,"sizeMax":11499999,"memberRate":0.008,"memberMin":88000,"memberDesignRate":0.00975,"memberDesignMin":107250,"memberConstRate":0.00325,"memberConstMin":35750,"nonMemberRate":0.0096,"nonMemberMin":105600,"nonMemberDesignRate":0.01095,"nonMemberDesignMin":120450,"nonMemberConstRate":0.00365,"nonMemberConstMin":40150},{"sizeMin":11500000,"sizeMax":11999999,"memberRate":0.008,"memberMin":92000,"memberDesignRate":0.00975,"memberDesignMin":112125,"memberConstRate":0.00325,"memberConstMin":37375,"nonMemberRate":0.0096,"nonMemberMin":110400,"nonMemberDesignRate":0.01095,"nonMemberDesignMin":125925,"nonMemberConstRate":0.00365,"nonMemberConstMin":41975},{"sizeMin":12000000,"sizeMax":12499999,"memberRate":0.008,"memberMin":96000,"memberDesignRate":0.00975,"memberDesignMin":117000,"memberConstRate":0.00325,"memberConstMin":39000,"nonMemberRate":0.0096,"nonMemberMin":115200,"nonMemberDesignRate":0.01095,"nonMemberDesignMin":131400,"nonMemberConstRate":0.00365,"nonMemberConstMin":43800},{"sizeMin":12500000,"sizeMax":12999999,"memberRate":0.008,"memberMin":100000,"memberDesignRate":0.00975,"memberDesignMin":121875,"memberConstRate":0.00325,"memberConstMin":40625,"nonMemberRate":0.0096,"nonMemberMin":120000,"nonMemberDesignRate":0.01095,"nonMemberDesignMin":136875,"nonMemberConstRate":0.00365,"nonMemberConstMin":45625},{"sizeMin":13000000,"sizeMax":13499999,"memberRate":0.008,"memberMin":104000,"memberDesignRate":0.00975,"memberDesignMin":126750,"memberConstRate":0.00325,"memberConstMin":42250,"nonMemberRate":0.0096,"nonMemberMin":124800,"nonMemberDesignRate":0.01095,"nonMemberDesignMin":142350,"nonMemberConstRate":0.00365,"nonMemberConstMin":47450},{"sizeMin":13500000,"sizeMax":13999999,"memberRate":0.008,"memberMin":108000,"memberDesignRate":0.00975,"memberDesignMin":131625,"memberConstRate":0.00325,"memberConstMin":43875,"nonMemberRate":0.0096,"nonMemberMin":129600,"nonMemberDesignRate":0.01095,"nonMemberDesignMin":147825,"nonMemberConstRate":0.00365,"nonMemberConstMin":49275},{"sizeMin":14000000,"sizeMax":14499999,"memberRate":0.008,"memberMin":112000,"memberDesignRate":0.00975,"memberDesignMin":136500,"memberConstRate":0.00325,"memberConstMin":45500,"nonMemberRate":0.0096,"nonMemberMin":134400,"nonMemberDesignRate":0.01095,"nonMemberDesignMin":153300,"nonMemberConstRate":0.00365,"nonMemberConstMin":51100},{"sizeMin":14500000,"sizeMax":14999999,"memberRate":0.008,"memberMin":116000,"memberDesignRate":0.00975,"memberDesignMin":141375,"memberConstRate":0.00325,"memberConstMin":47125,"nonMemberRate":0.0096,"nonMemberMin":139200,"nonMemberDesignRate":0.01095,"nonMemberDesignMin":158775,"nonMemberConstRate":0.00365,"nonMemberConstMin":52925},{"sizeMin":15000000,"sizeMax":15499999,"memberRate":0.008,"memberMin":120000,"memberDesignRate":0.00975,"memberDesignMin":146250,"memberConstRate":0.00325,"memberConstMin":48750,"nonMemberRate":0.0096,"nonMemberMin":144000,"nonMemberDesignRate":0.01095,"nonMemberDesignMin":164250,"nonMemberConstRate":0.00365,"nonMemberConstMin":54750},{"sizeMin":15500000,"sizeMax":15999999,"memberRate":0.008,"memberMin":124000,"memberDesignRate":0.00975,"memberDesignMin":151125,"memberConstRate":0.00325,"memberConstMin":50375,"nonMemberRate":0.0096,"nonMemberMin":148800,"nonMemberDesignRate":0.01095,"nonMemberDesignMin":169725,"nonMemberConstRate":0.00365,"nonMemberConstMin":56575},{"sizeMin":16000000,"sizeMax":16499999,"memberRate":0.008,"memberMin":128000,"memberDesignRate":0.00975,"memberDesignMin":156000,"memberConstRate":0.00325,"memberConstMin":52000,"nonMemberRate":0.0096,"nonMemberMin":153600,"nonMemberDesignRate":0.01095,"nonMemberDesignMin":175200,"nonMemberConstRate":0.00365,"nonMemberConstMin":58400},{"sizeMin":16500000,"sizeMax":16999999,"memberRate":0.008,"memberMin":132000,"memberDesignRate":0.00975,"memberDesignMin":160875,"memberConstRate":0.00325,"memberConstMin":53625,"nonMemberRate":0.0096,"nonMemberMin":158400,"nonMemberDesignRate":0.01095,"nonMemberDesignMin":180675,"nonMemberConstRate":0.00365,"nonMemberConstMin":60225},{"sizeMin":17000000,"sizeMax":17499999,"memberRate":0.008,"memberMin":136000,"memberDesignRate":0.00975,"memberDesignMin":165750,"memberConstRate":0.00325,"memberConstMin":55250,"nonMemberRate":0.0096,"nonMemberMin":163200,"nonMemberDesignRate":0.01095,"nonMemberDesignMin":186150,"nonMemberConstRate":0.00365,"nonMemberConstMin":62050},{"sizeMin":17500000,"sizeMax":17999999,"memberRate":0.008,"memberMin":140000,"memberDesignRate":0.00975,"memberDesignMin":170625,"memberConstRate":0.00325,"memberConstMin":56875,"nonMemberRate":0.0096,"nonMemberMin":168000,"nonMemberDesignRate":0.01095,"nonMemberDesignMin":191625,"nonMemberConstRate":0.00365,"nonMemberConstMin":63875},{"sizeMin":18000000,"sizeMax":18499999,"memberRate":0.008,"memberMin":144000,"memberDesignRate":0.00975,"memberDesignMin":175500,"memberConstRate":0.00325,"memberConstMin":58500,"nonMemberRate":0.0096,"nonMemberMin":172800,"nonMemberDesignRate":0.01095,"nonMemberDesignMin":197100,"nonMemberConstRate":0.00365,"nonMemberConstMin":65700},{"sizeMin":18500000,"sizeMax":18999999,"memberRate":0.008,"memberMin":148000,"memberDesignRate":0.00975,"memberDesignMin":180375,"memberConstRate":0.00325,"memberConstMin":60125,"nonMemberRate":0.0096,"nonMemberMin":177600,"nonMemberDesignRate":0.01095,"nonMemberDesignMin":202575,"nonMemberConstRate":0.00365,"nonMemberConstMin":67525},{"sizeMin":19000000,"sizeMax":19499999,"memberRate":0.008,"memberMin":152000,"memberDesignRate":0.00975,"memberDesignMin":185250,"memberConstRate":0.00325,"memberConstMin":61750,"nonMemberRate":0.0096,"nonMemberMin":182400,"nonMemberDesignRate":0.01095,"nonMemberDesignMin":208050,"nonMemberConstRate":0.00365,"nonMemberConstMin":69350},{"sizeMin":19500000,"sizeMax":19999999,"memberRate":0.008,"memberMin":156000,"memberDesignRate":0.00975,"memberDesignMin":190125,"memberConstRate":0.00325,"memberConstMin":63375,"nonMemberRate":0.0096,"nonMemberMin":187200,"nonMemberDesignRate":0.01095,"nonMemberDesignMin":213525,"nonMemberConstRate":0.00365,"nonMemberConstMin":71175},{"sizeMin":20000000,"sizeMax":20499999,"memberRate":0.008,"memberMin":160000,"memberDesignRate":0.00975,"memberDesignMin":195000,"memberConstRate":0.00325,"memberConstMin":65000,"nonMemberRate":0.0096,"nonMemberMin":192000,"nonMemberDesignRate":0.01095,"nonMemberDesignMin":219000,"nonMemberConstRate":0.00365,"nonMemberConstMin":73000}],"BD+C":[{"sizeMin":0,"sizeMax":249999,"memberRate":0.057,"memberMin":2850,"memberDesignRate":0.0465,"memberDesignMin":2325,"memberConstRate":0.0155,"memberConstMin":775,"nonMemberRate":0.0684,"nonMemberMin":3420,"nonMemberDesignRate":0.05505,"nonMemberDesignMin":2740,"nonMemberConstRate":0.01835,"nonMemberConstMin":910},{"sizeMin":250000,"sizeMax":499999,"memberRate":0.055,"memberMin":14250,"memberDesignRate":0.045,"memberDesignMin":11625,"memberConstRate":0.015,"memberConstMin":3875,"nonMemberRate":0.066,"nonMemberMin":17100,"nonMemberDesignRate":0.05325,"nonMemberDesignMin":13762,"nonMemberConstRate":0.01775,"nonMemberConstMin":4587},{"sizeMin":500000,"sizeMax":749999,"memberRate":0.05,"memberMin":27500,"memberDesignRate":0.04125,"memberDesignMin":22500,"memberConstRate":0.01375,"memberConstMin":7500,"nonMemberRate":0.06,"nonMemberMin":33000,"nonMemberDesignRate":0.04875,"nonMemberDesignMin":26625,"nonMemberConstRate":0.01625,"nonMemberConstMin":8875},{"sizeMin":750000,"sizeMax":999999,"memberRate":0.045,"memberMin":37500,"memberDesignRate":0.0375,"memberDesignMin":30937,"memberConstRate":0.0125,"memberConstMin":10312,"nonMemberRate":0.054,"nonMemberMin":45000,"nonMemberDesignRate":0.04425,"nonMemberDesignMin":36562,"nonMemberConstRate":0.01475,"nonMemberConstMin":12187},{"sizeMin":1000000,"sizeMax":1249999,"memberRate":0.04,"memberMin":45000,"memberDesignRate":0.03375,"memberDesignMin":37500,"memberConstRate":0.01125,"memberConstMin":12500,"nonMemberRate":0.048,"nonMemberMin":54000,"nonMemberDesignRate":0.03975,"nonMemberDesignMin":44250,"nonMemberConstRate":0.01325,"nonMemberConstMin":14750},{"sizeMin":1250000,"sizeMax":1499999,"memberRate":0.035,"memberMin":50000,"memberDesignRate":0.03,"memberDesignMin":42187,"memberConstRate":0.01,"memberConstMin":14062,"nonMemberRate":0.042,"nonMemberMin":60000,"nonMemberDesignRate":0.03525,"nonMemberDesignMin":49687,"nonMemberConstRate":0.01175,"nonMemberConstMin":16562},{"sizeMin":1500000,"sizeMax":1999999,"memberRate":0.03,"memberMin":52500,"memberDesignRate":0.02625,"memberDesignMin":45000,"memberConstRate":0.00875,"memberConstMin":15000,"nonMemberRate":0.036,"nonMemberMin":63000,"nonMemberDesignRate":0.03075,"nonMemberDesignMin":52875,"nonMemberConstRate":0.01025,"nonMemberConstMin":17625},{"sizeMin":2000000,"sizeMax":2499999,"memberRate":0.0291,"memberMin":60000,"memberDesignRate":0.02558,"memberDesignMin":52500,"memberConstRate":0.00852,"memberConstMin":17500,"nonMemberRate":0.03492,"nonMemberMin":72000,"nonMemberDesignRate":0.02994,"nonMemberDesignMin":61500,"nonMemberConstRate":0.00998,"nonMemberConstMin":20500},{"sizeMin":2500000,"sizeMax":2999999,"memberRate":0.0282,"memberMin":72750,"memberDesignRate":0.0249,"memberDesignMin":63937,"memberConstRate":0.0083,"memberConstMin":21312,"nonMemberRate":0.03384,"nonMemberMin":87300,"nonMemberDesignRate":0.02913,"nonMemberDesignMin":74850,"nonMemberConstRate":0.00971,"nonMemberConstMin":24950},{"sizeMin":3000000,"sizeMax":3499999,"memberRate":0.0273,"memberMin":84600,"memberDesignRate":0.02422,"memberDesignMin":74700,"memberConstRate":0.00807,"memberConstMin":24900,"nonMemberRate":0.03276,"nonMemberMin":101520,"nonMemberDesignRate":0.02832,"nonMemberDesignMin":87390,"nonMemberConstRate":0.00944,"nonMemberConstMin":29130},{"sizeMin":3500000,"sizeMax":3999999,"memberRate":0.0264,"memberMin":95550,"memberDesignRate":0.02355,"memberDesignMin":84787,"memberConstRate":0.00785,"memberConstMin":28262,"nonMemberRate":0.03168,"nonMemberMin":114660,"nonMemberDesignRate":0.02751,"nonMemberDesignMin":99120,"nonMemberConstRate":0.00917,"nonMemberConstMin":33040},{"sizeMin":4000000,"sizeMax":4499999,"memberRate":0.0255,"memberMin":105600,"memberDesignRate":0.02287,"memberDesignMin":94200,"memberConstRate":0.00762,"memberConstMin":31400,"nonMemberRate":0.0306,"nonMemberMin":126720,"nonMemberDesignRate":0.0267,"nonMemberDesignMin":110040,"nonMemberConstRate":0.0089,"nonMemberConstMin":36680},{"sizeMin":4500000,"sizeMax":4999999,"memberRate":0.0246,"memberMin":114750,"memberDesignRate":0.0222,"memberDesignMin":102937,"memberConstRate":0.0074,"memberConstMin":34312,"nonMemberRate":0.02952,"nonMemberMin":137700,"nonMemberDesignRate":0.02589,"nonMemberDesignMin":120150,"nonMemberConstRate":0.00863,"nonMemberConstMin":40050},{"sizeMin":5000000,"sizeMax":5499999,"memberRate":0.0237,"memberMin":123000,"memberDesignRate":0.02152,"memberDesignMin":111000,"memberConstRate":0.00717,"memberConstMin":37000,"nonMemberRate":0.02844,"nonMemberMin":147600,"nonMemberDesignRate":0.02508,"nonMemberDesignMin":129450,"nonMemberConstRate":0.00836,"nonMemberConstMin":43150},{"sizeMin":5500000,"sizeMax":5999999,"memberRate":0.0228,"memberMin":130350,"memberDesignRate":0.02085,"memberDesignMin":118387,"memberConstRate":0.00695,"memberConstMin":39462,"nonMemberRate":0.02736,"nonMemberMin":156420,"nonMemberDesignRate":0.02427,"nonMemberDesignMin":137940,"nonMemberConstRate":0.00809,"nonMemberConstMin":45980},{"sizeMin":6000000,"sizeMax":6499999,"memberRate":0.0219,"memberMin":136800,"memberDesignRate":0.02017,"memberDesignMin":125100,"memberConstRate":0.00672,"memberConstMin":41700,"nonMemberRate":0.02628,"nonMemberMin":164160,"nonMemberDesignRate":0.02346,"nonMemberDesignMin":145620,"nonMemberConstRate":0.00782,"nonMemberConstMin":48540},{"sizeMin":6500000,"sizeMax":6999999,"memberRate":0.021,"memberMin":142350,"memberDesignRate":0.0195,"memberDesignMin":131137,"memberConstRate":0.0065,"memberConstMin":43712,"nonMemberRate":0.0252,"nonMemberMin":170820,"nonMemberDesignRate":0.02265,"nonMemberDesignMin":152490,"nonMemberConstRate":0.00755,"nonMemberConstMin":50830},{"sizeMin":7000000,"sizeMax":7499999,"memberRate":0.0201,"memberMin":147000,"memberDesignRate":0.01882,"memberDesignMin":136500,"memberConstRate":0.00627,"memberConstMin":45500,"nonMemberRate":0.02412,"nonMemberMin":176400,"nonMemberDesignRate":0.02184,"nonMemberDesignMin":158550,"nonMemberConstRate":0.00728,"nonMemberConstMin":52850},{"sizeMin":7500000,"sizeMax":7999999,"memberRate":0.0192,"memberMin":150750,"memberDesignRate":0.01815,"memberDesignMin":141187,"memberConstRate":0.00605,"memberConstMin":47062,"nonMemberRate":0.02304,"nonMemberMin":180900,"nonMemberDesignRate":0.02103,"nonMemberDesignMin":163800,"nonMemberConstRate":0.00701,"nonMemberConstMin":54600},{"sizeMin":8000000,"sizeMax":8499999,"memberRate":0.0183,"memberMin":153600,"memberDesignRate":0.01747,"memberDesignMin":145200,"memberConstRate":0.00582,"memberConstMin":48400,"nonMemberRate":0.02196,"nonMemberMin":184320,"nonMemberDesignRate":0.02022,"nonMemberDesignMin":168240,"nonMemberConstRate":0.00674,"nonMemberConstMin":56080},{"sizeMin":8500000,"sizeMax":8999999,"memberRate":0.0174,"memberMin":155550,"memberDesignRate":0.0168,"memberDesignMin":148537,"memberConstRate":0.0056,"memberConstMin":49512,"nonMemberRate":0.02088,"nonMemberMin":186660,"nonMemberDesignRate":0.01941,"nonMemberDesignMin":171870,"nonMemberConstRate":0.00647,"nonMemberConstMin":57290},{"sizeMin":9000000,"sizeMax":9499999,"memberRate":0.0165,"memberMin":156600,"memberDesignRate":0.01612,"memberDesignMin":151200,"memberConstRate":0.00537,"memberConstMin":50400,"nonMemberRate":0.0198,"nonMemberMin":187920,"nonMemberDesignRate":0.0186,"nonMemberDesignMin":174690,"nonMemberConstRate":0.0062,"nonMemberConstMin":58230},{"sizeMin":9500000,"sizeMax":9999999,"memberRate":0.016,"memberMin":156750,"memberDesignRate":0.01575,"memberDesignMin":153187,"memberConstRate":0.00525,"memberConstMin":51062,"nonMemberRate":0.0192,"nonMemberMin":188100,"nonMemberDesignRate":0.01815,"nonMemberDesignMin":176700,"nonMemberConstRate":0.00605,"nonMemberConstMin":58900},{"sizeMin":10000000,"sizeMax":10499999,"memberRate":0.016,"memberMin":160000,"memberDesignRate":0.01575,"memberDesignMin":157500,"memberConstRate":0.00525,"memberConstMin":52500,"nonMemberRate":0.0192,"nonMemberMin":192000,"nonMemberDesignRate":0.01815,"nonMemberDesignMin":181500,"nonMemberConstRate":0.00605,"nonMemberConstMin":60500},{"sizeMin":10500000,"sizeMax":10999999,"memberRate":0.016,"memberMin":168000,"memberDesignRate":0.01575,"memberDesignMin":165375,"memberConstRate":0.00525,"memberConstMin":55125,"nonMemberRate":0.0192,"nonMemberMin":201600,"nonMemberDesignRate":0.01815,"nonMemberDesignMin":190575,"nonMemberConstRate":0.00605,"nonMemberConstMin":63525},{"sizeMin":11000000,"sizeMax":11499999,"memberRate":0.016,"memberMin":176000,"memberDesignRate":0.01575,"memberDesignMin":173250,"memberConstRate":0.00525,"memberConstMin":57750,"nonMemberRate":0.0192,"nonMemberMin":211200,"nonMemberDesignRate":0.01815,"nonMemberDesignMin":199650,"nonMemberConstRate":0.00605,"nonMemberConstMin":66550},{"sizeMin":11500000,"sizeMax":11999999,"memberRate":0.016,"memberMin":184000,"memberDesignRate":0.01575,"memberDesignMin":181125,"memberConstRate":0.00525,"memberConstMin":60375,"nonMemberRate":0.0192,"nonMemberMin":220800,"nonMemberDesignRate":0.01815,"nonMemberDesignMin":208725,"nonMemberConstRate":0.00605,"nonMemberConstMin":69575},{"sizeMin":12000000,"sizeMax":12499999,"memberRate":0.016,"memberMin":192000,"memberDesignRate":0.01575,"memberDesignMin":189000,"memberConstRate":0.00525,"memberConstMin":63000,"nonMemberRate":0.0192,"nonMemberMin":230400,"nonMemberDesignRate":0.01815,"nonMemberDesignMin":217800,"nonMemberConstRate":0.00605,"nonMemberConstMin":72600},{"sizeMin":12500000,"sizeMax":12999999,"memberRate":0.016,"memberMin":200000,"memberDesignRate":0.01575,"memberDesignMin":196875,"memberConstRate":0.00525,"memberConstMin":65625,"nonMemberRate":0.0192,"nonMemberMin":240000,"nonMemberDesignRate":0.01815,"nonMemberDesignMin":226875,"nonMemberConstRate":0.00605,"nonMemberConstMin":75625},{"sizeMin":13000000,"sizeMax":13499999,"memberRate":0.016,"memberMin":208000,"memberDesignRate":0.01575,"memberDesignMin":204750,"memberConstRate":0.00525,"memberConstMin":68250,"nonMemberRate":0.0192,"nonMemberMin":249600,"nonMemberDesignRate":0.01815,"nonMemberDesignMin":235950,"nonMemberConstRate":0.00605,"nonMemberConstMin":78650},{"sizeMin":13500000,"sizeMax":13999999,"memberRate":0.016,"memberMin":216000,"memberDesignRate":0.01575,"memberDesignMin":212625,"memberConstRate":0.00525,"memberConstMin":70875,"nonMemberRate":0.0192,"nonMemberMin":259200,"nonMemberDesignRate":0.01815,"nonMemberDesignMin":245025,"nonMemberConstRate":0.00605,"nonMemberConstMin":81675},{"sizeMin":14000000,"sizeMax":14499999,"memberRate":0.016,"memberMin":224000,"memberDesignRate":0.01575,"memberDesignMin":220500,"memberConstRate":0.00525,"memberConstMin":73500,"nonMemberRate":0.0192,"nonMemberMin":268800,"nonMemberDesignRate":0.01815,"nonMemberDesignMin":254100,"nonMemberConstRate":0.00605,"nonMemberConstMin":84700},{"sizeMin":14500000,"sizeMax":14999999,"memberRate":0.016,"memberMin":232000,"memberDesignRate":0.01575,"memberDesignMin":228375,"memberConstRate":0.00525,"memberConstMin":76125,"nonMemberRate":0.0192,"nonMemberMin":278400,"nonMemberDesignRate":0.01815,"nonMemberDesignMin":263175,"nonMemberConstRate":0.00605,"nonMemberConstMin":87725},{"sizeMin":15000000,"sizeMax":15499999,"memberRate":0.016,"memberMin":240000,"memberDesignRate":0.01575,"memberDesignMin":236250,"memberConstRate":0.00525,"memberConstMin":78750,"nonMemberRate":0.0192,"nonMemberMin":288000,"nonMemberDesignRate":0.01815,"nonMemberDesignMin":272250,"nonMemberConstRate":0.00605,"nonMemberConstMin":90750},{"sizeMin":15500000,"sizeMax":15999999,"memberRate":0.016,"memberMin":248000,"memberDesignRate":0.01575,"memberDesignMin":244125,"memberConstRate":0.00525,"memberConstMin":81375,"nonMemberRate":0.0192,"nonMemberMin":297600,"nonMemberDesignRate":0.01815,"nonMemberDesignMin":281325,"nonMemberConstRate":0.00605,"nonMemberConstMin":93775},{"sizeMin":16000000,"sizeMax":16499999,"memberRate":0.016,"memberMin":256000,"memberDesignRate":0.01575,"memberDesignMin":252000,"memberConstRate":0.00525,"memberConstMin":84000,"nonMemberRate":0.0192,"nonMemberMin":307200,"nonMemberDesignRate":0.01815,"nonMemberDesignMin":290400,"nonMemberConstRate":0.00605,"nonMemberConstMin":96800},{"sizeMin":16500000,"sizeMax":16999999,"memberRate":0.016,"memberMin":264000,"memberDesignRate":0.01575,"memberDesignMin":259875,"memberConstRate":0.00525,"memberConstMin":86625,"nonMemberRate":0.0192,"nonMemberMin":316800,"nonMemberDesignRate":0.01815,"nonMemberDesignMin":299475,"nonMemberConstRate":0.00605,"nonMemberConstMin":99825},{"sizeMin":17000000,"sizeMax":17499999,"memberRate":0.016,"memberMin":272000,"memberDesignRate":0.01575,"memberDesignMin":267750,"memberConstRate":0.00525,"memberConstMin":89250,"nonMemberRate":0.0192,"nonMemberMin":326400,"nonMemberDesignRate":0.01815,"nonMemberDesignMin":308550,"nonMemberConstRate":0.00605,"nonMemberConstMin":102850},{"sizeMin":17500000,"sizeMax":17999999,"memberRate":0.016,"memberMin":280000,"memberDesignRate":0.01575,"memberDesignMin":275625,"memberConstRate":0.00525,"memberConstMin":91875,"nonMemberRate":0.0192,"nonMemberMin":336000,"nonMemberDesignRate":0.01815,"nonMemberDesignMin":317625,"nonMemberConstRate":0.00605,"nonMemberConstMin":105875},{"sizeMin":18000000,"sizeMax":18499999,"memberRate":0.016,"memberMin":288000,"memberDesignRate":0.01575,"memberDesignMin":283500,"memberConstRate":0.00525,"memberConstMin":94500,"nonMemberRate":0.0192,"nonMemberMin":345600,"nonMemberDesignRate":0.01815,"nonMemberDesignMin":326700,"nonMemberConstRate":0.00605,"nonMemberConstMin":108900},{"sizeMin":18500000,"sizeMax":18999999,"memberRate":0.016,"memberMin":296000,"memberDesignRate":0.01575,"memberDesignMin":291375,"memberConstRate":0.00525,"memberConstMin":97125,"nonMemberRate":0.0192,"nonMemberMin":355200,"nonMemberDesignRate":0.01815,"nonMemberDesignMin":335775,"nonMemberConstRate":0.00605,"nonMemberConstMin":111925},{"sizeMin":19000000,"sizeMax":19499999,"memberRate":0.016,"memberMin":304000,"memberDesignRate":0.01575,"memberDesignMin":299250,"memberConstRate":0.00525,"memberConstMin":99750,"nonMemberRate":0.0192,"nonMemberMin":364800,"nonMemberDesignRate":0.01815,"nonMemberDesignMin":344850,"nonMemberConstRate":0.00605,"nonMemberConstMin":114950},{"sizeMin":19500000,"sizeMax":19999999,"memberRate":0.016,"memberMin":312000,"memberDesignRate":0.01575,"memberDesignMin":307125,"memberConstRate":0.00525,"memberConstMin":102375,"nonMemberRate":0.0192,"nonMemberMin":374400,"nonMemberDesignRate":0.01815,"nonMemberDesignMin":353925,"nonMemberConstRate":0.00605,"nonMemberConstMin":117975},{"sizeMin":20000000,"sizeMax":20499999,"memberRate":0.016,"memberMin":320000,"memberDesignRate":0.01575,"memberDesignMin":315000,"memberConstRate":0.00525,"memberConstMin":105000,"nonMemberRate":0.0192,"nonMemberMin":384000,"nonMemberDesignRate":0.01815,"nonMemberDesignMin":363000,"nonMemberConstRate":0.00605,"nonMemberConstMin":121000}]}}</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>15:16:52</td>
+																	<td class='step-details'>API responded in 190 Milliseconds</td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>15:16:52</td>
+																	<td class='step-details'>Test passed</td>
+																</tr>
+														</tbody>
+													</table>
+													<ul class='collapsible node-list' data-collapsible='accordion'>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class='collection-item test displayed active pass ' extentid='18533124-ed18-4fea-9bef-a2c960629e2c'>
+											<div class='test-head'>
+												<span class='test-name'>Get Member Info Api <span class="label outline info">169 Milliseconds</span> </span>
+												<span class='test-status label right outline capitalize pass'>pass</span>
+												<span class='category-assigned hide  apitest'></span>
+											</div>
+											<div class='test-body'>
+												<div class='test-info'>
+													<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-1 text-white'>2018-05-07 15:16:52</span>
+													<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-1 text-white'>2018-05-07 15:16:52</span>
+													<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 0s+0ms</span>
+												</div>
+												<div class='test-desc'>Get the pricing version details.</div>
+												<div class='test-attributes'>
+														<div class='categories'>
+																<span class='category text-white'>api test</span>
+														</div>
+												</div>
+												<div class='test-steps'>
+													<table class='bordered table-results'>
+														<thead>
+															<tr>
+																<th>Status</th>
+																<th>Timestamp</th>
+																<th>Details</th>
+															</tr>
+														</thead>
+														<tbody>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>15:16:52</td>
+																	<td class='step-details'>Authorization Token generated<br>Basic ab9da8aeb02c0fb170e7209b8233773b7ffc4b7a</td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>15:16:52</td>
+																	<td class='step-details'>verifies response from API<br>{"status":"success","versions":[{"version":20170124205047,"timeStamp":1485291047,"status":1,"memberId":10540014,"currency":"INR","ratingSystems":["O+M","ID+C","BD+C"]},{"version":20170124205036,"timeStamp":1485291036,"status":1,"memberId":10540014,"currency":"USD","ratingSystems":["O+M","ID+C","BD+C"]}]}</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>15:16:52</td>
+																	<td class='step-details'>API responded in 169 Milliseconds</td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>15:16:52</td>
+																	<td class='step-details'>Test passed</td>
+																</tr>
+														</tbody>
+													</table>
+													<ul class='collapsible node-list' data-collapsible='accordion'>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class='collection-item test displayed active pass ' extentid='1c96fb61-0e73-4b7f-bf86-aaab8fd41c39'>
+											<div class='test-head'>
+												<span class='test-name'>GetLeedPricingDownloadUploadedExcel <span class="label outline info">151 Milliseconds</span> </span>
+												<span class='test-status label right outline capitalize pass'>pass</span>
+												<span class='category-assigned hide  apitest'></span>
+											</div>
+											<div class='test-body'>
+												<div class='test-info'>
+													<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-1 text-white'>2018-05-07 15:16:52</span>
+													<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-1 text-white'>2018-05-07 15:16:52</span>
+													<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 0s+0ms</span>
+												</div>
+												<div class='test-desc'>Download the uploaded price excel which can be edited and re-uploaded .</div>
+												<div class='test-attributes'>
+														<div class='categories'>
+																<span class='category text-white'>api test</span>
+														</div>
+												</div>
+												<div class='test-steps'>
+													<table class='bordered table-results'>
+														<thead>
+															<tr>
+																<th>Status</th>
+																<th>Timestamp</th>
+																<th>Details</th>
+															</tr>
+														</thead>
+														<tbody>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>15:16:52</td>
+																	<td class='step-details'>Authorization Token generated<br>Basic ab9da8aeb02c0fb170e7209b8233773b7ffc4b7a</td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>15:16:52</td>
+																	<td class='step-details'>verifies response from API<br>{"status":"success","downloadUrl":"https://leedonline-api-stg.usgbc.org/Util/download?hash=UDIxeC9BZmd0Z1NtTWFFblphVmlFYW5SdXNPeElmSnFreDJidXBld3BwaXhPM1lOMnN1RHNLRWY2V2k0ZXhxc1RHT2YyZUJEQ29UaTVGeEU0dld4dHJqR0NVREZ0Z1k3UlBpY1U0enViZkUzRlVzL2Zoem4rTGNZRDd0aWk5am5SM0tNdG5MLy9LdkNHYWFmYWtqOTdqcW9OenAySVpGMS90dnIxb2hLTWJZNUl4dUUrOXVtM1F2QmhsenBVN2I2MElST2I4SWtWZCtERWsrUnlGa2FkUFN3eUVpU1lMd2kkOUpHMG1KSjJiY0E9"}</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>15:16:52</td>
+																	<td class='step-details'>API responded in 151 Milliseconds</td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>15:16:52</td>
+																	<td class='step-details'>Test passed</td>
+																</tr>
+														</tbody>
+													</table>
+													<ul class='collapsible node-list' data-collapsible='accordion'>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class='collection-item test displayed active pass ' extentid='26768ed5-3cc1-442d-8d37-5479c8e078e0'>
+											<div class='test-head'>
+												<span class='test-name'>Get Member Info Api <span class="label outline info">381 Milliseconds</span> </span>
+												<span class='test-status label right outline capitalize pass'>pass</span>
+												<span class='category-assigned hide  apitest'></span>
+											</div>
+											<div class='test-body'>
+												<div class='test-info'>
+													<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-1 text-white'>2018-05-07 15:16:53</span>
+													<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-1 text-white'>2018-05-07 15:16:53</span>
+													<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 0s+0ms</span>
+												</div>
+												<div class='test-desc'>Search Transaction payment details.</div>
+												<div class='test-attributes'>
+														<div class='categories'>
+																<span class='category text-white'>api test</span>
+														</div>
+												</div>
+												<div class='test-steps'>
+													<table class='bordered table-results'>
+														<thead>
+															<tr>
+																<th>Status</th>
+																<th>Timestamp</th>
+																<th>Details</th>
+															</tr>
+														</thead>
+														<tbody>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>15:16:53</td>
+																	<td class='step-details'>Authorization Token generated<br>Basic ab9da8aeb02c0fb170e7209b8233773b7ffc4b7a</td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>15:16:53</td>
+																	<td class='step-details'>verifies response from API<br>{"filters":{"programName":"LEED","projectId":1000146660,"toDateTime":"2018-05-07T19:16:54+00:00","fromDateTime":"2017-11-07T19:16:54+00:00","order":"desc","limit":25},"result":[{"processId":"5acdc8e124aca05cf201c582","orderId":"11007289","transOrderId":"N11007289T04110835","status":"success","currency":"USD","amount":500,"transOn":1523435783,"transId":"112677181","transBy":10543838,"transInfo":"Paid by Credit Card (Visa). Ref No: 112677181"},{"processId":"5acdb41524aca058e2010402","orderId":"11007283","transOrderId":"N11007283T04110707","status":"success","currency":"USD","amount":775,"transOn":1523430460,"transId":"112676005","transBy":10543838,"transInfo":"Paid by Credit Card (Visa). Ref No: 112676005"},{"processId":"5acdb17424aca058825223d3","orderId":"11007283","transOrderId":"N11007283T04110655","status":"cancelled","currency":"USD","amount":775,"transOn":1523429796,"transId":null,"transBy":10543838,"transInfo":"Transaction cancelled by the user."},{"processId":"5acda5fa24aca0587558d202","orderId":"11007278","transOrderId":"N11007278T04110606","status":"success","currency":"USD","amount":2325,"transOn":1523426846,"transId":"112673849","transBy":10543838,"transInfo":"Paid by Credit Card (Visa). Ref No: 112673849"},{"processId":"5acd9ef324aca05876077423","orderId":"11007271","transOrderId":"N11007271T04110536","status":"success","currency":"USD","amount":1200,"transOn":1523425050,"transId":"112672488","transBy":10543838,"transInfo":"Paid by Credit Card (Visa). Ref No: 112672488"}]}</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>15:16:53</td>
+																	<td class='step-details'>API responded in 381 Milliseconds</td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>15:16:53</td>
+																	<td class='step-details'>Test passed</td>
+																</tr>
+														</tbody>
+													</table>
+													<ul class='collapsible node-list' data-collapsible='accordion'>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class='collection-item test displayed active pass ' extentid='5a65804e-db55-4ced-8f3c-cb213b48a52c'>
+											<div class='test-head'>
+												<span class='test-name'>GetFileDmsProxy Api <span class="label outline info">165 Milliseconds</span> </span>
+												<span class='test-status label right outline capitalize pass'>pass</span>
+												<span class='category-assigned hide  apitest'></span>
+											</div>
+											<div class='test-body'>
+												<div class='test-info'>
+													<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-1 text-white'>2018-05-07 15:16:54</span>
+													<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-1 text-white'>2018-05-07 15:16:54</span>
+													<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 0s+0ms</span>
+												</div>
+												<div class='test-desc'>File proxy related actions.</div>
+												<div class='test-attributes'>
+														<div class='categories'>
+																<span class='category text-white'>api test</span>
+														</div>
+												</div>
+												<div class='test-steps'>
+													<table class='bordered table-results'>
+														<thead>
+															<tr>
+																<th>Status</th>
+																<th>Timestamp</th>
+																<th>Details</th>
+															</tr>
+														</thead>
+														<tbody>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>15:16:54</td>
+																	<td class='step-details'>Authorization Token generated<br>Basic 0b59eb03fc912a48135d82dad1713c320c23d682</td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>15:16:54</td>
+																	<td class='step-details'>verifies response from API<br>{"baseUrl":"https://leedonline-fileproxy-stg.usgbc.org/fileApi/action/","accessKey":"QUwxeDR0S2Q4d1RrNnVpalk4T042R2RHdWxNVHFYb21oQ1RMcjQzU05lMXFqNFV3RWYzaHEwcE1LdlFBWDBhQkU3dmVlRGErZ1ZqNEJIZm10dDRibGN1OCsyZlZEa3VLSFp2S29jajh1anZvTXgrNWNIUFZxeVpJTVU1a0EvM0okUGtiWGpGYkxCL3M9","paths":{"download":"download.php","creditUpload":"upload.php","projectUpload":"projectUpload.php"}}</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>15:16:54</td>
+																	<td class='step-details'>API responded in 165 Milliseconds</td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>15:16:54</td>
+																	<td class='step-details'>Test passed</td>
+																</tr>
+														</tbody>
+													</table>
+													<ul class='collapsible node-list' data-collapsible='accordion'>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class='collection-item test displayed active pass ' extentid='8b37973b-1d1a-4749-8e04-f37c3651be62'>
+											<div class='test-head'>
+												<span class='test-name'>GetNonceApi <span class="label outline info">200 Milliseconds</span> </span>
+												<span class='test-status label right outline capitalize pass'>pass</span>
+												<span class='category-assigned hide  apitest'></span>
+											</div>
+											<div class='test-body'>
+												<div class='test-info'>
+													<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-1 text-white'>2018-05-07 15:16:54</span>
+													<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-1 text-white'>2018-05-07 15:16:54</span>
+													<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 0s+0ms</span>
+												</div>
+												<div class='test-desc'>Generates one time use nonces.</div>
+												<div class='test-attributes'>
+														<div class='categories'>
+																<span class='category text-white'>api test</span>
+														</div>
+												</div>
+												<div class='test-steps'>
+													<table class='bordered table-results'>
+														<thead>
+															<tr>
+																<th>Status</th>
+																<th>Timestamp</th>
+																<th>Details</th>
+															</tr>
+														</thead>
+														<tbody>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>15:16:54</td>
+																	<td class='step-details'>Authorization Token generated<br>Basic 0b59eb03fc912a48135d82dad1713c320c23d682</td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>15:16:54</td>
+																	<td class='step-details'>verifies response from API<br>{"nonces":["cd8ce2854614423a","be64f66b5863e09d","20c571812cf3361c","38eeb2b63c4c3c5d","d20f1f31c04e256f","76588e6690280bb0","c0b3461d3e8a4950","9c477837b5fb8a75","9d2961b4d41fae3f","a3fad4b5ae52df36"]}</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>15:16:54</td>
+																	<td class='step-details'>API responded in 200 Milliseconds</td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>15:16:54</td>
+																	<td class='step-details'>Test passed</td>
+																</tr>
+														</tbody>
+													</table>
+													<ul class='collapsible node-list' data-collapsible='accordion'>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class='collection-item test displayed active fail ' extentid='f285fe17-1712-4f46-ace0-3597305d10e5'>
+											<div class='test-head'>
+												<span class='test-name'>PostFileUploadApi <span class="label outline info">326 Milliseconds</span> </span>
+												<span class='test-status label right outline capitalize fail'>fail</span>
+												<span class='category-assigned hide  apitest'></span>
+											</div>
+											<div class='test-body'>
+												<div class='test-info'>
+													<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-1 text-white'>2018-05-07 15:16:55</span>
+													<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-1 text-white'>2018-05-07 15:16:55</span>
+													<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 0s+0ms</span>
+												</div>
+												<div class='test-desc'>Upload a file to the project.</div>
+												<div class='test-attributes'>
+														<div class='categories'>
+																<span class='category text-white'>api test</span>
+														</div>
+												</div>
+												<div class='test-steps'>
+													<table class='bordered table-results'>
+														<thead>
+															<tr>
+																<th>Status</th>
+																<th>Timestamp</th>
+																<th>Details</th>
+															</tr>
+														</thead>
+														<tbody>
+																<tr>
+																	<td class='status fail' title='fail' alt='fail'><i class='mdi-navigation-cancel'></i></td>
+																	<td class='timestamp'>15:16:55</td>
+																	<td class='step-details'><textarea>java.lang.AssertionError: 1 expectation failed.
+Expected status code &lt;200&gt; doesn't match actual status code &lt;400&gt;.
+
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:80)
+	at org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:74)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:84)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:247)
+	at com.jayway.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:598)
+	at com.jayway.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
+	at com.jayway.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:760)
+	at sun.reflect.GeneratedMethodAccessor74.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:210)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:59)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:166)
+	at com.jayway.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:120)
+	at com.jayway.restassured.specification.ResponseSpecification$statusCode$0.callCurrent(Unknown Source)
+	at com.jayway.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:128)
+	at com.jayway.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:117)
+	at com.leedonline.testcases.PostFileUploadTest.PostFileUpload(PostFileUploadTest.java:48)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</textarea></td>
+																</tr>
+														</tbody>
+													</table>
+													<ul class='collapsible node-list' data-collapsible='accordion'>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class='collection-item test displayed active pass ' extentid='9c01455a-e8a4-49b7-b728-1ee699ba2f76'>
+											<div class='test-head'>
+												<span class='test-name'>Create Api Test Access Data <span class="label outline info">219 Milliseconds</span> </span>
+												<span class='test-status label right outline capitalize pass'>pass</span>
+												<span class='category-assigned hide  apitest'></span>
+											</div>
+											<div class='test-body'>
+												<div class='test-info'>
+													<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-1 text-white'>2018-05-07 15:16:55</span>
+													<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-1 text-white'>2018-05-07 15:16:55</span>
+													<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 0s+0ms</span>
+												</div>
+												<div class='test-desc'>Create some data for testing.</div>
+												<div class='test-attributes'>
+														<div class='categories'>
+																<span class='category text-white'>api test</span>
+														</div>
+												</div>
+												<div class='test-steps'>
+													<table class='bordered table-results'>
+														<thead>
+															<tr>
+																<th>Status</th>
+																<th>Timestamp</th>
+																<th>Details</th>
+															</tr>
+														</thead>
+														<tbody>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>15:16:55</td>
+																	<td class='step-details'>Authorization Token generated<br>Basic 0b59eb03fc912a48135d82dad1713c320c23d682</td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>15:16:55</td>
+																	<td class='step-details'>verifies response from API<br>{"key":"Test12","status":"Saved"}</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>15:16:55</td>
+																	<td class='step-details'>API responded in 219 Milliseconds</td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>15:16:55</td>
+																	<td class='step-details'>Test passed</td>
+																</tr>
+														</tbody>
+													</table>
+													<ul class='collapsible node-list' data-collapsible='accordion'>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class='collection-item test displayed active fail ' extentid='3eaf579b-d2f9-4a3e-a638-78e794f5766d'>
+											<div class='test-head'>
+												<span class='test-name'>Create Api Test Access Data <span class="label outline info">173 Milliseconds</span> </span>
+												<span class='test-status label right outline capitalize fail'>fail</span>
+												<span class='category-assigned hide  apitest'></span>
+											</div>
+											<div class='test-body'>
+												<div class='test-info'>
+													<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-1 text-white'>2018-05-07 15:16:56</span>
+													<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-1 text-white'>2018-05-07 15:16:56</span>
+													<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 0s+0ms</span>
+												</div>
+												<div class='test-desc'>Validate one or more organizations/persons.</div>
+												<div class='test-attributes'>
+														<div class='categories'>
+																<span class='category text-white'>api test</span>
+														</div>
+												</div>
+												<div class='test-steps'>
+													<table class='bordered table-results'>
+														<thead>
+															<tr>
+																<th>Status</th>
+																<th>Timestamp</th>
+																<th>Details</th>
+															</tr>
+														</thead>
+														<tbody>
+																<tr>
+																	<td class='status fail' title='fail' alt='fail'><i class='mdi-navigation-cancel'></i></td>
+																	<td class='timestamp'>15:16:56</td>
+																	<td class='step-details'><textarea>java.lang.AssertionError: 1 expectation failed.
+Expected status code &lt;200&gt; doesn't match actual status code &lt;400&gt;.
+
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:80)
+	at org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:74)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:84)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:247)
+	at com.jayway.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:598)
+	at com.jayway.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
+	at com.jayway.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:760)
+	at sun.reflect.GeneratedMethodAccessor74.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:210)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:59)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:166)
+	at com.jayway.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:120)
+	at com.jayway.restassured.specification.ResponseSpecification$statusCode$0.callCurrent(Unknown Source)
+	at com.jayway.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:128)
+	at com.jayway.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:117)
+	at com.leedonline.testcases.PostValidateSdnStatusTest.PostValidateSdnStatus(PostValidateSdnStatusTest.java:51)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</textarea></td>
+																</tr>
+														</tbody>
+													</table>
+													<ul class='collapsible node-list' data-collapsible='accordion'>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class='collection-item test displayed active fail ' extentid='42ab8719-8f19-42b1-9dba-7ffc2fce0394'>
+											<div class='test-head'>
+												<span class='test-name'>Create Api Test Access Data <span class="label outline info">182 Milliseconds</span> </span>
+												<span class='test-status label right outline capitalize fail'>fail</span>
+												<span class='category-assigned hide  apitest'></span>
+											</div>
+											<div class='test-body'>
+												<div class='test-info'>
+													<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-1 text-white'>2018-05-07 15:16:56</span>
+													<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-1 text-white'>2018-05-07 15:16:56</span>
+													<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 0s+0ms</span>
+												</div>
+												<div class='test-desc'>Validate one or more CaGBC member ID or Email.</div>
+												<div class='test-attributes'>
+														<div class='categories'>
+																<span class='category text-white'>api test</span>
+														</div>
+												</div>
+												<div class='test-steps'>
+													<table class='bordered table-results'>
+														<thead>
+															<tr>
+																<th>Status</th>
+																<th>Timestamp</th>
+																<th>Details</th>
+															</tr>
+														</thead>
+														<tbody>
+																<tr>
+																	<td class='status fail' title='fail' alt='fail'><i class='mdi-navigation-cancel'></i></td>
+																	<td class='timestamp'>15:16:56</td>
+																	<td class='step-details'><textarea>java.lang.AssertionError: 1 expectation failed.
+Expected status code &lt;200&gt; doesn't match actual status code &lt;400&gt;.
+
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:80)
+	at org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:74)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:84)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:247)
+	at com.jayway.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:598)
+	at com.jayway.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
+	at com.jayway.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:760)
+	at sun.reflect.GeneratedMethodAccessor74.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:210)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:59)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:166)
+	at com.jayway.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:120)
+	at com.jayway.restassured.specification.ResponseSpecification$statusCode$0.callCurrent(Unknown Source)
+	at com.jayway.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:128)
+	at com.jayway.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:117)
+	at com.leedonline.testcases.PostValidateCaGBCMemberTest.PostValidateCaGBCMember(PostValidateCaGBCMemberTest.java:47)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</textarea></td>
+																</tr>
+														</tbody>
+													</table>
+													<ul class='collapsible node-list' data-collapsible='accordion'>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class='collection-item test displayed active pass ' extentid='0a96956b-047c-408f-a231-1623fbd9e2f8'>
+											<div class='test-head'>
+												<span class='test-name'>Create Api Test Access Data <span class="label outline info">311 Milliseconds</span> </span>
+												<span class='test-status label right outline capitalize pass'>pass</span>
+												<span class='category-assigned hide  apitest'></span>
+											</div>
+											<div class='test-body'>
+												<div class='test-info'>
+													<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-1 text-white'>2018-05-07 15:16:56</span>
+													<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-1 text-white'>2018-05-07 15:16:56</span>
+													<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 0s+0ms</span>
+												</div>
+												<div class='test-desc'>Validate Postal Code.</div>
+												<div class='test-attributes'>
+														<div class='categories'>
+																<span class='category text-white'>api test</span>
+														</div>
+												</div>
+												<div class='test-steps'>
+													<table class='bordered table-results'>
+														<thead>
+															<tr>
+																<th>Status</th>
+																<th>Timestamp</th>
+																<th>Details</th>
+															</tr>
+														</thead>
+														<tbody>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>15:16:56</td>
+																	<td class='step-details'>Authorization Token generated<br>Basic 0b59eb03fc912a48135d82dad1713c320c23d682</td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>15:16:56</td>
+																	<td class='step-details'>verifies response from API<br>{"country":"US","state":"DC ","postalCode":"20006","result":"ok","resultChecksum":"a56e0e86"}</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>15:16:56</td>
+																	<td class='step-details'>API responded in 311 Milliseconds</td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>15:16:56</td>
+																	<td class='step-details'>Test passed</td>
+																</tr>
+														</tbody>
+													</table>
+													<ul class='collapsible node-list' data-collapsible='accordion'>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class='collection-item test displayed active pass ' extentid='7bf741b0-e0ec-45e6-8b83-5625aa7f39c1'>
+											<div class='test-head'>
+												<span class='test-name'>Delete Api Test Access Data <span class="label outline info">201 Milliseconds</span> </span>
+												<span class='test-status label right outline capitalize pass'>pass</span>
+												<span class='category-assigned hide  apitest'></span>
+											</div>
+											<div class='test-body'>
+												<div class='test-info'>
+													<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-1 text-white'>2018-05-07 15:16:57</span>
+													<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-1 text-white'>2018-05-07 15:16:57</span>
+													<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 0s+0ms</span>
+												</div>
+												<div class='test-desc'>Delete single or full data.</div>
+												<div class='test-attributes'>
+														<div class='categories'>
+																<span class='category text-white'>api test</span>
+														</div>
+												</div>
+												<div class='test-steps'>
+													<table class='bordered table-results'>
+														<thead>
+															<tr>
+																<th>Status</th>
+																<th>Timestamp</th>
+																<th>Details</th>
+															</tr>
+														</thead>
+														<tbody>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>15:16:57</td>
+																	<td class='step-details'>Authorization Token generated<br>Basic 0b59eb03fc912a48135d82dad1713c320c23d682</td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>15:16:57</td>
+																	<td class='step-details'>verifies response from API<br>{"key":"all","status":"All values deleted"}</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>15:16:57</td>
+																	<td class='step-details'>API responded in 201 Milliseconds</td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>15:16:57</td>
+																	<td class='step-details'>Test passed</td>
+																</tr>
+														</tbody>
+													</table>
+													<ul class='collapsible node-list' data-collapsible='accordion'>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class='collection-item test displayed active pass ' extentid='1a13a7ce-a7e3-460b-b9ad-0e4098c23ea4'>
+											<div class='test-head'>
+												<span class='test-name'>InvalidateToken api <span class="label outline info">170 Milliseconds</span> </span>
+												<span class='test-status label right outline capitalize pass'>pass</span>
+												<span class='category-assigned hide  apitest'></span>
+											</div>
+											<div class='test-body'>
+												<div class='test-info'>
+													<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-1 text-white'>2018-05-07 15:16:58</span>
+													<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-1 text-white'>2018-05-07 15:16:58</span>
+													<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 0s+0ms</span>
+												</div>
+												<div class='test-desc'>invalidate Basic auth token to remove the access.</div>
+												<div class='test-attributes'>
+														<div class='categories'>
+																<span class='category text-white'>api test</span>
+														</div>
+												</div>
+												<div class='test-steps'>
+													<table class='bordered table-results'>
+														<thead>
+															<tr>
+																<th>Status</th>
+																<th>Timestamp</th>
+																<th>Details</th>
+															</tr>
+														</thead>
+														<tbody>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>15:16:58</td>
+																	<td class='step-details'>Authorization Token generated<br>Basic 0b59eb03fc912a48135d82dad1713c320c23d682</td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>15:16:58</td>
+																	<td class='step-details'>verifies response from API<br>{"status":"success","message":"Basic authentication token invalidated successfully."}</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>15:16:58</td>
+																	<td class='step-details'>API responded in 170 Milliseconds</td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>15:16:58</td>
+																	<td class='step-details'>Test passed</td>
+																</tr>
+														</tbody>
+													</table>
+													<ul class='collapsible node-list' data-collapsible='accordion'>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class='collection-item test displayed active pass ' extentid='01e0d3ab-66a7-4842-b0fa-eb3e0a9b7f6e'>
+											<div class='test-head'>
+												<span class='test-name'>GetClientKey Api <span class='label outline info'>182 Milliseconds</span> </span>
+												<span class='test-status label right outline capitalize pass'>pass</span>
+												<span class='category-assigned hide  apitest'></span>
+											</div>
+											<div class='test-body'>
+												<div class='test-info'>
+													<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-1 text-white'>2018-05-07 15:16:59</span>
+													<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-1 text-white'>2018-05-07 15:16:59</span>
+													<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 0s+10ms</span>
+												</div>
+												<div class='test-desc'>Generate and get client key to sign in API .</div>
+												<div class='test-attributes'>
+														<div class='categories'>
+																<span class='category text-white'>api test</span>
+														</div>
+												</div>
+												<div class='test-steps'>
+													<table class='bordered table-results'>
+														<thead>
+															<tr>
+																<th>Status</th>
+																<th>Timestamp</th>
+																<th>Details</th>
+															</tr>
+														</thead>
+														<tbody>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>15:16:59</td>
+																	<td class='step-details'>Authorization Token generated<br>Basic 7327a063e73f9607bcb134c0d0b79ae756868265</td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>15:16:59</td>
+																	<td class='step-details'>verifies response from API<br>{"clientKey":"f511611c1c79014d5cc24d9f1a833413"}</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>15:16:59</td>
+																	<td class='step-details'>API responded in 182 Milliseconds</td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>15:16:59</td>
+																	<td class='step-details'>Test passed</td>
+																</tr>
+														</tbody>
+													</table>
+													<ul class='collapsible node-list' data-collapsible='accordion'>
+													</ul>
+												</div>
+											</div>
+										</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id='test-details-wrapper' class='col _addedCell2'>
+					<div class='contents'>
+						<div class='card-panel details-view'>
+							<h5 class='details-name'></h5>
+							<div class='step-filters right'>
+								<span class='btn-floating btn-small waves-effect waves-light blue' status='info' alt='info' title='info'><i class='mdi-action-info-outline'></i></span>
+								<span class='btn-floating btn-small waves-effect waves-light green' status='pass' alt='pass' title='pass'><i class='mdi-action-check-circle'></i></span>
+								<span class='btn-floating btn-small waves-effect waves-light red' status='fail' alt='fail' title='fail'><i class='mdi-navigation-cancel'></i></span>
+								<span class='btn-floating btn-small waves-effect waves-light red darken-4' status='fatal' alt='fatal' title='fatal'><i class='mdi-navigation-cancel'></i></span>
+								<span class='btn-floating btn-small waves-effect waves-light red lighten-2' status='error' alt='error' title='error'><i class='mdi-alert-error'></i></span>
+								<span class='btn-floating btn-small waves-effect waves-light orange' alt='warning' status='warning' title='warning'><i class='mdi-alert-warning'></i></span>
+								<span class='btn-floating btn-small waves-effect waves-light cyan' status='skip' alt='skip' title='skip'><i class='mdi-content-redo'></i></span>
+								<span class='btn-floating btn-small waves-effect waves-light grey darken-2' status='clear-step-filter' alt='Clear filters' title='Clear filters'><i class='mdi-content-clear'></i></span>
+							</div>
+							<div class='details-container'>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- /tests -->
+			
+			<!-- categories -->
+				<div id='categories-view' class='row _addedTable hide'>
+					<div class='col _addedCell1'>
+						<div class='contents'>
+							<div class='card-panel heading'>
+								<h5>Categories</h5>
+							</div>
+							<div class='card-panel filters'>
+								<div class='search' alt='Search tests' title='Search tests'>
+									<div class='input-field left'>
+										<input id='searchTests' type='text' class='validate' placeholder='Search...'>
+									</div>
+									<a href="#" class='btn-floating btn-small waves-effect waves-light blue lighten-1'>
+										<i class='mdi-action-search'></i>
+									</a>
+								</div>
+							</div>
+							<div class='card-panel no-padding-h no-padding-v'>
+								<div class='wrapper'>
+									<ul id='cat-collection' class='cat-collection'>
+											<li class='category-item displayed'>
+												<div class='cat-head'>
+													<span class='category-name'>api test</span>
+												</div>
+												<div class='category-status-counts'>
+														<span class='pass label dot'>Pass: 26</span>
+														<span class='fail label dot'>Fail: 4</span>
+												</div>
+												<div class='cat-body'>
+													<div class='category-status-counts'>
+														<div class='button-group'>
+															<a href='#!' class='pass label filter'>Pass <span class='icon'>26</span></a>
+															<a href='#!' class='fail label filter'>Fail <span class='icon'>4</span></a>
+															<a href='#!' class='other label filter'>Others <span class='icon'>0</span></a>
+														</div>
+													</div>
+													<div class='cat-tests'>
+														<table class='bordered'>
+															<thead>
+																<tr>
+																	<th>RunDate</th>
+																	<th>Test Name</th>
+																	<th>Status</th>
+																</tr>
+															</thead>
+															<tbody>
+																	<tr class='pass'>
+																		<td>2018-05-07 15:16:41</td>
+																		<td><span class='category-link linked' extentid='5f926f56-1a5d-4178-aaac-fa6295cd2640'>Authentication api <span class="label outline info">1219 Milliseconds</span></span></td>
+																		<td><div class='status label capitalize pass'>pass</div></td>
+																	</tr>
+																	<tr class='pass'>
+																		<td>2018-05-07 15:16:44</td>
+																		<td><span class='category-link linked' extentid='e1b78b87-4bd4-476f-97e8-ea8826917a5e'>GetFilesList Api <span class="label outline info">266 Milliseconds</span></span></td>
+																		<td><div class='status label capitalize pass'>pass</div></td>
+																	</tr>
+																	<tr class='pass'>
+																		<td>2018-05-07 15:16:45</td>
+																		<td><span class='category-link linked' extentid='a492be38-6df5-4438-8b86-a6aeac30394d'>GetFilesList Api <span class="label outline info">185 Milliseconds</span></span></td>
+																		<td><div class='status label capitalize pass'>pass</div></td>
+																	</tr>
+																	<tr class='pass'>
+																		<td>2018-05-07 15:16:45</td>
+																		<td><span class='category-link linked' extentid='a6745340-d16f-4817-8b3f-8acfba33a2c4'>Get Member Info Api <span class="label outline info">195 Milliseconds</span></span></td>
+																		<td><div class='status label capitalize pass'>pass</div></td>
+																	</tr>
+																	<tr class='fail'>
+																		<td>2018-05-07 15:16:46</td>
+																		<td><span class='category-link linked' extentid='ee80da78-0ce8-465d-9025-fd67c93615ce'>GetMemberSyncApi <span class="label outline info">500 Milliseconds</span></span></td>
+																		<td><div class='status label capitalize fail'>fail</div></td>
+																	</tr>
+																	<tr class='pass'>
+																		<td>2018-05-07 15:16:46</td>
+																		<td><span class='category-link linked' extentid='27e62a8b-2382-43a6-8a56-8aba5f44f2e6'>LeedGetInfo Api <span class="label outline info">232 Milliseconds</span></span></td>
+																		<td><div class='status label capitalize pass'>pass</div></td>
+																	</tr>
+																	<tr class='pass'>
+																		<td>2018-05-07 15:16:47</td>
+																		<td><span class='category-link linked' extentid='8e3db6c5-faca-4337-95c4-782e0fffbbfe'>ProjectGetListType Api <span class="label outline info">200 Milliseconds</span></span></td>
+																		<td><div class='status label capitalize pass'>pass</div></td>
+																	</tr>
+																	<tr class='pass'>
+																		<td>2018-05-07 15:16:47</td>
+																		<td><span class='category-link linked' extentid='815e6fcd-406d-4273-8ffa-6484f33d7d53'>ProjectDetailsType Api <span class="label outline info">225 Milliseconds</span></span></td>
+																		<td><div class='status label capitalize pass'>pass</div></td>
+																	</tr>
+																	<tr class='pass'>
+																		<td>2018-05-07 15:16:48</td>
+																		<td><span class='category-link linked' extentid='a6f6456e-0279-4b63-887e-e695ee27869e'>GetCreditType Api <span class="label outline info">178 Milliseconds</span></span></td>
+																		<td><div class='status label capitalize pass'>pass</div></td>
+																	</tr>
+																	<tr class='pass'>
+																		<td>2018-05-07 15:16:48</td>
+																		<td><span class='category-link linked' extentid='2c2f9ce7-513a-43c8-92ab-b836ccca20aa'>GetInterpretationTypeTest Api <span class="label outline info">161 Milliseconds</span></span></td>
+																		<td><div class='status label capitalize pass'>pass</div></td>
+																	</tr>
+																	<tr class='pass'>
+																		<td>2018-05-07 15:16:49</td>
+																		<td><span class='category-link linked' extentid='3d159f52-b62a-4d68-8118-c3261deb7177'>GetClarification Api <span class="label outline info">190 Milliseconds</span></span></td>
+																		<td><div class='status label capitalize pass'>pass</div></td>
+																	</tr>
+																	<tr class='pass'>
+																		<td>2018-05-07 15:16:49</td>
+																		<td><span class='category-link linked' extentid='c599b581-3949-4b5f-9fc4-816c2dd55e5a'>GetCountryAndStates Api <span class="label outline info">285 Milliseconds</span></span></td>
+																		<td><div class='status label capitalize pass'>pass</div></td>
+																	</tr>
+																	<tr class='pass'>
+																		<td>2018-05-07 15:16:50</td>
+																		<td><span class='category-link linked' extentid='c44a58af-e6e0-40dd-8b9f-02937241ae41'>GetTaxForAmount Api <span class="label outline info">207 Milliseconds</span></span></td>
+																		<td><div class='status label capitalize pass'>pass</div></td>
+																	</tr>
+																	<tr class='pass'>
+																		<td>2018-05-07 15:16:50</td>
+																		<td><span class='category-link linked' extentid='9fe963d9-a7da-4e89-ac93-4475e8c1bc6c'>GetPriceReleatedInfoTest Api <span class="label outline info">181 Milliseconds</span></span></td>
+																		<td><div class='status label capitalize pass'>pass</div></td>
+																	</tr>
+																	<tr class='pass'>
+																		<td>2018-05-07 15:16:51</td>
+																		<td><span class='category-link linked' extentid='985cd191-848e-45a5-bb42-af97d785b89f'>Get Api Test Access Data <span class="label outline info">167 Milliseconds</span></span></td>
+																		<td><div class='status label capitalize pass'>pass</div></td>
+																	</tr>
+																	<tr class='pass'>
+																		<td>2018-05-07 15:16:51</td>
+																		<td><span class='category-link linked' extentid='2cd84912-9ca1-48f1-b28e-36e3cd3bf0f8'>Get Member Info Api <span class="label outline info">192 Milliseconds</span></span></td>
+																		<td><div class='status label capitalize pass'>pass</div></td>
+																	</tr>
+																	<tr class='pass'>
+																		<td>2018-05-07 15:16:52</td>
+																		<td><span class='category-link linked' extentid='563f645f-c306-4f51-a931-16133e46cc38'>Get Member Info Api <span class="label outline info">190 Milliseconds</span></span></td>
+																		<td><div class='status label capitalize pass'>pass</div></td>
+																	</tr>
+																	<tr class='pass'>
+																		<td>2018-05-07 15:16:52</td>
+																		<td><span class='category-link linked' extentid='18533124-ed18-4fea-9bef-a2c960629e2c'>Get Member Info Api <span class="label outline info">169 Milliseconds</span></span></td>
+																		<td><div class='status label capitalize pass'>pass</div></td>
+																	</tr>
+																	<tr class='pass'>
+																		<td>2018-05-07 15:16:52</td>
+																		<td><span class='category-link linked' extentid='1c96fb61-0e73-4b7f-bf86-aaab8fd41c39'>GetLeedPricingDownloadUploadedExcel <span class="label outline info">151 Milliseconds</span></span></td>
+																		<td><div class='status label capitalize pass'>pass</div></td>
+																	</tr>
+																	<tr class='pass'>
+																		<td>2018-05-07 15:16:53</td>
+																		<td><span class='category-link linked' extentid='26768ed5-3cc1-442d-8d37-5479c8e078e0'>Get Member Info Api <span class="label outline info">381 Milliseconds</span></span></td>
+																		<td><div class='status label capitalize pass'>pass</div></td>
+																	</tr>
+																	<tr class='pass'>
+																		<td>2018-05-07 15:16:54</td>
+																		<td><span class='category-link linked' extentid='5a65804e-db55-4ced-8f3c-cb213b48a52c'>GetFileDmsProxy Api <span class="label outline info">165 Milliseconds</span></span></td>
+																		<td><div class='status label capitalize pass'>pass</div></td>
+																	</tr>
+																	<tr class='pass'>
+																		<td>2018-05-07 15:16:54</td>
+																		<td><span class='category-link linked' extentid='8b37973b-1d1a-4749-8e04-f37c3651be62'>GetNonceApi <span class="label outline info">200 Milliseconds</span></span></td>
+																		<td><div class='status label capitalize pass'>pass</div></td>
+																	</tr>
+																	<tr class='fail'>
+																		<td>2018-05-07 15:16:55</td>
+																		<td><span class='category-link linked' extentid='f285fe17-1712-4f46-ace0-3597305d10e5'>PostFileUploadApi <span class="label outline info">326 Milliseconds</span></span></td>
+																		<td><div class='status label capitalize fail'>fail</div></td>
+																	</tr>
+																	<tr class='pass'>
+																		<td>2018-05-07 15:16:55</td>
+																		<td><span class='category-link linked' extentid='9c01455a-e8a4-49b7-b728-1ee699ba2f76'>Create Api Test Access Data <span class="label outline info">219 Milliseconds</span></span></td>
+																		<td><div class='status label capitalize pass'>pass</div></td>
+																	</tr>
+																	<tr class='fail'>
+																		<td>2018-05-07 15:16:56</td>
+																		<td><span class='category-link linked' extentid='3eaf579b-d2f9-4a3e-a638-78e794f5766d'>Create Api Test Access Data <span class="label outline info">173 Milliseconds</span></span></td>
+																		<td><div class='status label capitalize fail'>fail</div></td>
+																	</tr>
+																	<tr class='fail'>
+																		<td>2018-05-07 15:16:56</td>
+																		<td><span class='category-link linked' extentid='42ab8719-8f19-42b1-9dba-7ffc2fce0394'>Create Api Test Access Data <span class="label outline info">182 Milliseconds</span></span></td>
+																		<td><div class='status label capitalize fail'>fail</div></td>
+																	</tr>
+																	<tr class='pass'>
+																		<td>2018-05-07 15:16:56</td>
+																		<td><span class='category-link linked' extentid='0a96956b-047c-408f-a231-1623fbd9e2f8'>Create Api Test Access Data <span class="label outline info">311 Milliseconds</span></span></td>
+																		<td><div class='status label capitalize pass'>pass</div></td>
+																	</tr>
+																	<tr class='pass'>
+																		<td>2018-05-07 15:16:57</td>
+																		<td><span class='category-link linked' extentid='7bf741b0-e0ec-45e6-8b83-5625aa7f39c1'>Delete Api Test Access Data <span class="label outline info">201 Milliseconds</span></span></td>
+																		<td><div class='status label capitalize pass'>pass</div></td>
+																	</tr>
+																	<tr class='pass'>
+																		<td>2018-05-07 15:16:58</td>
+																		<td><span class='category-link linked' extentid='1a13a7ce-a7e3-460b-b9ad-0e4098c23ea4'>InvalidateToken api <span class="label outline info">170 Milliseconds</span></span></td>
+																		<td><div class='status label capitalize pass'>pass</div></td>
+																	</tr>
+																	<tr class='pass'>
+																		<td>2018-05-07 15:16:59</td>
+																		<td><span class='category-link linked' extentid='01e0d3ab-66a7-4842-b0fa-eb3e0a9b7f6e'>GetClientKey Api <span class='label outline info'>182 Milliseconds</span></span></td>
+																		<td><div class='status label capitalize pass'>pass</div></td>
+																	</tr>
+															<tbody>
+														</table>
+													</div>
+												</div> 
+											</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div id='cat-details-wrapper' class='col _addedCell2'>
+						<div class='contents'>
+							<div class='card-panel details-view'>
+								<h5 class='cat-name'></h5>
+								<div class='cat-container'>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			<!-- /categories -->
+			
+			<!-- exceptions -->
+				<div id='exceptions-view' class='row _addedTable hide'>
+					<div class='col _addedCell1'>
+						<div class='contents'>
+							<div class='card-panel heading'>
+								<h5>Defects</h5>
+							</div>
+							<div class='card-panel filters'>
+								<div class='search' alt='Search tests' title='Search tests'>
+									<div class='input-field left'>
+										<input id='searchTests' type='text' class='validate' placeholder='Search tests...'>
+									</div>
+									<a href="#" class='btn-floating btn-small waves-effect waves-light blue lighten-1'>
+										<i class='mdi-action-search'></i>
+									</a>
+								</div>
+							</div>
+							<div class='card-panel no-padding-h no-padding-v'>
+								<div class='wrapper'>
+									<ul id='exception-collection' class='exception-collection'>
+											<li class='exception-item displayed'>
+												<div class='exception-head'>
+													<span class='exception-name'>java.lang.AssertionError</span>
+												</div>
+												<div class='exception-test-count'>
+													<span class='fail label'>4</span>
+												</div>
+												<div class='exception-body'>
+													<div class='exception-tests'>
+														<table class='bordered'>
+															<thead>
+																<tr>
+																	<th>RunDate</th>
+																	<th>Test Name</th>
+																	<th>Exception</th>
+																</tr>
+															</thead>
+															<tbody>
+                                                                   <tr class='fail'>
+                                                                       <td>2018-05-07 15:16:46</td>
+                                                                       <td><span class='exception-link linked' extentid='ee80da78-0ce8-465d-9025-fd67c93615ce'>GetMemberSyncApi <span class="label outline info">500 Milliseconds</span></span></td>
+                                                                       <td><pre class='exception-message'>java.lang.AssertionError: 1 expectation failed.
+Expected status code <200> doesn't match actual status code <403>.
+
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:80)
+	at org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:74)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:84)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:60)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:235)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:247)
+	at com.jayway.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:598)
+	at com.jayway.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
+	at com.jayway.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:760)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:210)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:59)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:166)
+	at com.jayway.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:120)
+	at com.jayway.restassured.specification.ResponseSpecification$statusCode$0.callCurrent(Unknown Source)
+	at com.jayway.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:128)
+	at com.jayway.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:117)
+	at com.leedonline.testcases.GetMemSyncApiTest.getMemSyncApi(GetMemSyncApiTest.java:37)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)</pre></td>
+                                                                   </tr>
+                                                                   <tr class='fail'>
+                                                                       <td>2018-05-07 15:16:55</td>
+                                                                       <td><span class='exception-link linked' extentid='f285fe17-1712-4f46-ace0-3597305d10e5'>PostFileUploadApi <span class="label outline info">326 Milliseconds</span></span></td>
+                                                                       <td><pre class='exception-message'>java.lang.AssertionError: 1 expectation failed.
+Expected status code <200> doesn't match actual status code <400>.
+
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:80)
+	at org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:74)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:84)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:247)
+	at com.jayway.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:598)
+	at com.jayway.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
+	at com.jayway.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:760)
+	at sun.reflect.GeneratedMethodAccessor74.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:210)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:59)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:166)
+	at com.jayway.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:120)
+	at com.jayway.restassured.specification.ResponseSpecification$statusCode$0.callCurrent(Unknown Source)
+	at com.jayway.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:128)
+	at com.jayway.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:117)
+	at com.leedonline.testcases.PostFileUploadTest.PostFileUpload(PostFileUploadTest.java:48)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)</pre></td>
+                                                                   </tr>
+                                                                   <tr class='fail'>
+                                                                       <td>2018-05-07 15:16:56</td>
+                                                                       <td><span class='exception-link linked' extentid='3eaf579b-d2f9-4a3e-a638-78e794f5766d'>Create Api Test Access Data <span class="label outline info">173 Milliseconds</span></span></td>
+                                                                       <td><pre class='exception-message'>java.lang.AssertionError: 1 expectation failed.
+Expected status code <200> doesn't match actual status code <400>.
+
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:80)
+	at org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:74)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:84)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:247)
+	at com.jayway.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:598)
+	at com.jayway.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
+	at com.jayway.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:760)
+	at sun.reflect.GeneratedMethodAccessor74.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:210)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:59)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:166)
+	at com.jayway.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:120)
+	at com.jayway.restassured.specification.ResponseSpecification$statusCode$0.callCurrent(Unknown Source)
+	at com.jayway.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:128)
+	at com.jayway.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:117)
+	at com.leedonline.testcases.PostValidateSdnStatusTest.PostValidateSdnStatus(PostValidateSdnStatusTest.java:51)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)</pre></td>
+                                                                   </tr>
+                                                                   <tr class='fail'>
+                                                                       <td>2018-05-07 15:16:56</td>
+                                                                       <td><span class='exception-link linked' extentid='42ab8719-8f19-42b1-9dba-7ffc2fce0394'>Create Api Test Access Data <span class="label outline info">182 Milliseconds</span></span></td>
+                                                                       <td><pre class='exception-message'>java.lang.AssertionError: 1 expectation failed.
+Expected status code <200> doesn't match actual status code <400>.
+
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:80)
+	at org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:74)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:84)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:247)
+	at com.jayway.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:598)
+	at com.jayway.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
+	at com.jayway.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:760)
+	at sun.reflect.GeneratedMethodAccessor74.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:210)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:59)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:166)
+	at com.jayway.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:120)
+	at com.jayway.restassured.specification.ResponseSpecification$statusCode$0.callCurrent(Unknown Source)
+	at com.jayway.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:128)
+	at com.jayway.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:117)
+	at com.leedonline.testcases.PostValidateCaGBCMemberTest.PostValidateCaGBCMember(PostValidateCaGBCMemberTest.java:47)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)</pre></td>
+                                                                   </tr>
+                                                            </tbody>
+														</table>
+													</div>
+												</div> 
+											</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div id='exception-details-wrapper' class='col _addedCell2'>
+						<div class='contents'>
+							<div class='card-panel details-view'>
+								<h5 class='exception-name'></h5>
+								<div class='exception-container'>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			<!-- /exceptions -->
+			
+			<!-- testrunner logs -->
+			<!-- /testrunner logs -->
+			
+		</div>
+		<!-- /container -->
+		
+		<!-- test dashboard counts setting -->
+		<div id='test-count-setting' class='modal bottom-sheet'> 
+			<div class='modal-content'> 
+				<h5>Configure Tests Count Setting</h5> 
+				<input name='test-count-setting' type='radio' id='parentWithoutNodes' class='with-gap'> 
+				<label for='parentWithoutNodes'>Parent Tests Only (Does not include child nodes in counts)</label> 
+				<br> 
+				<input name='test-count-setting' type='radio' id='parentWithoutNodesAndNodes' class='with-gap'> 
+				<label for='parentWithoutNodesAndNodes'>Parent Tests Without Child Tests + Child Tests</label> 
+				<br> 
+				<input name='test-count-setting' type='radio' id='childNodes' class='with-gap'> 
+				<label for='childNodes'>Child Tests Only</label> 
+			</div> 
+			<div class='modal-footer'> 
+				<a href='#!' class='modal-action modal-close waves-effect waves-green btn'>Save</a> 
+			</div> 
+		</div>
+		<!-- /test dashboard counts setting -->
+		
+		<!-- filter for step status -->
+		<div id='step-status-filter' class='modal bottom-sheet'> 
+			<div class='modal-content'> 
+				<h5>Select status</h5> 
+				<input checked class='filled-in' type='checkbox' id='step-dashboard-filter-pass'> 
+				<label for='step-dashboard-filter-pass'>Pass</label> 
+				<br> 
+				<input checked class='filled-in' type='checkbox' id='step-dashboard-filter-fail'> 
+				<label for='step-dashboard-filter-fail'>Fail</label> 
+				<br> 
+				<input checked class='filled-in' type='checkbox' id='step-dashboard-filter-fatal'> 
+				<label for='step-dashboard-filter-fatal'>Fatal</label> 
+				<br> 
+				<input checked class='filled-in' type='checkbox' id='step-dashboard-filter-error'> 
+				<label for='step-dashboard-filter-error'>Error</label> 
+				<br> 
+				<input checked class='filled-in' type='checkbox' id='step-dashboard-filter-warning'> 
+				<label for='step-dashboard-filter-warning'>Warning</label> 
+				<br> 
+				<input checked class='filled-in' type='checkbox' id='step-dashboard-filter-skip'> 
+				<label for='step-dashboard-filter-skip'>Skipped</label> 
+				<br> 
+				<input checked class='filled-in' type='checkbox' id='step-dashboard-filter-info'> 
+				<label for='step-dashboard-filter-info'>Info</label> 
+				<br> 
+				<input checked class='filled-in' type='checkbox' id='step-dashboard-filter-unknown'> 
+				<label for='step-dashboard-filter-unknown'>Unknown</label> 
+			</div>
+			<div class='modal-footer'> 
+				<a href='#!' class='modal-action modal-close waves-effect waves-green btn'>Save</a> 
+			</div> 
+		</div>
+		<!-- /filter for step status -->
+		
+		<script src='https://cdn.rawgit.com/anshooarora/extentreports/6032d73243ba4fe4fb8769eb9c315d4fdf16fe68/cdn/extent.js' type='text/javascript'></script>
+
+		<script>$(document).ready(function() { $('.logo span').html('ExtentReports'); });</script>
+		<script>
+				
+      
+        $(document).ready(function() {
+          
+        });
+      
+    
+		</script>
+	</body>
+</html>

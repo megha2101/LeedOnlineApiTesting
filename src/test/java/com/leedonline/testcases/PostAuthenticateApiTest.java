@@ -17,13 +17,11 @@ import com.leedOnline.driver.CommonMethod;
 import com.relevantcodes.extentreports.LogStatus;
 
 public class PostAuthenticateApiTest extends BaseClass{
-	String contentType;
-	int statusCode;
-	String token;
 
 	@Test
 	@Parameters({"rowNum", "SheetName" })
-	public void authenticate(int rowNum, String SheetName) throws IOException {		
+	public void authenticate(int rowNum, String SheetName) throws IOException {	
+		CommonMethod.ExtentReportConfig();
 		System.out.println(Thread.currentThread().getStackTrace()[1].getMethodName());
 		CommonMethod.res = given()
 				.header("Content-Type",CommonMethod.contentType)
@@ -36,7 +34,7 @@ public class PostAuthenticateApiTest extends BaseClass{
 				.post("/authenticate").then().extract().response();
 		System.out.println("Token is:" + CommonMethod.res.asString());
 		CommonMethod.responsetime = CommonMethod.res.getTimeIn(TimeUnit.MILLISECONDS);
-		test = extent
+		 CommonMethod.test =  CommonMethod.extent
 				.startTest("Authentication api " + CommonMethod.getLabel(CommonMethod.responsetime),
 						"genrating token.")
 				.assignCategory("api test");

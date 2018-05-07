@@ -25,6 +25,7 @@ public class PutApiTestAccessData extends BaseClass{
 	@Parameters({"rowNum", "SheetName" })
 	public void putApiTestAccess(int rowNum, String SheetName) throws IOException {
 		try {	
+			 CommonMethod.ExtentReportConfig();
 			System.out.println("header is: " +header + " createkey value is "+data.getCellData(SheetName, "createKey", rowNum));
 			System.out.println(Thread.currentThread().getStackTrace()[1].getMethodName());
 			JSONObject jsonAsMap = new JSONObject();
@@ -39,7 +40,7 @@ public class PutApiTestAccessData extends BaseClass{
 					.when()
 					.put("/Api/testAccess/Test12");		
 			CommonMethod.responsetime = CommonMethod.res.getTimeIn(TimeUnit.MILLISECONDS);
-			test = extent
+			 CommonMethod.test =  CommonMethod.extent
 					.startTest("PutApiTestAccess Api"+ CommonMethod.getLabel(CommonMethod.responsetime),
 							"Update the created test data.")
 					.assignCategory("api test");

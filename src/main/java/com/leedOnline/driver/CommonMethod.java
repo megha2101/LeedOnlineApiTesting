@@ -13,6 +13,7 @@ import java.text.Format;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Random;
 
@@ -25,11 +26,16 @@ import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
 public class CommonMethod extends BaseClass {
-	
-	public static String nonceValue;
+	static Format formatter = new SimpleDateFormat("YYYY-MM-dd");
+	static Date date = new Date();
+	public static List<String> jsonNonceResponse;
 	public static long responsetime;
 	public static Response res;
+	public static ExtentReports extent;
+    public static ExtentTest test;
 	public static String contentType = "application/x-www-form-urlencoded";
+	public static File extentconfigfile = new File(System.getProperty("user.dir") +"/src/main/resources/listener/extent-config.xml");
+    public static String Reportfile = System.getProperty("user.dir") +"/Report/Leedonline-AutomationReport" + "_" + formatter.format(date) + ".html";
 	
 	public static void GeneratingAuthCode() {
 		Token = given()
@@ -45,8 +51,17 @@ public class CommonMethod extends BaseClass {
 		header = "Basic " + Token;	
 	}
 	
-public static String getLabel(long responsetime) {
-		
+	 public static void ExtentReportConfig() {
+    	extent = new ExtentReports(Reportfile, false);
+    	extent.loadConfig(extentconfigfile);
+        Map<String, String> sysInfo = new HashMap<String, String>();
+    	sysInfo.put("Selenium Version", "2.53");
+    	sysInfo.put("Environment", "Staging");
+        extent.addSystemInfo(sysInfo);
+	    	
+	  }
+
+	public static String getLabel(long responsetime) {			
 		if (responsetime <= 4000){
 			
 	    return "<span class='label outline info'>" + CommonMethod.responsetime + " Milliseconds" + "</span>";
@@ -58,21 +73,17 @@ public static String getLabel(long responsetime) {
 		}	    
 	}
 
-public static void testlog(String log, String message){
-	switch(log){	
-	case "Pass":
-		test.log(LogStatus.PASS, message);
-		break;		
-	case "Info":
-		test.log(LogStatus.INFO, message);
-		break;		
-	 default:     	
-     	System.out.println("Not Valid Input");
+	public static void testlog(String log, String message){
+		switch(log){	
+		case "Pass":
+			CommonMethod.test.log(LogStatus.PASS, message);
+			break;		
+		case "Info":
+			CommonMethod.test.log(LogStatus.INFO, message);
+			break;		
+		 default:     	
+	     	System.out.println("Not Valid Input");
+		}
 	}
-}
-
-	
-	
-	
 	
 }

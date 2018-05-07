@@ -3,6 +3,7 @@ package com.leedonline.testcases;
 import static com.jayway.restassured.RestAssured.given;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.testng.ITestResult;
@@ -22,16 +23,16 @@ public class GetNonceApiTest extends BaseClass{
 	@Test
 	@Parameters({"rowNum", "SheetName" })
 	public void getNonceApi(int rowNum, String SheetName) throws IOException {
-		try {		
+		try {	
+			CommonMethod.ExtentReportConfig();
 			System.out.println(Thread.currentThread().getStackTrace()[1].getMethodName());
-			CommonMethod.GeneratingAuthCode();
 			CommonMethod.res = given()
 					.header("Authorization", header)
 					.spec(reqSpec)
 					.when()
 					.get("/getNonce?total="+data.getCellData(SheetName, "nonceNum", rowNum));		
 			CommonMethod.responsetime = CommonMethod.res.getTimeIn(TimeUnit.MILLISECONDS);
-			test = extent
+			 CommonMethod.test =  CommonMethod.extent
 					.startTest("GetNonceApi "+ CommonMethod.getLabel(CommonMethod.responsetime),
 							"Generates one time use nonces.")
 					.assignCategory("api test");
@@ -39,9 +40,11 @@ public class GetNonceApiTest extends BaseClass{
 			CommonMethod.res.then().assertThat().statusCode(200);		  
 			CommonMethod.res.then().assertThat().contentType(ContentType.JSON);
 			System.out.println("Nonce header is:"+ header);
-			JsonPath jsonPathEvaluator = CommonMethod.res.jsonPath();
-			CommonMethod.nonceValue = jsonPathEvaluator.get("nonce");
-			System.out.println("GetNonceApi value is: "+ CommonMethod.nonceValue );
+			//JsonPath jsonPathEvaluator = CommonMethod.res.jsonPath();
+			//CommonMethod.nonceValue = jsonPathEvaluator.get("nonce");
+			CommonMethod.jsonNonceResponse = CommonMethod.res.jsonPath().getList("nonces");
+			System.out.println(CommonMethod.jsonNonceResponse.get(0));
+			System.out.println("GetNonceApi value is: "+ CommonMethod.jsonNonceResponse.get(0) );
 			System.out.println("GetNonceApi body res is: "+ CommonMethod.res.asString() );
 	        CommonMethod.testlog("Pass", "Authorization Token generated" + "<br>" + header);
 			CommonMethod.testlog("Pass", "verifies response from API" + "<br>" + CommonMethod.res.asString());

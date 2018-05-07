@@ -21,17 +21,18 @@ public class GetProjectDetailsTypeTest extends BaseClass{
 	@Parameters({"rowNum", "SheetName" })
 	public void ProjectDetailsType(int rowNum, String SheetName) throws IOException {
 		try {	
+			CommonMethod.ExtentReportConfig();
 			System.out.println(Thread.currentThread().getStackTrace()[1].getMethodName());
 			CommonMethod.res = given()
 					.header("Authorization", header)
 					.spec(reqSpec)
 					.when()
 					.get("/Project/details/"+data.getCellData(SheetName, "projectType", rowNum)+
-							"/"+data.getCellData(SheetName, "leedProjectId", rowNum));
+							"/"+data.getCellData(SheetName, "leedProjectId", rowNum)).then().extract().response();
 			CommonMethod.responsetime = CommonMethod.res.getTimeIn(TimeUnit.MILLISECONDS);
-			test = extent
+			 CommonMethod.test =  CommonMethod.extent
 					.startTest("ProjectDetailsType Api "+ CommonMethod.getLabel(CommonMethod.responsetime),
-							"Get project details.")
+							"Get final payable amount after calculating all taxes.")
 					.assignCategory("api test");
 			System.out.println("ProjectDetailsType response time is: "+CommonMethod.res.asString());
 			System.out.println("ProjectDetailsType hedaer is: "+header);

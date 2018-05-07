@@ -22,7 +22,8 @@ public class GetApiTestAccessData extends BaseClass{
 	@Test
 	@Parameters({"rowNum", "SheetName" })
 	public void getApiTestAccessData(int rowNum, String SheetName) throws IOException {
-		try {		
+		try {	
+		    CommonMethod.ExtentReportConfig();
 			System.out.println(Thread.currentThread().getStackTrace()[1].getMethodName());
 			System.out.println("GetTestApiAccessData hedaer is: "+ header);
 			CommonMethod.res = given()
@@ -31,7 +32,7 @@ public class GetApiTestAccessData extends BaseClass{
 					.when()
 					.get("/Api/testAccess?key="+data.getCellData(SheetName, "createKey", rowNum));		
 			CommonMethod.responsetime = CommonMethod.res.getTimeIn(TimeUnit.MILLISECONDS);
-			test = extent
+			 CommonMethod.test =  CommonMethod.extent
 					.startTest("Get Api Test Access Data "+ CommonMethod.getLabel(CommonMethod.responsetime),
 							"Read the single or full data..")
 					.assignCategory("api test");

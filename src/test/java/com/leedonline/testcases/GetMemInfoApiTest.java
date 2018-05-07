@@ -21,6 +21,7 @@ public class GetMemInfoApiTest extends BaseClass{
 	@Parameters({"rowNum", "SheetName" })
 	public void getMemInfoApi(int rowNum, String SheetName) throws IOException {
 		try {	
+			CommonMethod.ExtentReportConfig();
 			System.out.println(Thread.currentThread().getStackTrace()[1].getMethodName());
 			CommonMethod.res = given()
 					.header("Authorization", header)
@@ -28,7 +29,7 @@ public class GetMemInfoApiTest extends BaseClass{
 					.when()
 					.get("/Member/GetInfo");		
 			CommonMethod.responsetime = CommonMethod.res.getTimeIn(TimeUnit.MILLISECONDS);
-			test = extent
+			 CommonMethod.test =  CommonMethod.extent
 					.startTest("Get Member Info Api "+ CommonMethod.getLabel(CommonMethod.responsetime),
 							"Get authenticated person details.")
 					.assignCategory("api test");

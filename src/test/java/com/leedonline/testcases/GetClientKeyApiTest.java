@@ -21,7 +21,8 @@ public class GetClientKeyApiTest extends BaseClass{
 	@Test
 	@Parameters({"rowNum", "SheetName" })
 	public void getClientKey(int rowNum, String SheetName) throws IOException {
-		try {		
+		try {	
+			CommonMethod.ExtentReportConfig();
 			System.out.println(Thread.currentThread().getStackTrace()[1].getMethodName());
 			CommonMethod.GeneratingAuthCode();
 			CommonMethod.res = given()
@@ -30,7 +31,7 @@ public class GetClientKeyApiTest extends BaseClass{
 					.when()
 					.get("/getClientKey");		
 			CommonMethod.responsetime = CommonMethod.res.getTimeIn(TimeUnit.MILLISECONDS);
-			test = extent
+			 CommonMethod.test =  CommonMethod.extent
 					.startTest("GetClientKey Api "+ CommonMethod.getLabel(CommonMethod.responsetime),
 							"Generate and get client key to sign in API .")
 					.assignCategory("api test");
