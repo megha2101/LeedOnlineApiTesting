@@ -18,42 +18,46 @@ import com.leedOnline.driver.BaseClass;
 import com.leedOnline.driver.CommonMethod;
 import com.relevantcodes.extentreports.LogStatus;
 
-import net.minidev.json.JSONObject;
-
-public class PutApiTestAccessData extends BaseClass{
+public class PostApiTestAccessDataTest extends BaseClass{
 	@Test
 	@Parameters({"rowNum", "SheetName" })
-	public void putApiTestAccess(int rowNum, String SheetName) throws IOException {
+	public void PostApiTestAccessData(int rowNum, String SheetName) throws IOException {
 		try {	
-			 CommonMethod.ExtentReportConfig();
-			System.out.println("header is: " +header + " createkey value is "+data.getCellData(SheetName, "createKey", rowNum));
+			CommonMethod.ExtentReportConfig();
 			System.out.println(Thread.currentThread().getStackTrace()[1].getMethodName());
-			JSONObject jsonAsMap = new JSONObject();
-			jsonAsMap.put("key", data.getCellData(SheetName, "createKey", rowNum));
-			jsonAsMap.put("value", data.getCellData(SheetName, "updatedKeyValue", rowNum));
-	
 			CommonMethod.res = given()
 					.header("Content-Type",CommonMethod.contentType)
 					.header("Authorization", header)
+					.header("X-Nonce", CommonMethod.jsonNonceResponse.get(0))
 					.spec(reqSpec)
-					.body(jsonAsMap)
+					.params(
+							"key", data.getCellData(SheetName, "createKey", rowNum),
+							"value", data.getCellData(SheetName, "createKeyValue", rowNum)
+							)
 					.when()
-					.put("/Api/testAccess/Test12");		
+					.post("/Api/testAccess")
+					.then()
+					.extract()
+					.response();	
+
 			CommonMethod.responsetime = CommonMethod.res.getTimeIn(TimeUnit.MILLISECONDS);
-			 CommonMethod.test =  CommonMethod.extent
-					.startTest("PutApiTestAccess Api"+ CommonMethod.getLabel(CommonMethod.responsetime),
-							"Update the created test data.")
+			CommonMethod.test =  CommonMethod.extent
+					.startTest("Create Api Test Access Data "+ CommonMethod.getLabel(CommonMethod.responsetime),
+							"Create some data for testing.")
 					.assignCategory("api test");
-			ResponseBody body = CommonMethod.res.getBody();
-			String bodyAsString = body.asString();
-			System.out.println("PutTestApiAccessData body res is: "+bodyAsString);
-			System.out.println("PutApiTestAccess api response time is: "+CommonMethod.responsetime);
-			CommonMethod.res.then().log().all();
+
 			CommonMethod.res.then().assertThat().statusCode(200);		  
 			CommonMethod.res.then().assertThat().contentType(ContentType.JSON);
-	        CommonMethod.testlog("Pass", "Authorization Token generated" + "<br>" + header);
+
+			System.out.println("Authorization Token Generated " + header);
+			System.out.println("Response received from API " + CommonMethod.res.asString());
+			System.out.println("Responsetime of API " + CommonMethod.responsetime);
+
+			CommonMethod.testlog("Pass", "Authorization Token generated" + "<br>" + header);
+			CommonMethod.testlog("Info", "Content Type is : " + CommonMethod.res.getContentType());
+			CommonMethod.testlog("Info", "Status Code is : " + CommonMethod.res.getStatusCode());
 			CommonMethod.testlog("Pass", "verifies response from API" + "<br>" + CommonMethod.res.asString());
-	        CommonMethod.testlog("Info", "API responded in "+ CommonMethod.responsetime + " Milliseconds");
+			CommonMethod.testlog("Info", "API responded in " + CommonMethod.responsetime + " Milliseconds");
 		}catch(Exception e) {
 			e.printStackTrace();
 		}

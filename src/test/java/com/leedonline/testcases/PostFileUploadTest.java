@@ -32,24 +32,31 @@ public class PostFileUploadTest extends BaseClass{
 					.header("X-Nonce", CommonMethod.jsonNonceResponse.get(3))
 					.spec(reqSpec)					
 					.multiPart("projectId",data.getCellData(SheetName, "leedProjectId", rowNum))
-					.multiPart("linkedTo",data.getCellData(SheetName, "getFilesListLinkedTo", rowNum))				//data.getCellData(SheetName, "orgName", rowNum)	
+					.multiPart("linkedTo",data.getCellData(SheetName, "getFilesListLinkedTo", rowNum))
 					.when()
-					.post("/Files/upload").then().extract().response();		
+					.post("/Files/upload")
+					.then()
+					.extract()
+					.response();	
+
 			CommonMethod.responsetime = CommonMethod.res.getTimeIn(TimeUnit.MILLISECONDS);
-			 CommonMethod.test =  CommonMethod.extent
+			CommonMethod.test =  CommonMethod.extent
 					.startTest("PostFileUploadApi "+ CommonMethod.getLabel(CommonMethod.responsetime),
 							"Upload a file to the project.")
 					.assignCategory("api test");
-			ResponseBody body = CommonMethod.res.getBody();
-			String bodyAsString = body.asString();
-			System.out.println("PostFileUploadApi body res is: "+bodyAsString);
-			System.out.println("PostFileUploadApi response time is: "+CommonMethod.responsetime);
-			System.out.println("PostFileUploadApi hedaer is: "+header);
+
 			CommonMethod.res.then().assertThat().statusCode(200);		  
 			CommonMethod.res.then().assertThat().contentType(ContentType.JSON);
-	        CommonMethod.testlog("Pass", "Authorization Token generated" + "<br>" + header);
+
+			System.out.println("Authorization Token Generated " + header);
+			System.out.println("Response received from API " + CommonMethod.res.asString());
+			System.out.println("Responsetime of API " + CommonMethod.responsetime);
+
+			CommonMethod.testlog("Pass", "Authorization Token generated" + "<br>" + header);
+			CommonMethod.testlog("Info", "Content Type is : " + CommonMethod.res.getContentType());
+			CommonMethod.testlog("Info", "Status Code is : " + CommonMethod.res.getStatusCode());
 			CommonMethod.testlog("Pass", "verifies response from API" + "<br>" + CommonMethod.res.asString());
-	        CommonMethod.testlog("Info", "API responded in "+ CommonMethod.responsetime + " Milliseconds");
+			CommonMethod.testlog("Info", "API responded in " + CommonMethod.responsetime + " Milliseconds");
 		}catch(Exception e) {
 			e.printStackTrace();
 		}

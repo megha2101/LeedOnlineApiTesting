@@ -25,30 +25,36 @@ public class PostValidateCaGBCMemberTest extends BaseClass{
 		try {	
 			CommonMethod.ExtentReportConfig();			
 			System.out.println(Thread.currentThread().getStackTrace()[1].getMethodName());
-			System.out.println("Nonce value is: "+ CommonMethod.jsonNonceResponse.get(2));
 			CommonMethod.res = given()
 					.header("Content-Type","multipart/formData")
 					.header("Authorization", header)
 					.header("X-Nonce", CommonMethod.jsonNonceResponse.get(2))
 					.spec(reqSpec)					
-					.multiPart("memberEmail","cagbcusgbcorg1@gmail.com")				//data.getCellData(SheetName, "orgName", rowNum)	
+					.multiPart("memberEmail","cagbcusgbcorg1@gmail.com")				
 					.when()
-					.post("/Validate/CaGBCMember").then().extract().response();		
+					.post("/Validate/CaGBCMember")
+					.then()
+					.extract()
+					.response();		
+
 			CommonMethod.responsetime = CommonMethod.res.getTimeIn(TimeUnit.MILLISECONDS);
-			 CommonMethod.test =  CommonMethod.extent
+			CommonMethod.test =  CommonMethod.extent
 					.startTest("Create Api Test Access Data "+ CommonMethod.getLabel(CommonMethod.responsetime),
 							"Validate one or more CaGBC member ID or Email.")
 					.assignCategory("api test");
-			ResponseBody body = CommonMethod.res.getBody();
-			String bodyAsString = body.asString();
-			System.out.println("PostValidateCaGBCMember body res is: "+bodyAsString);
-			System.out.println("PostValidateCaGBCMember response time is: "+CommonMethod.responsetime);
-			System.out.println("PostValidateCaGBCMember hedaer is: "+header);
+
 			CommonMethod.res.then().assertThat().statusCode(200);		  
 			CommonMethod.res.then().assertThat().contentType(ContentType.JSON);
-	        CommonMethod.testlog("Pass", "Authorization Token generated" + "<br>" + header);
+
+			System.out.println("Authorization Token Generated " + header);
+			System.out.println("Response received from API " + CommonMethod.res.asString());
+			System.out.println("Responsetime of API " + CommonMethod.responsetime);
+
+			CommonMethod.testlog("Pass", "Authorization Token generated" + "<br>" + header);
+			CommonMethod.testlog("Info", "Content Type is : " + CommonMethod.res.getContentType());
+			CommonMethod.testlog("Info", "Status Code is : " + CommonMethod.res.getStatusCode());
 			CommonMethod.testlog("Pass", "verifies response from API" + "<br>" + CommonMethod.res.asString());
-	        CommonMethod.testlog("Info", "API responded in "+ CommonMethod.responsetime + " Milliseconds");
+			CommonMethod.testlog("Info", "API responded in " + CommonMethod.responsetime + " Milliseconds");
 		}catch(Exception e) {
 			e.printStackTrace();
 		}

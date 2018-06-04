@@ -19,10 +19,10 @@ import com.leedOnline.driver.CommonMethod;
 import com.relevantcodes.extentreports.LogStatus;
 
 public class GetNonceApiTest extends BaseClass{
-	
+
 	@Test
 	@Parameters({"rowNum", "SheetName" })
-	public void getNonceApi(int rowNum, String SheetName) throws IOException {
+	public void GetNonceApi(int rowNum, String SheetName) throws IOException {
 		try {	
 			CommonMethod.ExtentReportConfig();
 			System.out.println(Thread.currentThread().getStackTrace()[1].getMethodName());
@@ -30,25 +30,31 @@ public class GetNonceApiTest extends BaseClass{
 					.header("Authorization", header)
 					.spec(reqSpec)
 					.when()
-					.get("/getNonce?total="+data.getCellData(SheetName, "nonceNum", rowNum));		
+					.get("/getNonce?total="+data.getCellData(SheetName, "nonceNum", rowNum))
+					.then()
+					.extract()
+					.response();
+
 			CommonMethod.responsetime = CommonMethod.res.getTimeIn(TimeUnit.MILLISECONDS);
-			 CommonMethod.test =  CommonMethod.extent
+			CommonMethod.test =  CommonMethod.extent
 					.startTest("GetNonceApi "+ CommonMethod.getLabel(CommonMethod.responsetime),
 							"Generates one time use nonces.")
 					.assignCategory("api test");
-			System.out.println("GetNonceApi response time is: "+CommonMethod.responsetime);
+			
+			CommonMethod.jsonNonceResponse = CommonMethod.res.jsonPath().getList("nonces");
+
 			CommonMethod.res.then().assertThat().statusCode(200);		  
 			CommonMethod.res.then().assertThat().contentType(ContentType.JSON);
-			System.out.println("Nonce header is:"+ header);
-			//JsonPath jsonPathEvaluator = CommonMethod.res.jsonPath();
-			//CommonMethod.nonceValue = jsonPathEvaluator.get("nonce");
-			CommonMethod.jsonNonceResponse = CommonMethod.res.jsonPath().getList("nonces");
-			System.out.println(CommonMethod.jsonNonceResponse.get(0));
-			System.out.println("GetNonceApi value is: "+ CommonMethod.jsonNonceResponse.get(0) );
-			System.out.println("GetNonceApi body res is: "+ CommonMethod.res.asString() );
-	        CommonMethod.testlog("Pass", "Authorization Token generated" + "<br>" + header);
+
+			System.out.println("Authorization Token Generated " + header);
+			System.out.println("Response received from API " + CommonMethod.res.asString());
+			System.out.println("Responsetime of API " + CommonMethod.responsetime);
+
+			CommonMethod.testlog("Pass", "Authorization Token generated" + "<br>" + header);
+			CommonMethod.testlog("Info", "Content Type is : " + CommonMethod.res.getContentType());
+			CommonMethod.testlog("Info", "Status Code is : " + CommonMethod.res.getStatusCode());
 			CommonMethod.testlog("Pass", "verifies response from API" + "<br>" + CommonMethod.res.asString());
-	        CommonMethod.testlog("Info", "API responded in "+ CommonMethod.responsetime + " Milliseconds");
+			CommonMethod.testlog("Info", "API responded in " + CommonMethod.responsetime + " Milliseconds");
 		}catch(Exception e) {
 			e.printStackTrace();
 		}

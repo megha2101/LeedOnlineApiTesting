@@ -19,7 +19,7 @@
 	         <class name="com.leedonline.testcases.GetCountryAndStateTest"/> 
 	         <class name="com.leedonline.testcases.GetTaxForAmountTest"/>
 	         <class name="com.leedonline.testcases.GetPriceReleatedInfoTest"/> 
-	         <class name="com.leedonline.testcases.GetApiTestAccessData"/>     
+	         <class name="com.leedonline.testcases.GetApiTestAccessDataTest"/>     
 	         <class name="com.leedonline.testcases.GetLeedPricingDefaultVersionTest"/>
 	         <class name="com.leedonline.testcases.GetLeedPricingVersionPricesInfoTest"/>
 	         <class name="com.leedonline.testcases.GetLeedPricingPriceVersionInfoTest"/>
@@ -28,12 +28,12 @@
 	         <class name="com.leedonline.testcases.GetFileDmsProxyTest"/>
 	         <class name="com.leedonline.testcases.GetNonceApiTest"/>
 	         <class name="com.leedonline.testcases.PostFileUploadTest"/>
-	         <class name="com.leedonline.testcases.PostApiTestAccessData"/> 
+	         <class name="com.leedonline.testcases.PostApiTestAccessDataTest"/> 
 	         <class name="com.leedonline.testcases.PostValidateSdnStatusTest"/> 
 	         <class name="com.leedonline.testcases.PostValidateCaGBCMemberTest"/>      
 	         <class name="com.leedonline.testcases.PostValidatePostalCodeTest"/>
-	         <class name="com.leedonline.testcases.PutApiTestAccessData"/> 
-	         <class name="com.leedonline.testcases.DeleteApiTestAccessData"/>            	         
+	         <class name="com.leedonline.testcases.PutApiTestAccessDataTest"/> 
+	         <class name="com.leedonline.testcases.DeleteApiTestAccessDataTest"/>            	         
 	         <class name="com.leedonline.testcases.GetInvalidateTokenApiTest"/> 	
 	         <class name="com.leedonline.testcases.GetClientKeyApiTest"/> <!--Generated token  -->	           
 	    </classes>   

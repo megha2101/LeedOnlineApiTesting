@@ -18,40 +18,40 @@ import com.leedOnline.driver.BaseClass;
 import com.leedOnline.driver.CommonMethod;
 import com.relevantcodes.extentreports.LogStatus;
 
-public class PostApiTestAccessData extends BaseClass{
+public class GetApiTestAccessDataTest extends BaseClass{
 	@Test
 	@Parameters({"rowNum", "SheetName" })
-	public void createApiTestAccessData(int rowNum, String SheetName) throws IOException {
+	public void GetApiTestAccessData(int rowNum, String SheetName) throws IOException {
 		try {	
-			CommonMethod.ExtentReportConfig();
+		    CommonMethod.ExtentReportConfig();
 			System.out.println(Thread.currentThread().getStackTrace()[1].getMethodName());
-			System.out.println("CreateTestApiAccessData hedaer is: "+ header);
 			CommonMethod.res = given()
-					.header("Content-Type",CommonMethod.contentType)
 					.header("Authorization", header)
-					.header("X-Nonce", CommonMethod.jsonNonceResponse.get(0))
 					.spec(reqSpec)
-					.params(
-						  "key", data.getCellData(SheetName, "createKey", rowNum),
-						  "value", data.getCellData(SheetName, "createKeyValue", rowNum)
-						  )
 					.when()
-					.post("/Api/testAccess").then().extract().response();		
+					.get("/Api/testAccess?key="+data.getCellData(SheetName, "createKey", rowNum))
+					.then()
+					.extract()
+					.response();	
+			
 			CommonMethod.responsetime = CommonMethod.res.getTimeIn(TimeUnit.MILLISECONDS);
-			 CommonMethod.test =  CommonMethod.extent
-					.startTest("Create Api Test Access Data "+ CommonMethod.getLabel(CommonMethod.responsetime),
-							"Create some data for testing.")
+			CommonMethod.test =  CommonMethod.extent
+					.startTest("Get Api Test Access Data "+ CommonMethod.getLabel(CommonMethod.responsetime),
+							"Read the single or full data..")
 					.assignCategory("api test");
-			ResponseBody body = CommonMethod.res.getBody();
-			String bodyAsString = body.asString();
-			System.out.println("CreateTestApiAccessData body res is: "+bodyAsString);
-			System.out.println("CreateTestApiAccessData response time is: "+CommonMethod.responsetime);
-			System.out.println("CreateTestApiAccessData hedaer is: "+header);
+			
 			CommonMethod.res.then().assertThat().statusCode(200);		  
 			CommonMethod.res.then().assertThat().contentType(ContentType.JSON);
-	        CommonMethod.testlog("Pass", "Authorization Token generated" + "<br>" + header);
+			
+			System.out.println("Authorization Token Generated " + header);
+			System.out.println("Response received from API " + CommonMethod.res.asString());
+			System.out.println("Responsetime of API " + CommonMethod.responsetime);
+
+			CommonMethod.testlog("Pass", "Authorization Token generated" + "<br>" + header);
+			CommonMethod.testlog("Info", "Content Type is : " + CommonMethod.res.getContentType());
+			CommonMethod.testlog("Info", "Status Code is : " + CommonMethod.res.getStatusCode());
 			CommonMethod.testlog("Pass", "verifies response from API" + "<br>" + CommonMethod.res.asString());
-	        CommonMethod.testlog("Info", "API responded in "+ CommonMethod.responsetime + " Milliseconds");
+			CommonMethod.testlog("Info", "API responded in " + CommonMethod.responsetime + " Milliseconds");
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
