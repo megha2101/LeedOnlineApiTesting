@@ -26,15 +26,16 @@ public class GetFileDownloadUrlTest extends BaseClass{
 			CommonMethod.res = given()
 					.header("Authorization", header)
 					.spec(reqSpec)
+					.param("ids", data.getCellData(SheetName, "fileId", rowNum))
 					.when()
-					.get("Files/getDownloadUrl?ids="+data.getCellData(SheetName, "fileId", rowNum))
+					.get("Files/getDownloadUrl")
 					.then()
 					.extract()
 					.response();
 			
 			CommonMethod.responsetime = CommonMethod.res.getTimeIn(TimeUnit.MILLISECONDS);
 			CommonMethod.test =  CommonMethod.extent
-					.startTest("GetFilesList Api "+ CommonMethod.getLabel(CommonMethod.responsetime),
+					.startTest("GetFileDownloadUrl Api "+ CommonMethod.getLabel(CommonMethod.responsetime),
 							"Get file download URL.")
 					.assignCategory("api test");
 			

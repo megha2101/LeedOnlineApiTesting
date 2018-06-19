@@ -16,7 +16,7 @@ import com.leedOnline.driver.BaseClass;
 import com.leedOnline.driver.CommonMethod;
 import com.relevantcodes.extentreports.LogStatus;
 
-public class GetProjectDetailsTypeTest extends BaseClass{
+public class GetLeedProjectDetailsTypeTest extends BaseClass{
 	@Test
 	@Parameters({"rowNum", "SheetName" })
 	public void GetProjectDetailsType(int rowNum, String SheetName) throws IOException {
@@ -35,7 +35,7 @@ public class GetProjectDetailsTypeTest extends BaseClass{
 
 			CommonMethod.responsetime = CommonMethod.res.getTimeIn(TimeUnit.MILLISECONDS);
 			CommonMethod.test =  CommonMethod.extent
-					.startTest("ProjectDetailsType Api "+ CommonMethod.getLabel(CommonMethod.responsetime),
+					.startTest("GetProjectDetailsType Api "+ CommonMethod.getLabel(CommonMethod.responsetime),
 							"Get final payable amount after calculating all taxes.")
 					.assignCategory("api test");
 

@@ -26,15 +26,16 @@ public class GetLeedPricingPriceVersionInfoTest extends BaseClass{
 			CommonMethod.res = given()
 					.header("Authorization", header)
 					.spec(reqSpec)
+					.param("versions",data.getCellData(SheetName, "versions", rowNum))
 					.when()
-					.get("/LEEDPricing/getPriceVersionsInfo?versions="+data.getCellData(SheetName, "versions", rowNum))
+					.get("/LEEDPricing/getPriceVersionsInfo")
 					.then()
 					.extract()
 					.response();
 
 			CommonMethod.responsetime = CommonMethod.res.getTimeIn(TimeUnit.MILLISECONDS);
 			CommonMethod.test =  CommonMethod.extent
-					.startTest("Get Member Info Api "+ CommonMethod.getLabel(CommonMethod.responsetime),
+					.startTest("GetLeedPricingPriceVersionInfo Api "+ CommonMethod.getLabel(CommonMethod.responsetime),
 							"Get the pricing version details.")
 					.assignCategory("api test");
 			

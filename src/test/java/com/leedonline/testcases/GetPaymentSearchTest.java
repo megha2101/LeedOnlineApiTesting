@@ -26,16 +26,17 @@ public class GetPaymentSearchTest extends BaseClass{
 			CommonMethod.res = given()
 					.header("Authorization", header)
 					.spec(reqSpec)
+					.params("programName", data.getCellData(SheetName, "programName", rowNum),
+							"projectId", data.getCellData(SheetName, "leedProjectId", rowNum))
 					.when()
-					.get("Payments/search?programName="+data.getCellData(SheetName, "programName", rowNum)+
-							"&projectId="+data.getCellData(SheetName, "leedProjectId", rowNum))
+					.get("/Payments/search")
 					.then()
 					.extract()
 					.response();
 
 			CommonMethod.responsetime = CommonMethod.res.getTimeIn(TimeUnit.MILLISECONDS);
 			CommonMethod.test =  CommonMethod.extent
-					.startTest("Get Member Info Api "+ CommonMethod.getLabel(CommonMethod.responsetime),
+					.startTest("GetPaymentSearch Api "+ CommonMethod.getLabel(CommonMethod.responsetime),
 							"Search Transaction payment details.")
 					.assignCategory("api test");
 

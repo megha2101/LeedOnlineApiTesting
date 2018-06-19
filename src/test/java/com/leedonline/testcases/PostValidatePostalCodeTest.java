@@ -42,7 +42,7 @@ public class PostValidatePostalCodeTest extends BaseClass{
 
 			CommonMethod.responsetime = CommonMethod.res.getTimeIn(TimeUnit.MILLISECONDS);
 			CommonMethod.test =  CommonMethod.extent
-					.startTest("Create Api Test Access Data "+ CommonMethod.getLabel(CommonMethod.responsetime),
+					.startTest("PostValidatePostalCode Api "+ CommonMethod.getLabel(CommonMethod.responsetime),
 							"Validate Postal Code.")
 					.assignCategory("api test");
 

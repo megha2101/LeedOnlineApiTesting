@@ -26,9 +26,10 @@ public class GetTaxForAmountTest extends BaseClass{
 			CommonMethod.res = given()
 					.header("Authorization", header)
 					.spec(reqSpec)
+					.params("currency", data.getCellData(SheetName, "currencyCode", rowNum),
+							"amount", data.getCellData(SheetName, "amount", rowNum))
 					.when()
-					.get("/Common/getTaxForAmount?currency="+data.getCellData(SheetName, "currencyCode", rowNum)
-					+"&amount="+data.getCellData(SheetName, "amount", rowNum))
+					.get("/Common/getTaxForAmount")
 					.then()
 					.extract()
 					.response();

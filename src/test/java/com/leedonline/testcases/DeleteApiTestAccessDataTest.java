@@ -41,7 +41,7 @@ public class DeleteApiTestAccessDataTest extends BaseClass{
 			
 			CommonMethod.responsetime = CommonMethod.res.getTimeIn(TimeUnit.MILLISECONDS);
 			CommonMethod.test =  CommonMethod.extent
-					.startTest("Delete Api Test Access Data "+ CommonMethod.getLabel(CommonMethod.responsetime),
+					.startTest("DeleteApiTestAccessData api"+ CommonMethod.getLabel(CommonMethod.responsetime),
 							"Delete single or full data.")
 					.assignCategory("api test");
 			

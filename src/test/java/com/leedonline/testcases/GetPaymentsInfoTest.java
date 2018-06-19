@@ -16,26 +16,30 @@ import com.leedOnline.driver.BaseClass;
 import com.leedOnline.driver.CommonMethod;
 import com.relevantcodes.extentreports.LogStatus;
 
-public class GetProgramPaymentTest extends BaseClass{
+public class GetPaymentsInfoTest extends BaseClass{
 	@Test
 	@Parameters({"rowNum", "SheetName" })
-	public void GetProgramPayment(int rowNum, String SheetName) throws IOException {
+	public void GetPaymentInfo(int rowNum, String SheetName) throws IOException {
 		try {	
 			CommonMethod.ExtentReportConfig();
 			System.out.println(Thread.currentThread().getStackTrace()[1].getMethodName());
-			CommonMethod.res = given()
+			CommonMethod.res = given().log().ifValidationFails()
 					.header("Authorization", header)
+					.header("X-Caller-Id", "20297672fa1247ccf00ce8e0a14013ac")
 					.spec(reqSpec)
+					.params("programName", data.getCellData(SheetName, "programName", rowNum),
+							"processId", data.getCellData(SheetName, "processId", rowNum),
+							"orderId",data.getCellData(SheetName, "orderId", rowNum))
 					.when()
-					.get("/Payments/doPayment/"+data.getCellData(SheetName, "currencies", rowNum))
+					.get("Payments/getInfo")
 					.then()
 					.extract()
 					.response();
 
 			CommonMethod.responsetime = CommonMethod.res.getTimeIn(TimeUnit.MILLISECONDS);
 			CommonMethod.test =  CommonMethod.extent
-					.startTest("GetProgramPayment Api "+ CommonMethod.getLabel(CommonMethod.responsetime),
-							"Initiate program payment transaction.")
+					.startTest("GetPaymentInfo Api "+ CommonMethod.getLabel(CommonMethod.responsetime),
+							"Get payment process result.")
 					.assignCategory("api test");
 			
 			CommonMethod.res.then().assertThat().statusCode(200);		  

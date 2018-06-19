@@ -26,15 +26,16 @@ public class GetLeedPricingDefaultVersionTest extends BaseClass{
 			CommonMethod.res = given()
 					.header("Authorization", header)
 					.spec(reqSpec)
+					.param("currencies", data.getCellData(SheetName, "currencies", rowNum))
 					.when()
-					.get("/LEEDPricing/getDefaultVersion?currencies="+data.getCellData(SheetName, "currencies", rowNum))
+					.get("/LEEDPricing/getDefaultVersion")
 					.then()
 					.extract()
 					.response();
 
 			CommonMethod.responsetime = CommonMethod.res.getTimeIn(TimeUnit.MILLISECONDS);
 			CommonMethod.test =  CommonMethod.extent
-					.startTest("Get Member Info Api "+ CommonMethod.getLabel(CommonMethod.responsetime),
+					.startTest("GetLeedPricingDefaultVersion Api "+ CommonMethod.getLabel(CommonMethod.responsetime),
 							"Get default version.")
 					.assignCategory("api test");
 

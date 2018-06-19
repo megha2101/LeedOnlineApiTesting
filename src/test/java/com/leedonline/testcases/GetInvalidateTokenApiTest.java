@@ -34,7 +34,7 @@ public class GetInvalidateTokenApiTest extends BaseClass{
 
 			CommonMethod.responsetime = CommonMethod.res.getTimeIn(TimeUnit.MILLISECONDS);
 			CommonMethod.test =  CommonMethod.extent
-					.startTest("InvalidateToken api "+ CommonMethod.getLabel(CommonMethod.responsetime),
+					.startTest("GetInvalidateToken Api "+ CommonMethod.getLabel(CommonMethod.responsetime),
 							"invalidate Basic auth token to remove the access.")
 					.assignCategory("api test");
 			

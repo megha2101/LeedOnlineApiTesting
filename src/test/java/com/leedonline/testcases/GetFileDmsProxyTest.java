@@ -26,9 +26,10 @@ public class GetFileDmsProxyTest extends BaseClass{
 			CommonMethod.res = given()
 					.header("Authorization", header)
 					.spec(reqSpec)
+					.params("cmd",data.getCellData(SheetName, "cmd", rowNum),
+							"linkedTo", data.getCellData(SheetName, "getFilesListLinkedTo", rowNum))
 					.when()
-					.get("/Files/dmsProxy?cmd="+data.getCellData(SheetName, "cmd", rowNum)+
-							"&linkedTo="+data.getCellData(SheetName, "getFilesListLinkedTo", rowNum))
+					.get("/Files/dmsProxy")
 					.then()
 					.extract()
 					.response();

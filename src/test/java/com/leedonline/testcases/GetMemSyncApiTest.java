@@ -23,11 +23,12 @@ public class GetMemSyncApiTest extends BaseClass{
 		try {	
 			CommonMethod.ExtentReportConfig();
 			System.out.println(Thread.currentThread().getStackTrace()[1].getMethodName());
-			CommonMethod.res = given()
+			CommonMethod.res = given().log().ifValidationFails()
 					.header("Authorization", header)
 					.spec(reqSpec)
+					.param("email", data.getCellData(SheetName, "emailMemSyncApi", rowNum))
 					.when()
-					.get("/Member/sync?email="+data.getCellData(SheetName, "emailMemSyncApi", rowNum))
+					.get("/Member/sync")
 					.then()
 					.extract()
 					.response();

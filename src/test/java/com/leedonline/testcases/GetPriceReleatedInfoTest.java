@@ -26,8 +26,9 @@ public class GetPriceReleatedInfoTest extends BaseClass{
 			CommonMethod.res = given()
 					.header("Authorization", header)
 					.spec(reqSpec)
+					.param("countryOrCurrency", data.getCellData(SheetName, "currencyCode", rowNum))
 					.when()
-					.get("/Common/getPriceRelatedInfo?countryOrCurrency="+data.getCellData(SheetName, "currencyCode", rowNum))
+					.get("/Common/getPriceRelatedInfo")
 					.then()
 					.extract()
 					.response();

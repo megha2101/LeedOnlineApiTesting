@@ -34,7 +34,7 @@ public class GetLeedInfoTest extends BaseClass{
 			
 			CommonMethod.responsetime = CommonMethod.res.getTimeIn(TimeUnit.MILLISECONDS);
 			CommonMethod.test =  CommonMethod.extent
-					.startTest("LeedGetInfo Api "+ CommonMethod.getLabel(CommonMethod.responsetime),
+					.startTest("GetLeedGetInfo Api "+ CommonMethod.getLabel(CommonMethod.responsetime),
 							"Get LEED project types and rating systems.")
 					.assignCategory("api test");
 			

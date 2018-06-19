@@ -27,13 +27,13 @@ public class PostValidateSdnStatusTest extends BaseClass{
 			CommonMethod.ExtentReportConfig();
 			System.out.println(Thread.currentThread().getStackTrace()[1].getMethodName());
 			CommonMethod.res = given()
-					.header("Content-Type","multipart/formData")
+					.header("Content-Type",CommonMethod.contentType)
 					.header("Authorization", header)
-					.header("X-Nonce", CommonMethod.jsonNonceResponse.get(1))
+					.header("X-Caller-Id", "20297672fa1247ccf00ce8e0a14013ac")
 					.spec(reqSpec)					
-					.multiPart( "orgName", data.getCellData(SheetName, "orgName", rowNum))
-					.multiPart( "person", data.getCellData(SheetName, "person", rowNum))
-					.multiPart( "country", data.getCellData(SheetName, "countryCode", rowNum))
+					.params( "orgName[1]", data.getCellData(SheetName, "orgName[1]", rowNum),
+					 "person[1]", data.getCellData(SheetName, "person[1]", rowNum),
+					 "country[1]", data.getCellData(SheetName, "countryCode[1]", rowNum))
 					.when()
 					.post("/Validate/sdnStatus")
 					.then()
@@ -42,7 +42,7 @@ public class PostValidateSdnStatusTest extends BaseClass{
 
 			CommonMethod.responsetime = CommonMethod.res.getTimeIn(TimeUnit.MILLISECONDS);
 			CommonMethod.test =  CommonMethod.extent
-					.startTest("Create Api Test Access Data "+ CommonMethod.getLabel(CommonMethod.responsetime),
+					.startTest("PostValidateSdnStatus Api "+ CommonMethod.getLabel(CommonMethod.responsetime),
 							"Validate one or more organizations/persons.")
 					.assignCategory("api test");
 

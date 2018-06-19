@@ -26,11 +26,11 @@ public class PostValidateCaGBCMemberTest extends BaseClass{
 			CommonMethod.ExtentReportConfig();			
 			System.out.println(Thread.currentThread().getStackTrace()[1].getMethodName());
 			CommonMethod.res = given()
-					.header("Content-Type","multipart/formData")
+					.header("Content-Type",CommonMethod.contentType)
 					.header("Authorization", header)
-					.header("X-Nonce", CommonMethod.jsonNonceResponse.get(2))
+					.header("X-Caller-Id", "20297672fa1247ccf00ce8e0a14013ac")
 					.spec(reqSpec)					
-					.multiPart("memberEmail","cagbcusgbcorg1@gmail.com")				
+					.param("memberEmail[a]",data.getCellData(SheetName, "memberEmail", rowNum))				
 					.when()
 					.post("/Validate/CaGBCMember")
 					.then()
@@ -39,7 +39,7 @@ public class PostValidateCaGBCMemberTest extends BaseClass{
 
 			CommonMethod.responsetime = CommonMethod.res.getTimeIn(TimeUnit.MILLISECONDS);
 			CommonMethod.test =  CommonMethod.extent
-					.startTest("Create Api Test Access Data "+ CommonMethod.getLabel(CommonMethod.responsetime),
+					.startTest("PostValidateCaGBCMember Api "+ CommonMethod.getLabel(CommonMethod.responsetime),
 							"Validate one or more CaGBC member ID or Email.")
 					.assignCategory("api test");
 

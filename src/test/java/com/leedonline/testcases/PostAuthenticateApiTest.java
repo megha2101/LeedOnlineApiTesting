@@ -39,7 +39,7 @@ public class PostAuthenticateApiTest extends BaseClass{
 
 			CommonMethod.responsetime = CommonMethod.res.getTimeIn(TimeUnit.MILLISECONDS);
 			CommonMethod.test =  CommonMethod.extent
-					.startTest("Authentication api " + CommonMethod.getLabel(CommonMethod.responsetime),
+					.startTest("PostAuthenticateApi Api " + CommonMethod.getLabel(CommonMethod.responsetime),
 							"genrating token.")
 					.assignCategory("api test");
 			

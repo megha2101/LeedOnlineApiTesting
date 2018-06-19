@@ -26,15 +26,16 @@ public class GetLeedPricingDownloadUploadedExcelTest extends BaseClass{
 			CommonMethod.res = given()
 					.header("Authorization", header)
 					.spec(reqSpec)
+					.param("version", data.getCellData(SheetName, "version", rowNum))
 					.when()
-					.get("/LEEDPricing/downloadUploadedExcel?version="+data.getCellData(SheetName, "version", rowNum))
+					.get("/LEEDPricing/downloadUploadedExcel")
 					.then()
 					.extract()
 					.response();
 
 			CommonMethod.responsetime = CommonMethod.res.getTimeIn(TimeUnit.MILLISECONDS);
 			CommonMethod.test =  CommonMethod.extent
-					.startTest("GetLeedPricingDownloadUploadedExcel "+ CommonMethod.getLabel(CommonMethod.responsetime),
+					.startTest("GetLeedPricingDownloadUploadedExcel Api"+ CommonMethod.getLabel(CommonMethod.responsetime),
 							"Download the uploaded price excel which can be edited and re-uploaded .")
 					.assignCategory("api test");
 

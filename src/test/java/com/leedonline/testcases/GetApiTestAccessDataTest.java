@@ -28,15 +28,16 @@ public class GetApiTestAccessDataTest extends BaseClass{
 			CommonMethod.res = given()
 					.header("Authorization", header)
 					.spec(reqSpec)
+					.params("key",data.getCellData(SheetName, "createKey", rowNum))
 					.when()
-					.get("/Api/testAccess?key="+data.getCellData(SheetName, "createKey", rowNum))
+					.get("/Api/testAccess")
 					.then()
 					.extract()
 					.response();	
 			
 			CommonMethod.responsetime = CommonMethod.res.getTimeIn(TimeUnit.MILLISECONDS);
 			CommonMethod.test =  CommonMethod.extent
-					.startTest("Get Api Test Access Data "+ CommonMethod.getLabel(CommonMethod.responsetime),
+					.startTest("GetApiTestAccessData Api"+ CommonMethod.getLabel(CommonMethod.responsetime),
 							"Read the single or full data..")
 					.assignCategory("api test");
 			

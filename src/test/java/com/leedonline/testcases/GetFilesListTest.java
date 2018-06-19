@@ -22,15 +22,16 @@ public class GetFilesListTest extends BaseClass{
 	public void GetFilesList(int rowNum, String SheetName) throws IOException {
 		try {	
 			CommonMethod.ExtentReportConfig();
-			CommonMethod.GeneratingAuthCode();
+			CommonMethod.GeneratingAuthCode(SheetName, rowNum);
 			System.out.println(Thread.currentThread().getStackTrace()[1].getMethodName());
 			System.out.println("GetFilesListApi hedaer is: "+header);
 			CommonMethod.res = given()
 					.header("Authorization", header)
 					.spec(reqSpec)
+					.params("projectId", data.getCellData(SheetName, "leedProjectId", rowNum),
+							"linkedTo", data.getCellData(SheetName, "getFilesListLinkedTo", rowNum))
 					.when()
-					.get("/Files/getList?projectId="+data.getCellData(SheetName, "leedProjectId", rowNum)+
-							"&linkedTo="+data.getCellData(SheetName, "getFilesListLinkedTo", rowNum))
+					.get("/Files/getList")
 					.then()
 					.extract()
 					.response();

@@ -42,7 +42,7 @@ public class PostApiTestAccessDataTest extends BaseClass{
 
 			CommonMethod.responsetime = CommonMethod.res.getTimeIn(TimeUnit.MILLISECONDS);
 			CommonMethod.test =  CommonMethod.extent
-					.startTest("Create Api Test Access Data "+ CommonMethod.getLabel(CommonMethod.responsetime),
+					.startTest("PostApiTestAccessData Api "+ CommonMethod.getLabel(CommonMethod.responsetime),
 							"Create some data for testing.")
 					.assignCategory("api test");
 

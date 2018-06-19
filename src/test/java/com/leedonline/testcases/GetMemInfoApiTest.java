@@ -34,7 +34,7 @@ public class GetMemInfoApiTest extends BaseClass{
 
 			CommonMethod.responsetime = CommonMethod.res.getTimeIn(TimeUnit.MILLISECONDS);
 			CommonMethod.test =  CommonMethod.extent
-					.startTest("Get Member Info Api "+ CommonMethod.getLabel(CommonMethod.responsetime),
+					.startTest("GetMemInfo Api "+ CommonMethod.getLabel(CommonMethod.responsetime),
 							"Get authenticated person details.")
 					.assignCategory("api test");
 

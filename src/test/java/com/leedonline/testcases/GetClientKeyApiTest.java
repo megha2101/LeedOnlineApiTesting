@@ -24,7 +24,7 @@ public class GetClientKeyApiTest extends BaseClass{
 		try {	
 			CommonMethod.ExtentReportConfig();
 			System.out.println(Thread.currentThread().getStackTrace()[1].getMethodName());
-			CommonMethod.GeneratingAuthCode();
+			CommonMethod.GeneratingAuthCode(SheetName, rowNum);
 			CommonMethod.res = given()
 					.header("Authorization", header)
 					.spec(reqSpec)

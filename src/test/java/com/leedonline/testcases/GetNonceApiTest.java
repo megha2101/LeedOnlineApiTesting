@@ -29,8 +29,9 @@ public class GetNonceApiTest extends BaseClass{
 			CommonMethod.res = given()
 					.header("Authorization", header)
 					.spec(reqSpec)
+					.param("total", data.getCellData(SheetName, "nonceNum", rowNum))
 					.when()
-					.get("/getNonce?total="+data.getCellData(SheetName, "nonceNum", rowNum))
+					.get("/getNonce")
 					.then()
 					.extract()
 					.response();

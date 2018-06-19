@@ -37,14 +37,13 @@ public class CommonMethod extends BaseClass {
 	public static File extentconfigfile = new File(System.getProperty("user.dir") +"/src/main/resources/listener/extent-config.xml");
     public static String Reportfile = System.getProperty("user.dir") +"/Report/Leedonline-AutomationReport" + "_" + formatter.format(date) + ".html";
 	
-	public static void GeneratingAuthCode() {
+	public static void GeneratingAuthCode(String SheetName, int rowNum) {
 		Token = given()
 				.header("Content-Type",CommonMethod.contentType)
 				.spec(reqSpec)
 				.params(
-						  "username", "newserver2@gmail.com",
-						  "password", "initpass",
-						  "guid", "")
+						"username", data.getCellData(SheetName, "username", rowNum),
+						"password", data.getCellData(SheetName, "password", rowNum))
 				.expect().statusCode(200).when()
 				.post("/authenticate").then().contentType(ContentType.JSON)
 				.extract().response().path("token").toString();		
