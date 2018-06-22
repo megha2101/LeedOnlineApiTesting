@@ -26,7 +26,7 @@ public class GetPaymentsProgramPaymentTest extends BaseClass{
 		try {	
 		    CommonMethod.ExtentReportConfig();
 			System.out.println(Thread.currentThread().getStackTrace()[1].getMethodName());
-			CommonMethod.res = given()
+			CommonMethod.res = given().log().ifValidationFails()
 					.header("Authorization", header)
 					.header("X-Caller-Id", "20297672fa1247ccf00ce8e0a14013ac")
 					.spec(reqSpec)
@@ -46,13 +46,16 @@ public class GetPaymentsProgramPaymentTest extends BaseClass{
 							"Initiate program payment transaction.")
 					.assignCategory("api test");
 			
-			CommonMethod.res.then().assertThat().statusCode(200);		  
-			CommonMethod.res.then().assertThat().contentType(ContentType.JSON);
-			
 			System.out.println("Authorization Token Generated " + header);
 			System.out.println("Response received from API " + CommonMethod.res.asString());
 			System.out.println("Responsetime of API " + CommonMethod.responsetime);
-
+			
+			String status = CommonMethod.getStatus(CommonMethod.res.getStatusCode());
+			String time = String.valueOf(CommonMethod.responsetime);
+			CommonMethod.writeInExcel(Thread.currentThread().getStackTrace()[1].getMethodName(), time, status);
+					
+			CommonMethod.res.then().assertThat().statusCode(200);		  
+			CommonMethod.res.then().assertThat().contentType(ContentType.JSON);
 			CommonMethod.testlog("Pass", "Authorization Token generated" + "<br>" + header);
 			CommonMethod.testlog("Info", "Content Type is : " + CommonMethod.res.getContentType());
 			CommonMethod.testlog("Info", "Status Code is : " + CommonMethod.res.getStatusCode());

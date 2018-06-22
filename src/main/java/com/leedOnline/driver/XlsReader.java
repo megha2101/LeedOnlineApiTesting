@@ -2,6 +2,8 @@ package com.leedOnline.driver;
 
 import org.apache.poi.hssf.usermodel.HSSFDateUtil;
 import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CellStyle;
+import org.apache.poi.ss.usermodel.Font;
 import org.apache.poi.xssf.usermodel.*;
 
 import java.io.*;
@@ -255,6 +257,78 @@ public class XlsReader
 			else
 				return true;
 		}
+		
+		public boolean setCellData(String sheetName,String colName,int rowNum, String ProjectID, Short fontcolor, Short foregroundcolor)
+		 {
+		  try
+		  {
+		  fis = new FileInputStream(path); 
+		  workbook = new XSSFWorkbook(fis);
+		  
+		   CellStyle style = workbook.createCellStyle();
+		   
+		   style.setFillForegroundColor(foregroundcolor);
+		         style.setFillPattern(CellStyle.SOLID_FOREGROUND);
+		         Font font = workbook.createFont();
+		         font.setColor(fontcolor);
+		         style.setFont(font);
+
+		  if(rowNum<=0)
+		   return false;
+		  
+		  int index = workbook.getSheetIndex(sheetName);
+		  int colNum=-1;
+		  if(index==-1)
+		   return false;
+				  
+		  sheet = workbook.getSheetAt(index);
+		  
+		  row=sheet.getRow(0);
+		  for(int i=0;i<row.getLastCellNum();i++)
+		  {
+		   //System.out.println(row.getCell(i).getStringCellValue().trim());
+		   if(row.getCell(i).getStringCellValue().trim().equals(colName))
+		    colNum=i;
+		  }
+		  if(colNum==-1)
+		   return false;
+
+		  sheet.autoSizeColumn(colNum); 
+		 		  
+		  row = sheet.getRow(rowNum-1);
+		  if (row == null)
+		   row = sheet.createRow(rowNum-1);
+		  
+		  cell = row.getCell(colNum); 
+		  if (cell == null)
+		         cell = row.createCell(colNum);
+		     
+		     cell.setCellValue(ProjectID);
+		     
+		     cell.setCellStyle(style);
+
+		     fileOut = new FileOutputStream(path);
+
+		       workbook.write(fileOut);
+
+		     fileOut.close();
+		     
+		     workbook = new XSSFWorkbook(new FileInputStream(path));
+
+		  }
+		  catch(Exception e)
+		  {
+		   e.printStackTrace();
+		   return false;
+		  }
+		  return true;
+		 }
+		 // find whether sheets exists 
+		  /**
+		   *  To Verify the sheet exists or not.
+		   * @param sheetName
+		   * @return boolean - true/false.
+		   */
 		/**
 		 * Overloaded method. To read a data from a cell based column No. Returns the data from a cell
 		 * @param sheetName

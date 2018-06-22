@@ -6,6 +6,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
@@ -33,6 +34,7 @@ public class BaseClass {
 	public static String Token;
     public static String header;
     public String apiUrl = "https://leedonline-api-stg.usgbc.org/v1/json";
+    public static String uploadFile = System.getProperty("user.dir") + "/File/Katalon_studio.docx";
     
     
     @BeforeClass

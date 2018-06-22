@@ -27,17 +27,18 @@ public class PostFileUploadTest extends BaseClass{
 			CommonMethod.ExtentReportConfig();			
 			System.out.println(Thread.currentThread().getStackTrace()[1].getMethodName());
 
-			CommonMethod.res = given().log().all()
-					.multiPart("data",new File("C:/Users/Megha/Documents/GitHub/LeedOnlineAPITest/File/Katalon_studio.docx"))
+			CommonMethod.res = given().log().ifValidationFails()
+					.multiPart("data",new File(uploadFile))
 					.header("Content-Type","multipart/form-data")
 					.header("Authorization", header)
 					.header("X-Caller-Id", "20297672fa1247ccf00ce8e0a14013ac")
 					.spec(reqSpec)	
 					.params("projectId", data.getCellData(SheetName, "leedProjectId", rowNum),
 							"linkedTo", data.getCellData(SheetName, "docType", rowNum),
-							"linkedId"+data.getCellData(SheetName, "linkedId", rowNum))
+							"linkedId", data.getCellData(SheetName, "linkedId", rowNum))
 					.when()
-					.post("/Files/upload")
+					.post("/Files/upload?projectId="+data.getCellData(SheetName, "leedProjectId", rowNum)+"&linkedTo="
+							+data.getCellData(SheetName, "docType", rowNum)+"&linkedId="+data.getCellData(SheetName, "linkedId", rowNum))
 					.then()
 					.extract()
 					.response();	
@@ -47,13 +48,17 @@ public class PostFileUploadTest extends BaseClass{
 					.startTest("PostFileUpload Api "+ CommonMethod.getLabel(CommonMethod.responsetime),
 							"Upload a file to the project.")
 					.assignCategory("api test");
-
-			CommonMethod.res.then().assertThat().statusCode(200);		  
-			CommonMethod.res.then().assertThat().contentType(ContentType.JSON);
-
+			
 			System.out.println("Authorization Token Generated " + header);
 			System.out.println("Response received from API " + CommonMethod.res.asString());
 			System.out.println("Responsetime of API " + CommonMethod.responsetime);
+			
+			String status = CommonMethod.getStatus(CommonMethod.res.getStatusCode());
+			String time = String.valueOf(CommonMethod.responsetime);
+			CommonMethod.writeInExcel(Thread.currentThread().getStackTrace()[1].getMethodName(), time, status);
+					
+			CommonMethod.res.then().assertThat().statusCode(200);		  
+			CommonMethod.res.then().assertThat().contentType(ContentType.JSON);
 
 			CommonMethod.testlog("Pass", "Authorization Token generated" + "<br>" + header);
 			CommonMethod.testlog("Info", "Content Type is : " + CommonMethod.res.getContentType());

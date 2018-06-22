@@ -7,9 +7,9 @@
 	    <classes> <!-- Add new test cases in the end -->
 	         <class name="com.leedonline.testcases.PostAuthenticateApiTest"/>
 	         <class name="com.leedonline.testcases.GetFilesListTest"/> <!--Generated token  -->
+	         <class name="com.leedonline.testcases.GetLeedProjectDownloadTest"/> 
 	         <class name="com.leedonline.testcases.GetFileDownloadUrlTest"/>
 	         <class name="com.leedonline.testcases.GetMemInfoApiTest"/>
-	         <class name="com.leedonline.testcases.GetMemSyncApiTest"/>
 	         <class name="com.leedonline.testcases.GetLeedInfoTest"/>
 	         <class name="com.leedonline.testcases.GetLeedProjectsListTest"/>
 	         <class name="com.leedonline.testcases.GetLeedMoreInfoTest"/>
@@ -36,16 +36,17 @@
 	         <class name="com.leedonline.testcases.PostApiTestAccessDataTest"/> 
 	         <class name="com.leedonline.testcases.PostValidateSdnStatusTest"/> 
 	         <class name="com.leedonline.testcases.PostValidateCaGBCMemberTest"/>      
-	         <class name="com.leedonline.testcases.PostValidatePostalCodeTest"/>
-	        <!--  <class name="com.leedonline.testcases.PostPaymentsSetPayloadTest"/> -->
+	         <class name="com.leedonline.testcases.PostValidatePostalCodeTest"/> 
+	        <!--  <class name="com.leedonline.testcases.PostPaymentsSetPayloadTest"/>  -->
 	         <class name="com.leedonline.testcases.PutApiTestAccessDataTest"/>  
 	         <class name="com.leedonline.testcases.PutLeedProjectDetailsTest"/>
 	         <class name="com.leedonline.testcases.PutFileUpdateLinkedIdInfoTest"/>       	      
 	         <class name="com.leedonline.testcases.PutPaymentsSendTransactionDataToSapTest"/>  
 	         <class name="com.leedonline.testcases.DeleteApiTestAccessDataTest"/>
-	         <class name="com.leedonline.testcases.DeleteFileTest"/>            	         
-	         <class name="com.leedonline.testcases.GetInvalidateTokenApiTest"/>
-	         <class name="com.leedonline.testcases.GetClientKeyApiTest"/> <!-- Generated token -->      	        
+	         <class name="com.leedonline.testcases.DeleteFileTest"/>           	         
+	         <class name="com.leedonline.testcases.GetInvalidateTokenApiTest"/> 
+	         <class name="com.leedonline.testcases.GetClientKeyApiTest"/><!-- Generated token -->   
+	           	        
 	        
 	       
 	      

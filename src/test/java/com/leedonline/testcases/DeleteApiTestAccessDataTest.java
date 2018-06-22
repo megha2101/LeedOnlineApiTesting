@@ -26,7 +26,7 @@ public class DeleteApiTestAccessDataTest extends BaseClass{
 			CommonMethod.ExtentReportConfig();
 			System.out.println(Thread.currentThread().getStackTrace()[1].getMethodName());
 			
-			CommonMethod.res = given()
+			CommonMethod.res = given().log().ifValidationFails()
 					.header("Content-Type",CommonMethod.contentType)
 					.header("Authorization", header)
 					.spec(reqSpec)
@@ -45,13 +45,17 @@ public class DeleteApiTestAccessDataTest extends BaseClass{
 							"Delete single or full data.")
 					.assignCategory("api test");
 			
+			System.out.println("Authorization Token Generated " + header);
+			System.out.println("Response received from API " + CommonMethod.res.asString());
+			System.out.println("Responsetime of API " + CommonMethod.responsetime);
+			
+			String status = CommonMethod.getStatus(CommonMethod.res.getStatusCode());
+			String time = String.valueOf(CommonMethod.responsetime);
+			CommonMethod.writeInExcel(Thread.currentThread().getStackTrace()[1].getMethodName(), time, status);
+					
 			CommonMethod.res.then().assertThat().statusCode(200);		  
 			CommonMethod.res.then().assertThat().contentType(ContentType.JSON);
-			
-			System.out.println("DeleteTestApiAccessData body res is: "+CommonMethod.res.asString());
-			System.out.println("DeleteTestApiAccessData response time is: "+CommonMethod.responsetime);
-			System.out.println("DeleteTestApiAccessData hedaer is: "+header);
-			
+						
 			CommonMethod.testlog("Pass", "Authorization Token generated" + "<br>" + header);
 			CommonMethod.testlog("Info", "Content Type is : " + CommonMethod.res.getContentType());
 			CommonMethod.testlog("Info", "Status Code is : " + CommonMethod.res.getStatusCode());
