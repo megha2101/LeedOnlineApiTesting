@@ -2,64 +2,67 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="LeedonlineApi Test Suit">  
   <test name="LeedonlineApi">
+		 	
 	    <parameter name="rowNum" value="2"/>
 	    <parameter name="SheetName" value="STG" />
+	    
 	    <classes> <!-- Add new test cases in the end -->
-	         <class name="com.leedonline.testcases.PostAuthenticateApiTest"/>
-	         <class name="com.leedonline.testcases.GetFilesListTest"/> <!--Generated token  -->
-	         <class name="com.leedonline.testcases.GetLeedProjectDownloadTest"/> 
-	         <class name="com.leedonline.testcases.GetFileDownloadUrlTest"/>
-	         <class name="com.leedonline.testcases.GetMemInfoApiTest"/>
-	         <class name="com.leedonline.testcases.GetLeedInfoTest"/>
-	         <class name="com.leedonline.testcases.GetLeedProjectsListTest"/>
-	         <class name="com.leedonline.testcases.GetLeedMoreInfoTest"/>
-	         <class name="com.leedonline.testcases.GetLeedProjectListTypeTest"/> 
-	         <class name="com.leedonline.testcases.GetLeedProjectDetailsTypeTest"/>   
-	         <class name="com.leedonline.testcases.GetCreditTypeTest"/>
-	         <class name="com.leedonline.testcases.GetInterpretationTypeTest"/>  
-	         <class name="com.leedonline.testcases.GetClarificationTypeTest"/>       
-	         <class name="com.leedonline.testcases.GetCountryAndStateTest"/> 
-	         <class name="com.leedonline.testcases.GetTaxForAmountTest"/>
-	         <class name="com.leedonline.testcases.GetPriceReleatedInfoTest"/> 
-	         <class name="com.leedonline.testcases.GetApiTestAccessDataTest"/>     
-	         <class name="com.leedonline.testcases.GetLeedPricingDefaultVersionTest"/>
-	         <class name="com.leedonline.testcases.GetLeedPricingVersionPricesInfoTest"/>
-	         <class name="com.leedonline.testcases.GetLeedPricingPriceVersionInfoTest"/>
-	         <class name="com.leedonline.testcases.GetLeedPricingDownloadUploadedExcelTest"/>
-	         <class name="com.leedonline.testcases.GetPaymentSearchTest"/>
-	         <class name="com.leedonline.testcases.GetFileDmsProxyTest"/>
-	         <class name="com.leedonline.testcases.GetLeedProjectDownloadTest"/> 
-	         <class name="com.leedonline.testcases.GetPaymentsProgramPaymentTest"/>
-	         <class name="com.leedonline.testcases.GetPaymentsInfoTest"/>	
-	         <class name="com.leedonline.testcases.GetNonceApiTest"/>
-	         <class name="com.leedonline.testcases.PostFileUploadTest"/>
-	         <class name="com.leedonline.testcases.PostApiTestAccessDataTest"/> 
-	         <class name="com.leedonline.testcases.PostValidateSdnStatusTest"/> 
-	         <class name="com.leedonline.testcases.PostValidateCaGBCMemberTest"/>      
-	         <class name="com.leedonline.testcases.PostValidatePostalCodeTest"/> 
-	        <!--  <class name="com.leedonline.testcases.PostPaymentsSetPayloadTest"/>  -->
-	         <class name="com.leedonline.testcases.PutApiTestAccessDataTest"/>  
-	         <class name="com.leedonline.testcases.PutLeedProjectDetailsTest"/>
-	         <class name="com.leedonline.testcases.PutFileUpdateLinkedIdInfoTest"/>       	      
-	         <class name="com.leedonline.testcases.PutPaymentsSendTransactionDataToSapTest"/>  
-	         <class name="com.leedonline.testcases.DeleteApiTestAccessDataTest"/>
-	         <class name="com.leedonline.testcases.DeleteFileTest"/>           	         
-	         <class name="com.leedonline.testcases.GetInvalidateTokenApiTest"/> 
-	         <class name="com.leedonline.testcases.GetClientKeyApiTest"/><!-- Generated token -->   
-	           	        
-	        
+	    	<!--  <class name="com.leedonline.testcases.Post_Payments_setPayloadTest"/> 
+	    	 <class name="com.leedonline.testcases.Put_Files_UpdateLinkedIdInfoTest"/>
+	    	 <class name="com.leedonline.testcases.Put_Payments_sendTransactionDataToSapTest"/>
+	    	  	 -->  
+				<class name="com.leedonline.testcases.Post_Api_authenticateTest"/>
+				<class name="com.leedonline.testcases.Get_Files_filesGetListTest"/>  
+				<class name="com.leedonline.testcases.Get_Files_getDownloadUrlTest"/> 
+				 <class name="com.leedonline.testcases.Get_Api_memberGetInfoTest"/> 
+				<class name="com.leedonline.testcases.Get_Api_memberCredentialsTest"/> 
+				<class name="com.leedonline.testcases.Get_LEED_getInfoTest"/>  
+				<class name="com.leedonline.testcases.Get_LEED_projectMoreInfoTest"/>
+				<class name="com.leedonline.testcases.Get_LEED_projectsGetListTest"/>  
+				<class name="com.leedonline.testcases.Get_LEED_projectDetailsTest"/>   
+				<class name="com.leedonline.testcases.Get_LEED_getCreditsTest"/>
+				<class name="com.leedonline.testcases.Get_LEED_getInterpretationTest"/> 
+				<class name="com.leedonline.testcases.Get_LEED_getClarificationTest"/> 
+				<class name="com.leedonline.testcases.Get_LEED_creditsCreditTest"/> 
+				<class name="com.leedonline.testcases.Get_LEED_leedElsiK12SchoolsTest"/>  
+				<class name="com.leedonline.testcases.Get_LEED_leedOrganizationsTest"/>  
+				<class name="com.leedonline.testcases.Get_Common_getCountriesAndStatesTest"/> 	          
+				<class name="com.leedonline.testcases.Get_LEEDPricing_downloadUploadedExcelTest"/>
+				<class name="com.leedonline.testcases.Get_Payments_searchTest"/>
+				<class name="com.leedonline.testcases.Get_Files_dmsProxyTest"/>
+				<class name="com.leedonline.testcases.Get_LEED_projectDownloadTest"/> 
+				<class name="com.leedonline.testcases.Get_Payments_programPaymentTest"/>
+				<class name="com.leedonline.testcases.Get_Payments_getInfoTest"/>	
+				<class name="com.leedonline.testcases.Get_Api_getNonceTest"/>
+				<class name="com.leedonline.testcases.Post_Files_filesUploadTest"/>
+				<class name="com.leedonline.testcases.Delete_Files_deleteFilesTest"/>   
+				<class name="com.leedonline.testcases.Post_Common_validateSdnStatusTest"/> 
+				<class name="com.leedonline.testcases.Post_Common_validateCaGBCMemberTest"/>      
+				<class name="com.leedonline.testcases.Post_Common_validatePostalCodeTest"/>  
+				<class name="com.leedonline.testcases.Post_LEED_leedOrganizationsTest"/>              
+				<class name="com.leedonline.testcases.Put_LEED_projectDetailsTest"/>	               	      	              	         
+				<class name="com.leedonline.testcases.Get_Api_invalidateTokenTest"/>  
+				<class name="com.leedonline.testcases.Get_Api_getClientKeyTest"/> <!-- Generated token -->   
+	       	    
 	       
-	      
-	       
+	          	        	       
 	    </classes>   
 	</test> 
-		
-	<test name="LeedonlineApi Getclient">
-	    <parameter name="rowNum" value="2"/>
-	    <parameter name="SheetName" value="STG" />
-	    <classes> 
-	        <!--  <class name="com.leedonline.testcases.GetClientKeyApiTest"/> -->
-	    </classes>   
-	</test> 
+	
+	<!-- Manually entered values testcases --> 
+	<!--  <class name="com.leedonline.testcases.Put_LEED_projectDetailsTest"/>	
+	 -->
+	<!-- Excluded testcases --> 
+	<!-- 
+	      <class name="com.leedonline.testcases.Get_Common_getTaxForAmountTest"/>
+	      <class name="com.leedonline.testcases.Get_Common_getPriceReleatedInfoTest"/>
+	      <class name="com.leedonline.testcases.Put_Api_testAccessDataTest"/>  
+	      <class name="com.leedonline.testcases.Post_Api_testAccessDataTest"/> 
+	      <class name="com.leedonline.testcases.Delete_Api_testAccessDataTest"/>
+	      <class name="com.leedonline.testcases.Get_Api_getTestAccessDataTest"/> 
+	      <class name="com.leedonline.testcases.Get_LEEDPricing_getDefaultVersionTest"/>
+	      <class name="com.leedonline.testcases.Get_LEEDPricing_getVersionsPricesInfoTest"/> 
+	      <class name="com.leedonline.testcases.Get_LEEDPricing_getPriceVersionsInfoTest"/>
+	      -->
 	  
 </suite>

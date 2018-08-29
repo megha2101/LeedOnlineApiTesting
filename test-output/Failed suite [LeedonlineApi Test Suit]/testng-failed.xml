@@ -1,0 +1,625 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Failed suite [LeedonlineApi Test Suit]]">
+  <parameter name="rowNum" value="2"/>
+  <parameter name="SheetName" value="STG"/>
+  <test name="LeedonlineApi">
+    <parameter name="rowNum" value="2"/>
+    <parameter name="SheetName" value="STG"/>
+    <classes>
+      <class name="com.leedonline.testcases.Post_Api_authenticateTest"/>
+      <class name="com.leedonline.testcases.Get_Files_filesGetListTest"/>
+      <class name="com.leedonline.testcases.Get_LEED_projectDownloadTest"/>
+      <class name="com.leedonline.testcases.Get_Files_getDownloadUrlTest"/>
+      <class name="com.leedonline.testcases.Get_Api_memberGetInfoTest"/>
+      <class name="com.leedonline.testcases.Get_LEED_getInfoTest"/>
+      <class name="com.leedonline.testcases.Get_LEED_projectMoreInfoTest"/>
+      <class name="com.leedonline.testcases.Get_LEED_projectsGetListTest"/>
+      <class name="com.leedonline.testcases.Get_LEED_projectDetailsTest"/>
+      <class name="com.leedonline.testcases.Get_LEED_getCreditsTest"/>
+      <class name="com.leedonline.testcases.Get_LEED_getInterpretationTest"/>
+      <class name="com.leedonline.testcases.Get_LEED_getClarificationTest"/>
+      <class name="com.leedonline.testcases.Get_Common_getCountriesAndStatesTest"/>
+      <class name="com.leedonline.testcases.Get_LEEDPricing_downloadUploadedExcelTest"/>
+      <class name="com.leedonline.testcases.Get_Payments_searchTest"/>
+      <class name="com.leedonline.testcases.Get_Files_dmsProxyTest"/>
+      <class name="com.leedonline.testcases.Get_LEED_projectDownloadTest"/>
+      <class name="com.leedonline.testcases.Get_Payments_programPaymentTest"/>
+      <class name="com.leedonline.testcases.Get_Payments_getInfoTest"/>
+      <class name="com.leedonline.testcases.Get_Api_getNonceTest"/>
+      <class name="com.leedonline.testcases.Post_Files_filesUploadTest"/>
+      <class name="com.leedonline.testcases.Post_Common_validateSdnStatusTest"/>
+      <class name="com.leedonline.testcases.Post_Common_validateCaGBCMemberTest"/>
+      <class name="com.leedonline.testcases.Post_Common_validatePostalCodeTest"/>
+      <class name="com.leedonline.testcases.Put_LEED_projectDetailsTest"/>
+      <class name="com.leedonline.testcases.Put_Files_UpdateLinkedIdInfoTest"/>
+      <class name="com.leedonline.testcases.Put_Payments_sendTransactionDataToSapTest"/>
+      <class name="com.leedonline.testcases.Delete_Files_deleteFilesTest"/>
+      <class name="com.leedonline.testcases.Get_LEED_projectDownloadTest"/>
+      <class name="com.leedonline.testcases.Get_Api_invalidateTokenTest"/>
+      <class name="com.leedonline.testcases.Get_Api_getClientKeyTest"/>
+    </classes>
+  </test> <!-- LeedonlineApi -->
+  <test name="LeedonlineApi(failed)">
+    <parameter name="rowNum" value="2"/>
+    <parameter name="SheetName" value="STG"/>
+    <classes>
+      <class name="com.leedonline.testcases.Get_Api_getClientKeyTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.Get_Api_getClientKeyTest -->
+      <class name="com.leedonline.testcases.Get_Payments_searchTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.Get_Payments_searchTest -->
+      <class name="com.leedonline.testcases.Get_Api_invalidateTokenTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.Get_Api_invalidateTokenTest -->
+      <class name="com.leedonline.testcases.Get_LEED_getCreditsTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="GetCreditType" invocation-numbers="0"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.Get_LEED_getCreditsTest -->
+      <class name="com.leedonline.testcases.Get_LEED_projectDetailsTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+          <include name="Get_LEED_projectDetails" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.Get_LEED_projectDetailsTest -->
+      <class name="com.leedonline.testcases.Get_LEED_projectMoreInfoTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.Get_LEED_projectMoreInfoTest -->
+      <class name="com.leedonline.testcases.Put_Files_UpdateLinkedIdInfoTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.Put_Files_UpdateLinkedIdInfoTest -->
+      <class name="com.leedonline.testcases.Get_LEED_getInfoTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.Get_LEED_getInfoTest -->
+      <class name="com.leedonline.testcases.Get_Api_getNonceTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.Get_Api_getNonceTest -->
+      <class name="com.leedonline.testcases.Get_Payments_programPaymentTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.Get_Payments_programPaymentTest -->
+      <class name="com.leedonline.testcases.Get_Api_memberGetInfoTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.Get_Api_memberGetInfoTest -->
+      <class name="com.leedonline.testcases.Get_LEED_getInterpretationTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+          <include name="Get_LEED_getInterpretation" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.Get_LEED_getInterpretationTest -->
+      <class name="com.leedonline.testcases.Post_Common_validatePostalCodeTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.Post_Common_validatePostalCodeTest -->
+      <class name="com.leedonline.testcases.Post_Common_validateSdnStatusTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.Post_Common_validateSdnStatusTest -->
+      <class name="com.leedonline.testcases.Get_Payments_getInfoTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.Get_Payments_getInfoTest -->
+      <class name="com.leedonline.testcases.Post_Common_validateCaGBCMemberTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.Post_Common_validateCaGBCMemberTest -->
+      <class name="com.leedonline.testcases.Get_Files_getDownloadUrlTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.Get_Files_getDownloadUrlTest -->
+      <class name="com.leedonline.testcases.Get_LEED_getClarificationTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="Get_LEED_getClarifications" invocation-numbers="0"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.Get_LEED_getClarificationTest -->
+      <class name="com.leedonline.testcases.Get_LEEDPricing_downloadUploadedExcelTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.Get_LEEDPricing_downloadUploadedExcelTest -->
+      <class name="com.leedonline.testcases.Put_Payments_sendTransactionDataToSapTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.Put_Payments_sendTransactionDataToSapTest -->
+      <class name="com.leedonline.testcases.Get_Common_getCountriesAndStatesTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.Get_Common_getCountriesAndStatesTest -->
+      <class name="com.leedonline.testcases.Get_LEED_projectDownloadTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+          <include name="Get_LEED_projectDownload" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.Get_LEED_projectDownloadTest -->
+      <class name="com.leedonline.testcases.Get_Files_dmsProxyTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.Get_Files_dmsProxyTest -->
+      <class name="com.leedonline.testcases.Post_Files_filesUploadTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.Post_Files_filesUploadTest -->
+      <class name="com.leedonline.testcases.Get_Files_filesGetListTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.Get_Files_filesGetListTest -->
+      <class name="com.leedonline.testcases.Delete_Files_deleteFilesTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.Delete_Files_deleteFilesTest -->
+      <class name="com.leedonline.testcases.Put_LEED_projectDetailsTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="Put_LEED_projectDetails" invocation-numbers="0"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.Put_LEED_projectDetailsTest -->
+      <class name="com.leedonline.testcases.Get_LEED_projectsGetListTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.Get_LEED_projectsGetListTest -->
+      <class name="com.leedonline.testcases.Post_Api_authenticateTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.Post_Api_authenticateTest -->
+    </classes>
+  </test> <!-- LeedonlineApi(failed) -->
+  <test name="LeedonlineApi(failed)">
+    <parameter name="rowNum" value="2"/>
+    <parameter name="SheetName" value="STG"/>
+    <classes>
+      <class name="com.leedonline.testcases.Put_Files_UpdateLinkedIdInfoTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.Put_Files_UpdateLinkedIdInfoTest -->
+      <class name="com.leedonline.testcases.Delete_Files_deleteFilesTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.Delete_Files_deleteFilesTest -->
+      <class name="com.leedonline.testcases.Get_LEED_getInterpretationTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+          <include name="teardown"/>
+          <include name="Get_LEED_getInterpretation" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.Get_LEED_getInterpretationTest -->
+      <class name="com.leedonline.testcases.Put_LEED_projectDetailsTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="setBaseUri"/>
+          <include name="Put_LEED_projectDetails" invocation-numbers="0"/>
+          <include name="teardown"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.Put_LEED_projectDetailsTest -->
+      <class name="com.leedonline.testcases.Get_Api_memberGetInfoTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.Get_Api_memberGetInfoTest -->
+      <class name="com.leedonline.testcases.Get_LEED_getInfoTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.Get_LEED_getInfoTest -->
+      <class name="com.leedonline.testcases.Get_LEED_projectDownloadTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+          <include name="teardown"/>
+          <include name="Get_LEED_projectDownload" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.Get_LEED_projectDownloadTest -->
+      <class name="com.leedonline.testcases.Post_Common_validateSdnStatusTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.Post_Common_validateSdnStatusTest -->
+      <class name="com.leedonline.testcases.Get_Files_filesGetListTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.Get_Files_filesGetListTest -->
+      <class name="com.leedonline.testcases.Get_Payments_searchTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.Get_Payments_searchTest -->
+      <class name="com.leedonline.testcases.Put_Payments_sendTransactionDataToSapTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.Put_Payments_sendTransactionDataToSapTest -->
+      <class name="com.leedonline.testcases.Get_Common_getCountriesAndStatesTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.Get_Common_getCountriesAndStatesTest -->
+      <class name="com.leedonline.testcases.Post_Api_authenticateTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.Post_Api_authenticateTest -->
+      <class name="com.leedonline.testcases.Get_LEED_projectMoreInfoTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.Get_LEED_projectMoreInfoTest -->
+      <class name="com.leedonline.testcases.Get_Api_getNonceTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.Get_Api_getNonceTest -->
+      <class name="com.leedonline.testcases.Get_Payments_programPaymentTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.Get_Payments_programPaymentTest -->
+      <class name="com.leedonline.testcases.Get_LEEDPricing_downloadUploadedExcelTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.Get_LEEDPricing_downloadUploadedExcelTest -->
+      <class name="com.leedonline.testcases.Get_Payments_getInfoTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.Get_Payments_getInfoTest -->
+      <class name="com.leedonline.testcases.Get_LEED_getCreditsTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="setBaseUri"/>
+          <include name="GetCreditType" invocation-numbers="0"/>
+          <include name="teardown"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.Get_LEED_getCreditsTest -->
+      <class name="com.leedonline.testcases.Get_LEED_projectsGetListTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.Get_LEED_projectsGetListTest -->
+      <class name="com.leedonline.testcases.Post_Common_validateCaGBCMemberTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.Post_Common_validateCaGBCMemberTest -->
+      <class name="com.leedonline.testcases.Get_Api_getClientKeyTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.Get_Api_getClientKeyTest -->
+      <class name="com.leedonline.testcases.Get_LEED_projectDetailsTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+          <include name="teardown"/>
+          <include name="Get_LEED_projectDetails" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.Get_LEED_projectDetailsTest -->
+      <class name="com.leedonline.testcases.Get_LEED_getClarificationTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="setBaseUri"/>
+          <include name="Get_LEED_getClarifications" invocation-numbers="0"/>
+          <include name="teardown"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.Get_LEED_getClarificationTest -->
+      <class name="com.leedonline.testcases.Get_Files_dmsProxyTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.Get_Files_dmsProxyTest -->
+      <class name="com.leedonline.testcases.Post_Common_validatePostalCodeTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.Post_Common_validatePostalCodeTest -->
+      <class name="com.leedonline.testcases.Post_Files_filesUploadTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.Post_Files_filesUploadTest -->
+      <class name="com.leedonline.testcases.Get_Files_getDownloadUrlTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.Get_Files_getDownloadUrlTest -->
+      <class name="com.leedonline.testcases.Get_Api_invalidateTokenTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.Get_Api_invalidateTokenTest -->
+    </classes>
+  </test> <!-- LeedonlineApi(failed) -->
+  <test name="LeedonlineApi(failed)(failed)">
+    <parameter name="rowNum" value="2"/>
+    <parameter name="SheetName" value="STG"/>
+    <classes>
+      <class name="com.leedonline.testcases.Put_Files_UpdateLinkedIdInfoTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.Put_Files_UpdateLinkedIdInfoTest -->
+      <class name="com.leedonline.testcases.Delete_Files_deleteFilesTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.Delete_Files_deleteFilesTest -->
+      <class name="com.leedonline.testcases.Get_LEED_getInterpretationTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+          <include name="teardown"/>
+          <include name="Get_LEED_getInterpretation" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.Get_LEED_getInterpretationTest -->
+      <class name="com.leedonline.testcases.Put_LEED_projectDetailsTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="setBaseUri"/>
+          <include name="Put_LEED_projectDetails" invocation-numbers="0"/>
+          <include name="teardown"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.Put_LEED_projectDetailsTest -->
+      <class name="com.leedonline.testcases.Get_Api_memberGetInfoTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.Get_Api_memberGetInfoTest -->
+      <class name="com.leedonline.testcases.Get_LEED_getInfoTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.Get_LEED_getInfoTest -->
+      <class name="com.leedonline.testcases.Get_LEED_projectDownloadTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+          <include name="teardown"/>
+          <include name="Get_LEED_projectDownload" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.Get_LEED_projectDownloadTest -->
+      <class name="com.leedonline.testcases.Post_Common_validateSdnStatusTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.Post_Common_validateSdnStatusTest -->
+      <class name="com.leedonline.testcases.Get_Files_filesGetListTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.Get_Files_filesGetListTest -->
+      <class name="com.leedonline.testcases.Get_Payments_searchTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.Get_Payments_searchTest -->
+      <class name="com.leedonline.testcases.Put_Payments_sendTransactionDataToSapTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.Put_Payments_sendTransactionDataToSapTest -->
+      <class name="com.leedonline.testcases.Get_Common_getCountriesAndStatesTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.Get_Common_getCountriesAndStatesTest -->
+      <class name="com.leedonline.testcases.Post_Api_authenticateTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.Post_Api_authenticateTest -->
+      <class name="com.leedonline.testcases.Get_LEED_projectMoreInfoTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.Get_LEED_projectMoreInfoTest -->
+      <class name="com.leedonline.testcases.Get_Api_getNonceTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.Get_Api_getNonceTest -->
+      <class name="com.leedonline.testcases.Get_Payments_programPaymentTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.Get_Payments_programPaymentTest -->
+      <class name="com.leedonline.testcases.Get_LEEDPricing_downloadUploadedExcelTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.Get_LEEDPricing_downloadUploadedExcelTest -->
+      <class name="com.leedonline.testcases.Get_Payments_getInfoTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.Get_Payments_getInfoTest -->
+      <class name="com.leedonline.testcases.Get_LEED_getCreditsTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="setBaseUri"/>
+          <include name="GetCreditType" invocation-numbers="0"/>
+          <include name="teardown"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.Get_LEED_getCreditsTest -->
+      <class name="com.leedonline.testcases.Get_LEED_projectsGetListTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.Get_LEED_projectsGetListTest -->
+      <class name="com.leedonline.testcases.Post_Common_validateCaGBCMemberTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.Post_Common_validateCaGBCMemberTest -->
+      <class name="com.leedonline.testcases.Get_Api_getClientKeyTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.Get_Api_getClientKeyTest -->
+      <class name="com.leedonline.testcases.Get_LEED_projectDetailsTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+          <include name="teardown"/>
+          <include name="Get_LEED_projectDetails" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.Get_LEED_projectDetailsTest -->
+      <class name="com.leedonline.testcases.Get_LEED_getClarificationTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="setBaseUri"/>
+          <include name="Get_LEED_getClarifications" invocation-numbers="0"/>
+          <include name="teardown"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.Get_LEED_getClarificationTest -->
+      <class name="com.leedonline.testcases.Get_Files_dmsProxyTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.Get_Files_dmsProxyTest -->
+      <class name="com.leedonline.testcases.Post_Common_validatePostalCodeTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.Post_Common_validatePostalCodeTest -->
+      <class name="com.leedonline.testcases.Post_Files_filesUploadTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.Post_Files_filesUploadTest -->
+      <class name="com.leedonline.testcases.Get_Files_getDownloadUrlTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.Get_Files_getDownloadUrlTest -->
+      <class name="com.leedonline.testcases.Get_Api_invalidateTokenTest">
+        <methods>
+          <include name="setBaseUri"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.leedonline.testcases.Get_Api_invalidateTokenTest -->
+    </classes>
+  </test> <!-- LeedonlineApi(failed)(failed) -->
+</suite> <!-- Failed suite [Failed suite [LeedonlineApi Test Suit]] -->

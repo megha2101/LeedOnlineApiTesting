@@ -102,6 +102,7 @@ public class XlsReader
 		{
 			if(rowNum <=0)
 				return "";
+			
 		
 		int index = workbook.getSheetIndex(sheetName);
 		int col_Num=-1;
@@ -110,6 +111,7 @@ public class XlsReader
 		
 		sheet = workbook.getSheetAt(index);
 		row=sheet.getRow(0);
+		
 		for(int i=0;i<row.getLastCellNum();i++)
 		{
 			//System.out.println(row.getCell(i).getStringCellValue().trim());

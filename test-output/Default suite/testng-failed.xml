@@ -3,17 +3,17 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test verbose="2" name="Default test">
     <classes>
-      <class name="com.leedonline.testcases.PutPaymentsSendTransactionDataToSapTest"/>
+      <class name="com.leedonline.testcases.Get_LEED_projectsGetListTest"/>
     </classes>
   </test> <!-- Default test -->
   <test name="Default test(failed)">
     <classes>
-      <class name="com.leedonline.testcases.PutPaymentsSendTransactionDataToSapTest">
+      <class name="com.leedonline.testcases.Get_LEED_projectsGetListTest">
         <methods>
           <include name="setBaseUri"/>
-          <include name="PutPaymentsSendTransactionDataToSap"/>
+          <include name="Get_LEED_projectsGetList"/>
         </methods>
-      </class> <!-- com.leedonline.testcases.PutPaymentsSendTransactionDataToSapTest -->
+      </class> <!-- com.leedonline.testcases.Get_LEED_projectsGetListTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
